@@ -51,6 +51,7 @@
       <HintPath>$(ProjectDir)/.mono/assemblies/$(ApiConfiguration)/GodotSharpEditor.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp"/>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="addons\WAT\core\assertions\Asserts.cs" />
