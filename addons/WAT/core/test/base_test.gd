@@ -1,10 +1,11 @@
 extends Node
+tool
 
 const TEST: bool = true
 const YIELD: String = "finished"
 const CRASH_IF_TEST_FAILS: bool = true
 
-var asserts: Reference
+var Assert
 var direct: Reference
 var rerun_method: bool = false
 
@@ -27,9 +28,9 @@ func methods() -> PoolStringArray:
 			output.append(method.name)
 	return output
 	
-func setup(assertions, yielder, testcase, director, 
+func setup(yielder, testcase, director, 
            signal_watcher, parameters, recorder):
-	asserts = assertions
+	Assert = load("res://addons/WAT/core/assertions/Asserts.cs").new()
 	direct = director
 	_testcase = testcase
 	_yielder = yielder
@@ -45,7 +46,7 @@ func record(who: Object, properties: Array) -> Node:
 	
 func _ready() -> void:
 	p = _parameters.parameters
-	asserts.connect("asserted", _testcase, "_on_asserted")
+	Assert.assertions.connect("asserted", _testcase, "_on_asserted")
 	connect("described", _testcase, "_on_test_method_described")
 
 func any():
