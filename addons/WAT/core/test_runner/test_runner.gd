@@ -67,7 +67,7 @@ func _run_tests() -> void:
 		time_taken = _time / 1000.0
 		end()
 
-const Executor = preload("res://addons/WAT/core/test/test.gd")
+const Executor = preload("res://addons/WAT/core/test/executable.gd")
 
 func run(test: WAT.Test = _tests.pop_front().new()) -> void:
 	var testcase = WAT.TestCase.new(test.title(), test.path())

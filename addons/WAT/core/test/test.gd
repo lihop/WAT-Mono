@@ -1,86 +1,26 @@
 extends Node
-# class_name WATTest
+class_name WATTest
 
-class State:
-	const START: String = "start"
-	const PRE: String = "pre"
-	const EXECUTE: String = "execute"
-	const POST: String = "post"
-	const END: String = "end"
-	
-var _state: String
-var _methods: Array = []
-var _method: String
-var time: float = 0.0
-var _test: Node
-signal completed
+const TEST: bool = true
+const YIELD: String = "finished"
+const CRASH_IF_TEST_FAILS: bool = true
 
-func _init(test) -> void:
-	_test = test
+var Assert
+var direct: Reference
+var rerun_method: bool = false
 
-func _ready() -> void:
-	_test._yielder.connect("finished", self, "_next")
-	add_child(_test)
-	add_child(_test._yielder)
+# This is used to access variable data with the user test
+# e.g assert.is_equal(p.augend + p.addend, p.result, etc;
+var p: Dictionary
+ 
+var _watcher: Reference
+var _parameters: Reference
+var _yielder: Timer
+var _testcase: Reference
+var _recorder
 
-func _next(vargs = null):
-	# When yielding until signals or timeouts, this gets called on resume
-	# We call defer here to give the __testcase method time to reach either the end
-	# or an extra yield at which point we're able to check the _state of the yield and
-	# see if we stay paused or can continue
-	call_deferred("_change_state")
-	
-func _change_state() -> void:
-	if _test._yielder.is_active():
-		return
-	match _state:
-		State.START:
-			_pre()
-		State.PRE:
-			_execute()
-		State.EXECUTE:
-			_post()
-		State.POST:
-			_pre()
-		State.END:
-			_end()
-	
-func _start():
-	_state = State.START
-	_test.start()
-	_next()
-	
-func _pre():
-	time = OS.get_ticks_msec()
-	if _methods.empty() and not _test.rerun_method:
-		_state = State.END
-		_next()
-		return
-	_state = State.PRE
-	_test.pre()
-	_next()
-	
-func _execute():
-	_state = State.EXECUTE
-	_method = _method if _test.rerun_method else _methods.pop_back()
-	_test._testcase.add_method(_method)
-	_test.call(_method)
-	_next()
-	
-func _post():
-	_test._testcase.methods.back().time = (OS.get_ticks_msec() - time) / 1000.0
-	_state = State.POST
-	_test.post()
-	_next()
-	
-func _end():
-	_state = State.END
-	_test.end()
-	emit_signal("completed")
-	
-func _exit_tree() -> void:
-	queue_free()
-	
+signal described
+
 func start():
 	pass
 	
@@ -92,3 +32,83 @@ func post():
 	
 func end():
 	pass
+
+func methods() -> PoolStringArray:
+	var output: PoolStringArray = []
+	for method in get_method_list():
+		if method.name.begins_with("test"):
+			output.append(method.name)
+	return output
+	
+# I think the best idea is to remove everything
+# Change this to a c# test suite object
+# and then work back up from there
+# We may also need to create an external script when loading tests
+# so we can collect them via c# attributes
+func setup(testcase):
+	Assert = load("res://addons/WAT/core/assertions/Asserts.cs").new()
+	direct = load("res://addons/WAT/core/double/factory.gd").new()
+	_testcase = testcase # No changes needed
+	_yielder = load("res://addons/WAT/core/test/yielder.gd").new() # Research C# Yield
+	_watcher = load("res://addons/WAT/core/test/watcher.gd").new() # Research signal-interoperation
+	_parameters = load("res://addons/WAT/core/test/parameters.gd").new()# Use C# Attributes
+	_recorder = load("res://addons/WAT/core/test/recorder.gd").new() # Maybe require more research
+	
+func record(who: Object, properties: Array) -> Node:
+	var record = _recorder.new()
+	record.record(who, properties)
+	add_child(record)
+	return record
+	
+func _ready() -> void:
+	p = _parameters.parameters
+	Assert.assertions.connect("asserted", _testcase, "_on_asserted")
+	connect("described", _testcase, "_on_test_method_described")
+
+func any():
+	return preload("any.gd").new()
+
+func describe(message: String) -> void:
+	emit_signal("described", message)
+
+func parameters(list: Array) -> void:
+	rerun_method = _parameters.parameters(list)
+
+func path() -> String:
+	var path = get_script().get_path()
+	return path if path != "" else get_script().get_meta("path")
+	
+func title() -> String:
+	var path: String = get_script().get_path()
+	var substr: String = path.substr(path.find_last("/") + 1, 
+	path.find(".gd")).replace(".gd", "").replace("test", "").replace(".", " ").capitalize()
+	return substr
+
+func watch(emitter, event: String) -> void:
+	_watcher.watch(emitter, event)
+	
+func unwatch(emitter, event: String) -> void:
+	_watcher.unwatch(emitter, event)
+
+## Untested
+## Thanks to bitwes @ https://github.com/bitwes/Gut/
+func simulate(obj, times, delta):
+	for i in range(times):
+		if(obj.has_method("_process")):
+			obj._process(delta)
+		if(obj.has_method("_physics_process")):
+			obj._physics_process(delta)
+
+		for kid in obj.get_children():
+			simulate(kid, 1, delta)
+
+func until_signal(emitter: Object, event: String, time_limit: float) -> Node:
+	watch(emitter, event)
+	return _yielder.until_signal(time_limit, emitter, event)
+
+func until_timeout(time_limit: float) -> Node:
+	return _yielder.until_timeout(time_limit)
+
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_PREDELETE:
+		_watcher.clear()
