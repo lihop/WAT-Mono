@@ -69,9 +69,7 @@ func _run_tests() -> void:
 
 func run(test: WAT.Test = _tests.pop_front().new()) -> void:
 	var testcase = WAT.TestCase.new(test.title(), test.path())
-	test.setup(WAT.Yielder.new(), testcase, \
-		WAT.TestDoubleFactory.new(), WAT.SignalWatcher.new(), WAT.Parameters.new(),
-		WAT.Recorder)
+	test.setup(testcase)
 	var start_time = OS.get_ticks_msec()
 	add_child(test)
 	# Add Strategy Here?

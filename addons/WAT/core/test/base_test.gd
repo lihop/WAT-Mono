@@ -17,7 +17,7 @@ var _watcher: Reference
 var _parameters: Reference
 var _yielder: Timer
 var _testcase: Reference
-var _recorder: Script
+var _recorder
 
 signal described
 
@@ -28,15 +28,19 @@ func methods() -> PoolStringArray:
 			output.append(method.name)
 	return output
 	
-func setup(yielder, testcase, director, 
-           signal_watcher, parameters, recorder):
+# I think the best idea is to remove everything
+# Change this to a c# test suite object
+# and then work back up from there
+# We may also need to create an external script when loading tests
+# so we can collect them via c# attributes
+func setup(testcase):
 	Assert = load("res://addons/WAT/core/assertions/Asserts.cs").new()
-	direct = director
-	_testcase = testcase
-	_yielder = yielder
-	_watcher = signal_watcher
-	_parameters = parameters
-	_recorder = recorder
+	direct = load("res://addons/WAT/core/double/factory.gd").new()
+	_testcase = testcase # No changes needed
+	_yielder = load("res://addons/WAT/core/test/yielder.gd").new() # Research C# Yield
+	_watcher = load("res://addons/WAT/core/test/watcher.gd").new() # Research signal-interoperation
+	_parameters = load("res://addons/WAT/core/test/parameters.gd").new()# Use C# Attributes
+	_recorder = load("res://addons/WAT/core/test/recorder.gd").new() # Maybe require more research
 	
 func record(who: Object, properties: Array) -> Node:
 	var record = _recorder.new()
