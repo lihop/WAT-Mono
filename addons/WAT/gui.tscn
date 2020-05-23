@@ -82,7 +82,7 @@ func _show_more() -> void:
 func _on_method_selector_pressed() -> void:
 	MethodSelector.clear()
 	var path: String = ScriptSelector.get_item_text(ScriptSelector.selected)
-	if not path.ends_with(\".gd\"):
+	if not path.ends_with(\".cs\"):
 		MethodSelector.add_item(\"Please Select A Script First\")
 		return
 	var script = load(path)
@@ -166,10 +166,12 @@ func _on_directory_selector_pressed() -> void:
 		DirectorySelector.add_item(directory)
 		
 func _on_script_selector_pressed() -> void:
+	print(\"ScriptSelector Pressed\")
 	ScriptSelector.clear()
 	for script in filesystem.scripts():
-		if script.ends_with(\".gd\"):
-			if load(script).get(\"TEST\") != null:
+		print(script)
+		if script.ends_with(\".cs\"):
+			if load(script).get_instance_base_type() == \"WAT.Test\":
 				ScriptSelector.add_item(script)
 			if load(script).get(\"IS_WAT_SUITE\"):
 				ScriptSelector.add_item(script)

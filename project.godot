@@ -25,7 +25,8 @@ Results_Directory="res://tests/results/WAT"
 Minimize_Window_When_Running_Tests=false
 TestStrategy={
 "repeat": 1,
-"strategy": "RunAll"
+"script": "res://tests/EqualityTest.cs",
+"strategy": "RunScript"
 }
 Tags=PoolStringArray(  )
 Display=8

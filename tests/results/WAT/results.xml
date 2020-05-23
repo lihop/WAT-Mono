@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
-<testsuites failures="0" name="TestXML" tests="1" time="1.012">
-<testsuite failures="0" name="Given an Equality Assertion" tests="1" time="0.003">
-<testcase name="TestWhenCallingIsEqual" time="0.233">
+<testsuites failures="0" name="TestXML" tests="1" time="1.022">
+<testsuite failures="0" name="Given an Equality Assertion" tests="1" time="0.005">
+<testcase name="TestWhenCallingIsEqual" time="0.245">
 </testcase>
 </testsuite>
 </testsuites>
