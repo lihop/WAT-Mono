@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<testsuites failures="0" name="TestXML" tests="1" time="1.307">
+<testsuite failures="0" name="Given a Boolean Assertion" tests="2" time="0.003">
+<testcase name="When calling asserts.is_false(false)" time="0.018">
+</testcase>
+<testcase name="When calling asserts.is_true(true)" time="0.001">
+</testcase>
+</testsuite>
+</testsuites>
