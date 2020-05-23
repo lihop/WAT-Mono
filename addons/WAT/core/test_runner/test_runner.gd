@@ -71,8 +71,8 @@ const Executor = preload("res://addons/WAT/core/test/executable.gd")
 const TestCase = preload("res://addons/WAT/core/test/case.gd")
 
 func run(test = _tests.pop_front().new()) -> void:
-	var testcase = TestCase.new(test.title(), test.path())
-	test.setup(testcase)
+	var testcase = TestCase.new(test.GetTitle(), test.GetFilePath())
+	test.SetUp(testcase)
 	var executable = Executor.new(test)
 	var start_time = OS.get_ticks_msec()
 	add_child(executable)
@@ -80,7 +80,7 @@ func run(test = _tests.pop_front().new()) -> void:
 	if _strategy.has("method"):
 		test._methods = [_strategy.method]
 	else:
-		executable._methods = test.methods()
+		executable._methods = test.GetMethods()
 	executable._start()
 	var time = OS.get_ticks_msec() - start_time
 	testcase.time_taken = time / 1000.0

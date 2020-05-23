@@ -8,9 +8,10 @@ public class EqualityTest : WAT.Test
 		return "Given an Equality Assertion";
 	}
 	
+	[Test]
 	public void TestWhenCallingIsEqual()
 	{
 		//	describe("When calling asserts.is_equal(1, 1)")
-		// Assert.IsEqual(1, 1, "Then it passes");
+		Assert.IsEqual(1, 1, "Then it passes");
 	}
 }

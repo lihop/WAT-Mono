@@ -7,7 +7,7 @@ public class Assertions : Reference
 {
 	
 	public Reference assertions;
-	
+
 	public Assertions()
 	{
 		String path = "res://addons/WAT/core/assertions/assertions.gd";

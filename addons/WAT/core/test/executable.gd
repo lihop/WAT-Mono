@@ -47,35 +47,35 @@ func _change_state() -> void:
 	
 func _start():
 	_state = State.START
-	_test.start()
+	_test.Start()
 	_next()
 	
 func _pre():
 	time = OS.get_ticks_msec()
-	if _methods.empty() and not _test.rerun_method:
+	if _methods.empty() and not _test.RerunMethod:
 		_state = State.END
 		_next()
 		return
 	_state = State.PRE
-	_test.pre()
+	_test.Pre()
 	_next()
 	
 func _execute():
 	_state = State.EXECUTE
-	_method = _method if _test.rerun_method else _methods.pop_back()
-	_test._testcase.add_method(_method)
+	_method = _method if _test.RerunMethod else _methods.pop_back()
+	_test.Testcase.add_method(_method)
 	_test.call(_method)
 	_next()
 	
 func _post():
-	_test._testcase.methods.back().time = (OS.get_ticks_msec() - time) / 1000.0
+	_test.Testcase.methods.back().time = (OS.get_ticks_msec() - time) / 1000.0
 	_state = State.POST
-	_test.post()
+	_test.Post()
 	_next()
 	
 func _end():
 	_state = State.END
-	_test.end()
+	_test.End()
 	emit_signal("completed")
 	
 func _exit_tree() -> void:

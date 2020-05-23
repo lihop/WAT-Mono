@@ -2,14 +2,20 @@ using Godot;
 using System;
 using Godot.Collections;
 using GodotArray = Godot.Collections.Array;
+using System.Reflection;
 
 namespace WAT {
 	
 	public class Test : Node
 	{
+		
+		[AttributeUsage(AttributeTargets.Method)]
+		public class TestAttribute : Attribute {}
+		
 		const bool TEST = true;
 		protected Assertions Assert;
 		private Reference Testcase;
+		public Timer _yielder;
 		public bool RerunMethod = false;
 		
 		public virtual void Start() {}
@@ -21,7 +27,10 @@ namespace WAT {
 		{
 
 			Assert = new Assertions();
-			Testcase = testcase;			
+			Testcase = testcase;
+			
+			Script yielder = (Script)ResourceLoader.Load("res://addons/WAT/core/test/yielder.gd");
+			_yielder = (Timer)yielder.Call("new");
 		}
 		
 		public override void _Ready()
@@ -34,9 +43,32 @@ namespace WAT {
 			return "Untitled Test";
 		}
 		
+		public virtual String GetFilePath()
+		{
+			return "Undefined Script Path";
+		}
+		
 		public GodotArray GetMethods()
 		{
-			return new GodotArray();
+			GodotArray Methods = new GodotArray();
+			foreach(MethodInfo m in GetType().GetMethods())
+			{
+				if(m.IsDefined(typeof(TestAttribute)))
+				{
+					Methods.Add(m.Name);
+				}
+			}
+			return Methods;
+		}
+		
+		public bool IsTestSuite()
+		{
+			return true;
+		}
+		
+		static public String get_instance_base_type()
+		{
+			return "WAT.Test";
 		}
 	}
 }

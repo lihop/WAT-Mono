@@ -51,23 +51,26 @@ func tag(tag: String) -> Array:
 	
 func deposited() -> Array:
 	return _tests
-#	var tests = _tests.duplicate()
-#	_tests = []
-#	return tests
 	
 func _load_tests() -> Array:
 	var tests: Array = []
 	for path in _tests:
 		# Can't load WAT.Test here for whatever reason
-		if path is String and not path.ends_with(".gd"):
-			path = path.substr(0, path.find(".gd") + 3)
+#		if path is String and not path.ends_with(".cs"):
+#			path = path.substr(0, path.find(".cs") + 3)
+		print("trying to load %s" % path)
 		var test = load(path) if path is String else path
-		if test.get("TEST") != null:
+		print(test)
+		if test.get_instance_base_type() == "WAT.Test":
+			print("valid")
 			tests.append(test)
-		elif test.get("IS_WAT_SUITE") and Engine.get_version_info().minor == 2:
-			tests += _suite_of_suites_3p2(test)
-		elif test.get("IS_WAT_SUITE") and Engine.get_version_info().minor == 1:
-			tests += _suite_of_suites_3p1(test)
+		else:
+			print("not valid")
+		
+#		elif test.get("IS_WAT_SUITE") and Engine.get_version_info().minor == 2:
+#			tests += _suite_of_suites_3p2(test)
+#		elif test.get("IS_WAT_SUITE") and Engine.get_version_info().minor == 1:
+#			tests += _suite_of_suites_3p1(test)
 	return tests
 
 func _suite_of_suites_3p2(suite_of_suites) -> Array:

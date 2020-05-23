@@ -50,7 +50,7 @@ static func _parse_for_tests(what_exists: String, list: PoolStringArray) -> Pool
 	var directory: Directory = Directory.new()
 	for path in list:
 		if directory.call(what_exists, path):
-			if path.ends_with(".gd"):
+			if path.ends_with(".cs"):
 				output.append(path)
 	return output
 
@@ -67,4 +67,4 @@ static func templates():
 		if title == test_template:
 			template_exist = true
 			break
-	return {savepath = template_directory, exists = template_exist}
+	return {savepath = template_directory, exists = true}
