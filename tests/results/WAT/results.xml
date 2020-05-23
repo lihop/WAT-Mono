@@ -1,13 +1,27 @@
 <?xml version="1.0" ?>
-<testsuites failures="0" name="TestXML" tests="2" time="1.087">
-<testsuite failures="0" name="Given an Equality Assertion" tests="1" time="0.004">
-<testcase name="TestWhenCallingIsEqual" time="0.232">
+<testsuites failures="0" name="TestXML" tests="2" time="0.98">
+<testsuite failures="0" name="Given an Equality Assertion" tests="1" time="0.003">
+<testcase name="TestWhenCallingIsEqual" time="0.241">
 </testcase>
 </testsuite>
-<testsuite failures="0" name="Given a Yield" tests="3" time="0.006">
-<testcase name="TestWhenWeYieldInExecute" time="0.538">
+<testsuite failures="0" name="Given a Yield" tests="10" time="0.005">
+<testcase name="WhenTheYielderHearsOurSignal" time="0.43">
 </testcase>
-<testcase name="TestWhenWeYieldInPre" time="0.299">
+<testcase name="WhenWeCallUntilSignal" time="0.3">
+</testcase>
+<testcase name="WhenYielderIsFinishedSignalsAreDisconnected" time="0.399">
+</testcase>
+<testcase name="WhenASignalBeingYieldedOnIsEmittedTheYielderIsStopped" time="0.6">
+</testcase>
+<testcase name="WhenWeCallUntilTimeout" time="0.303">
+</testcase>
+<testcase name="WhenTheYielderTimesOut" time="0.397">
+</testcase>
+<testcase name="YielderIsNotActiveWhenAsserting" time="0.4">
+</testcase>
+<testcase name="TestWhenWeYieldInExecute" time="0.5">
+</testcase>
+<testcase name="TestWhenWeYieldInPre" time="0.3">
 </testcase>
 <testcase name="TestWhenWeYieldInStart" time="0.3">
 </testcase>

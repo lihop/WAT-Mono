@@ -73,10 +73,10 @@ namespace WAT {
 			return "WAT.Test";
 		}
 		
-//		public Timer until_signal(Godot.Object Emitter, String Event, float TimeLimit)
-//		{
-//			return (Timer)_yielder.Call("until_signal", TimeLimit, Emitter, Event);
-//		}
+		public Timer until_signal(Godot.Object Emitter, String Event, double TimeLimit)
+		{
+			return (Timer)_yielder.Call("until_signal", TimeLimit, Emitter, Event);
+		}
 		
 		public Timer until_timeout(double TimeLimit)
 		{
