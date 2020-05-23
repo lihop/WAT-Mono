@@ -3,6 +3,7 @@ using System;
 using Godot.Collections;
 using GodotArray = Godot.Collections.Array;
 using System.Reflection;
+using System.Threading.Tasks;
 
 namespace WAT {
 	
@@ -12,6 +13,7 @@ namespace WAT {
 		[AttributeUsage(AttributeTargets.Method)]
 		public class TestAttribute : Attribute {}
 		
+		public const String YIELD = "finished";
 		const bool TEST = true;
 		protected Assertions Assert;
 		private Reference Testcase;
@@ -69,6 +71,16 @@ namespace WAT {
 		static public String get_instance_base_type()
 		{
 			return "WAT.Test";
+		}
+		
+//		public Timer until_signal(Godot.Object Emitter, String Event, float TimeLimit)
+//		{
+//			return (Timer)_yielder.Call("until_signal", TimeLimit, Emitter, Event);
+//		}
+		
+		public Timer until_timeout(double TimeLimit)
+		{
+			return (Timer)_yielder.Call("until_timeout", TimeLimit);
 		}
 	}
 }

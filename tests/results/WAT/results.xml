@@ -1,7 +1,15 @@
 <?xml version="1.0" ?>
-<testsuites failures="0" name="TestXML" tests="1" time="1.022">
-<testsuite failures="0" name="Given an Equality Assertion" tests="1" time="0.005">
-<testcase name="TestWhenCallingIsEqual" time="0.245">
+<testsuites failures="0" name="TestXML" tests="2" time="1.087">
+<testsuite failures="0" name="Given an Equality Assertion" tests="1" time="0.004">
+<testcase name="TestWhenCallingIsEqual" time="0.232">
+</testcase>
+</testsuite>
+<testsuite failures="0" name="Given a Yield" tests="3" time="0.006">
+<testcase name="TestWhenWeYieldInExecute" time="0.538">
+</testcase>
+<testcase name="TestWhenWeYieldInPre" time="0.299">
+</testcase>
+<testcase name="TestWhenWeYieldInStart" time="0.3">
 </testcase>
 </testsuite>
 </testsuites>
