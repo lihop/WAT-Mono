@@ -1,17 +1,14 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 
-namespace System.Runtime.CompilerServices
-{
-    public class ExtensionAttribute : Attribute { }
-}
 
-public class Asserts : Reference
+public class Assertions : Reference
 {
 	
 	public Reference assertions;
 	
-	public Asserts()
+	public Assertions()
 	{
 		String path = "res://addons/WAT/core/assertions/assertions.gd";
 		Godot.Script script = (Godot.Script)ResourceLoader.Load(path);
@@ -31,5 +28,13 @@ public class Asserts : Reference
 	public void IsEqual(dynamic a, dynamic b, String context = "")
 	{
 		assertions.Call("is_equal", a, b, context);
+	}
+	
+	public List<String> get_words()
+	{
+		List<String> x = new List<String>();
+		x.Add("10");
+		x.Add("5");
+		return x; 
 	}
 }

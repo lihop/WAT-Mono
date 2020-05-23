@@ -46,7 +46,7 @@ func methods() -> PoolStringArray:
 # We may also need to create an external script when loading tests
 # so we can collect them via c# attributes
 func setup(testcase):
-	Assert = load("res://addons/WAT/core/assertions/Asserts.cs").new()
+	Assert = load("res://addons/WAT/core/assertions/Assertions.cs").new()
 	direct = load("res://addons/WAT/core/double/factory.gd").new()
 	_testcase = testcase # No changes needed
 	_yielder = load("res://addons/WAT/core/test/yielder.gd").new() # Research C# Yield

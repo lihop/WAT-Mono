@@ -54,9 +54,11 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="addons\WAT\core\assertions\Asserts.cs" />
+    <Compile Include="addons\WAT\core\assertions\Assertions.cs" />
+    <Compile Include="addons\WAT\core\test\Test.cs" />
     <Compile Include="Node.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="tests\EqualityTest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
