@@ -1,4 +1,4 @@
-extends WAT.Test
+extends WATTest
 #extends "res://addons/WAT/test/test.gd"
 
 func title():

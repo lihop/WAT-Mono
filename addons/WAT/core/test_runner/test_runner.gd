@@ -3,7 +3,7 @@ extends Node
 const COMPLETED: String = "completed"
 var JunitXML = preload("res://addons/WAT/resources/JUnitXML.gd").new()
 var test_loader: Reference = preload("test_loader.gd").new()
-var test_results: Resource = WAT.Results
+var test_results: Resource = preload("res://addons/WAT/resources/results.tres")
 var _tests: Array = []
 var _cases: Array = []
 var _strategy: Dictionary = {}
@@ -68,9 +68,10 @@ func _run_tests() -> void:
 		end()
 
 const Executor = preload("res://addons/WAT/core/test/executable.gd")
+const TestCase = preload("res://addons/WAT/core/test/case.gd")
 
-func run(test: WAT.Test = _tests.pop_front().new()) -> void:
-	var testcase = WAT.TestCase.new(test.title(), test.path())
+func run(test = _tests.pop_front().new()) -> void:
+	var testcase = TestCase.new(test.title(), test.path())
 	test.setup(testcase)
 	var executable = Executor.new(test)
 	var start_time = OS.get_ticks_msec()

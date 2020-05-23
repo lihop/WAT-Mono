@@ -1,6 +1,8 @@
 tool
 extends TabContainer
 
+const SUCCESS_ICON = preload("res://addons/WAT/assets/success.png")
+const FAILED_ICON = preload("res://addons/WAT/assets/failed.png")
 const ResultTree: PackedScene = preload("res://addons/WAT/ui/results/ResultTree.tscn")
 var _results: Resource
 var _tabs: Dictionary
@@ -34,7 +36,7 @@ func sort(results: Array) -> Dictionary:
 	
 func _on_tree_results_calculated(tree: Tree, passed: int, total: int, success: bool) -> void:
 	tree.name += " (%s|%s)" % [passed, total]
-	set_tab_icon(_tabs[tree], WAT.Icon.SUCCESS if success else WAT.Icon.FAILED)
+	set_tab_icon(_tabs[tree], SUCCESS_ICON if success else FAILED_ICON)
 
 func clear() -> void:
 	var children: Array = get_children()

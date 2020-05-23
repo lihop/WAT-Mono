@@ -6,6 +6,8 @@ const FAILED: Color = Color(1, 1, 1, 1)
 signal calculated
 var _cache: Array = []
 var _mega_cache: Array = []
+const SUCCESS_ICON = preload("res://addons/WAT/assets/success.png")
+const FAILED_ICON = preload("res://addons/WAT/assets/failed.png")
 
 func _ready():
 	connect("button_pressed", self, "_on_button_pressed")
@@ -80,7 +82,7 @@ func _color(success: bool) -> Color:
 	return PASSED if success else FAILED
 	
 func _icon(success: bool) -> Texture:
-	return WAT.Icon.SUCCESS if success else WAT.Icon.FAILED
+	return SUCCESS_ICON if success else FAILED_ICON
 	
 func expand_all() -> void:
 	for item in _cache:
@@ -92,4 +94,4 @@ func collapse_all() -> void:
 		
 func expand_failures() -> void:
 	for item in _mega_cache:
-		item.collapsed = true if item.get_icon(0) == WAT.Icon.SUCCESS else false
+		item.collapsed = true if item.get_icon(0) == SUCCESS_ICON else false
