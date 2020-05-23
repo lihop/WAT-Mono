@@ -1,13 +1,13 @@
 <?xml version="1.0" ?>
-<testsuites failures="0" name="TestXML" tests="2" time="1.072">
-<testsuite failures="0" name="Given a Boolean Assertion" tests="2" time="0.003">
-<testcase name="When calling asserts.is_true(true)" time="0">
-</testcase>
+<testsuites failures="0" name="TestXML" tests="2" time="1.123">
+<testsuite failures="0" name="Given a Boolean Assertion" tests="2" time="0.002">
 <testcase name="When calling asserts.is_false(false)" time="0">
+</testcase>
+<testcase name="When calling asserts.is_true(true)" time="0">
 </testcase>
 </testsuite>
 <testsuite failures="0" name="Given an Equality Assertion" tests="1" time="0.002">
-<testcase name="When calling asserts.is_equal(1, 1)" time="0.223">
+<testcase name="When calling asserts.is_equal(1, 1)" time="0.236">
 </testcase>
 </testsuite>
 </testsuites>

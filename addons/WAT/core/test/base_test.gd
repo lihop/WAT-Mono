@@ -1,5 +1,5 @@
 extends Node
-tool
+class_name WATTest
 
 const TEST: bool = true
 const YIELD: String = "finished"
@@ -20,6 +20,18 @@ var _testcase: Reference
 var _recorder
 
 signal described
+
+func start():
+	pass
+	
+func pre():
+	pass
+	
+func post():
+	pass
+	
+func end():
+	pass
 
 func methods() -> PoolStringArray:
 	var output: PoolStringArray = []

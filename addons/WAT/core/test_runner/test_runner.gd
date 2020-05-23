@@ -67,23 +67,26 @@ func _run_tests() -> void:
 		time_taken = _time / 1000.0
 		end()
 
+const Executor = preload("res://addons/WAT/core/test/test.gd")
+
 func run(test: WAT.Test = _tests.pop_front().new()) -> void:
 	var testcase = WAT.TestCase.new(test.title(), test.path())
 	test.setup(testcase)
+	var executable = Executor.new(test)
 	var start_time = OS.get_ticks_msec()
-	add_child(test)
+	add_child(executable)
 	# Add Strategy Here?
 	if _strategy.has("method"):
 		test._methods = [_strategy.method]
 	else:
-		test._methods = test.methods()
-	test._start()
+		executable._methods = test.methods()
+	executable._start()
 	var time = OS.get_ticks_msec() - start_time
 	testcase.time_taken = time / 1000.0
-	yield(test, COMPLETED)
+	yield(executable, COMPLETED)
 	testcase.calculate()
 	_cases.append(testcase.to_dictionary())
-	remove_child(test)
+	remove_child(executable)
 	
 func end() -> void:
 	print("Ending WAT Test Runner")

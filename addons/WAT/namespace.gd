@@ -3,7 +3,7 @@ class_name WAT
 
 const TestDoubleFactory = preload("res://addons/WAT/core/double/factory.gd")
 const BaseTest = preload("res://addons/WAT/core/test/base_test.gd")
-const Test: Script = preload("res://addons/WAT/core/test/test.gd")
+const Test: Script = preload("res://addons/WAT/core/test/base_test.gd")
 const Results: Resource = preload("res://addons/WAT/resources/results.tres")
 const TestSuiteOfSuites = preload("res://addons/WAT/core/test/suite.gd")
 const SignalWatcher = preload("res://addons/WAT/core/test/watcher.gd")

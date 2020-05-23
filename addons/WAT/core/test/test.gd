@@ -1,5 +1,5 @@
-extends "base_test.gd"
-class_name WATTest
+extends Node
+# class_name WATTest
 
 class State:
 	const START: String = "start"
@@ -12,11 +12,16 @@ var _state: String
 var _methods: Array = []
 var _method: String
 var time: float = 0.0
+var _test: Node
 signal completed
 
+func _init(test) -> void:
+	_test = test
+
 func _ready() -> void:
-	_yielder.connect("finished", self, "_next")
-	add_child(_yielder)
+	_test._yielder.connect("finished", self, "_next")
+	add_child(_test)
+	add_child(_test._yielder)
 
 func _next(vargs = null):
 	# When yielding until signals or timeouts, this gets called on resume
@@ -26,7 +31,7 @@ func _next(vargs = null):
 	call_deferred("_change_state")
 	
 func _change_state() -> void:
-	if _yielder.is_active():
+	if _test._yielder.is_active():
 		return
 	match _state:
 		State.START:
@@ -42,35 +47,35 @@ func _change_state() -> void:
 	
 func _start():
 	_state = State.START
-	start()
+	_test.start()
 	_next()
 	
 func _pre():
 	time = OS.get_ticks_msec()
-	if _methods.empty() and not rerun_method:
+	if _methods.empty() and not _test.rerun_method:
 		_state = State.END
 		_next()
 		return
 	_state = State.PRE
-	pre()
+	_test.pre()
 	_next()
 	
 func _execute():
 	_state = State.EXECUTE
-	_method = _method if rerun_method else _methods.pop_back()
-	_testcase.add_method(_method)
-	call(_method)
+	_method = _method if _test.rerun_method else _methods.pop_back()
+	_test._testcase.add_method(_method)
+	_test.call(_method)
 	_next()
 	
 func _post():
-	_testcase.methods.back().time = (OS.get_ticks_msec() - time) / 1000.0
+	_test._testcase.methods.back().time = (OS.get_ticks_msec() - time) / 1000.0
 	_state = State.POST
-	post()
+	_test.post()
 	_next()
 	
 func _end():
 	_state = State.END
-	end()
+	_test.end()
 	emit_signal("completed")
 	
 func _exit_tree() -> void:
