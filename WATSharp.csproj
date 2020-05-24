@@ -61,6 +61,7 @@
     <Compile Include="tests\BooleanTest.cs" />
     <Compile Include="tests\EqualityTest.cs" />
     <Compile Include="tests\NullTest.cs" />
+    <Compile Include="tests\ObjectTest.cs" />
     <Compile Include="tests\ParameterizedTest.cs" />
     <Compile Include="tests\RangeTest.cs" />
     <Compile Include="tests\RecorderTest.cs" />
