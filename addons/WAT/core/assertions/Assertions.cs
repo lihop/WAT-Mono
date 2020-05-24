@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using GDArray = Godot.Collections.Array;
 
 
 public class Assertions : Reference
@@ -30,11 +31,23 @@ public class Assertions : Reference
 		assertions.Call("is_equal", a, b, context);
 	}
 	
-	public List<String> get_words()
+	public void SignalWasEmitted(Godot.Object Emitter, String Event, String Context = "")
 	{
-		List<String> x = new List<String>();
-		x.Add("10");
-		x.Add("5");
-		return x; 
+		assertions.Call("signal_was_emitted", Emitter, Event, Context);
+	}
+	
+	public void SignalWasEmittedXTimes(Godot.Object Emitter, String Event, int Times, String Context = "")
+	{
+		assertions.Call("signal_was_emitted_x_times", Emitter, Event, Times, Context);
+	}
+	
+	public void SignalWasNotEmitted(Godot.Object Emitter, String Event, int Times, String Context = "")
+	{
+		assertions.Call("signal_was_not_emitted", Emitter, Event, Context);
+	}
+
+	public void SignalWasEmittedWithArguments(Godot.Object Emitter, GDArray Args, String Context = "")
+	{
+		assertions.Call("signal_was_emitted_with_arguments", Emitter, Args, Context);
 	}
 }

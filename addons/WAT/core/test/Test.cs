@@ -89,6 +89,7 @@ namespace WAT {
 
 		public Timer UntilSignal(Godot.Object Emitter, String Event, double TimeLimit)
 		{
+			Watcher.Call("watch", Emitter, Event);
 			return (Timer)Yielder.Call("until_signal", TimeLimit, Emitter, Event);
 		}
 		
