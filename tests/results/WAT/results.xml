@@ -1,27 +1,27 @@
 <?xml version="1.0" ?>
-<testsuites failures="0" name="TestXML" tests="3" time="0.966">
+<testsuites failures="0" name="TestXML" tests="3" time="0.976">
 <testsuite failures="0" name="Given an Equality Assertion" tests="1" time="0.004">
-<testcase name="TestWhenCallingIsEqual" time="0.223">
+<testcase name="TestWhenCallingIsEqual" time="0.224">
 </testcase>
 </testsuite>
-<testsuite failures="0" name="Given A Signal Watcher" tests="4" time="0.001">
+<testsuite failures="0" name="Given A Signal Watcher" tests="4" time="0.002">
 <testcase name="WhenWeWatchASignalAndEmitItMultipleTimes" time="0.001">
 </testcase>
-<testcase name="WhenWeWatchAndDoNotEmitASignal" time="0">
+<testcase name="When we Watch and Do not Emit a Signal" time="0">
 </testcase>
-<testcase name="WhenWeWatchAndEmitASignal" time="0">
+<testcase name="When we watch and emit a signal" time="0.001">
 </testcase>
-<testcase name="WhenWeWatchASignalFromAnObjectWithNoBoundVariables" time="0.001">
+<testcase name="WhenWeWatchASignalFromAnObjectWithNoBoundVariables" time="0">
 </testcase>
 </testsuite>
-<testsuite failures="0" name="Given a Yield" tests="10" time="0.005">
-<testcase name="WhenTheYielderHearsOurSignal" time="0.437">
+<testsuite failures="0" name="Given a Yield" tests="10" time="0.004">
+<testcase name="WhenTheYielderHearsOurSignal" time="0.422">
 </testcase>
 <testcase name="WhenWeCallUntilSignal" time="0.302">
 </testcase>
 <testcase name="WhenYielderIsFinishedSignalsAreDisconnected" time="0.397">
 </testcase>
-<testcase name="WhenASignalBeingYieldedOnIsEmittedTheYielderIsStopped" time="0.599">
+<testcase name="WhenASignalBeingYieldedOnIsEmittedTheYielderIsStopped" time="0.6">
 </testcase>
 <testcase name="WhenWeCallUntilTimeout" time="0.302">
 </testcase>
@@ -31,9 +31,9 @@
 </testcase>
 <testcase name="TestWhenWeYieldInExecute" time="0.5">
 </testcase>
-<testcase name="TestWhenWeYieldInPre" time="0.3">
+<testcase name="TestWhenWeYieldInPre" time="0.299">
 </testcase>
-<testcase name="TestWhenWeYieldInStart" time="0.301">
+<testcase name="TestWhenWeYieldInStart" time="0.3">
 </testcase>
 </testsuite>
 </testsuites>

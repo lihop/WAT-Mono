@@ -50,6 +50,7 @@ public class WatcherTest : WAT.Test
 	[Test]
 	public void WhenWeWatchAndEmitASignal()
 	{
+		Describe("When we watch and emit a signal");
 		EmitSignal("Example");
 		Assert.SignalWasEmitted(this, "Example", "Then it captures the emitted signal");
 		
@@ -58,6 +59,7 @@ public class WatcherTest : WAT.Test
 	[Test]
 	public void WhenWeWatchAndDoNotEmitASignal()
 	{
+		Describe("When we Watch and Do not Emit a Signal");
 		Assert.SignalWasNotEmitted(this, "Example", "Then it does not capture the non-emitted signal");
 	}
 	

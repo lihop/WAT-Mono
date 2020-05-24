@@ -21,6 +21,9 @@ namespace WAT {
 		public Reference Watcher;
 		public bool RerunMethod = false;
 		
+		[Signal]
+		delegate void Described(String MethodDescription);
+		
 		public virtual void Start() {}
 		public virtual void Pre() {}
 		public virtual void Post() {}
@@ -42,6 +45,7 @@ namespace WAT {
 		public override void _Ready()
 		{
 			Assert.assertions.Call("connect", "asserted", Testcase, "_on_asserted");
+			Connect("Described", Testcase, "_on_test_method_described");
 		}
 		
 		public virtual String GetTitle()
@@ -75,6 +79,11 @@ namespace WAT {
 		static public String get_instance_base_type()
 		{
 			return "WAT.Test";
+		}
+		
+		protected void Describe(String MethodDescription)
+		{
+			EmitSignal("Described", MethodDescription);
 		}
 		
 		public void Watch(Godot.Object Emitter, String Event)
