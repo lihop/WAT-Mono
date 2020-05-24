@@ -3,7 +3,7 @@ using System;
 
 public class ParameterizedTest : WAT.Test
 {
-	public override String GetTitle()
+	public override String Title()
 	{
 		return "Given The Addition Operator (Parameter Tests)";
 	}

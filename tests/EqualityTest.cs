@@ -3,7 +3,7 @@ using System;
 
 public class EqualityTest : WAT.Test
 {
-	public override String GetTitle()
+	public override String Title()
 	{
 		return "Given an Equality Assertion";
 	}

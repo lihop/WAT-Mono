@@ -3,7 +3,7 @@ using System;
 
 public class IsInstanceTest : WAT.Test
 {
-	public override String GetTitle()
+	public override String Title()
 	{
 		return "Is Instance ( class / type ) Assertions";
 	}

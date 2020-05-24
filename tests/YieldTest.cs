@@ -15,7 +15,7 @@ public class YieldTest : WAT.Test
 	[Signal]
 	delegate void abc();
 	
-	public override String GetTitle()
+	public override String Title()
 	{
 		return "Given a Yield";
 	}

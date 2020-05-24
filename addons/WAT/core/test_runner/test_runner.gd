@@ -71,7 +71,7 @@ const Executor = preload("res://addons/WAT/core/test/executable.gd")
 const TestCase = preload("res://addons/WAT/core/test/case.gd")
 
 func run(test = _tests.pop_front().new()) -> void:
-	var testcase = TestCase.new(test.GetTitle(), test.GetFilePath())
+	var testcase = TestCase.new(test.Title(), test.GetFilePath())
 	test.SetUp(testcase)
 	var executable = Executor.new(test)
 	var start_time = OS.get_ticks_msec()

@@ -3,7 +3,7 @@ using System;
 
 public class BooleanTest : WAT.Test
 {
-	public override String GetTitle()
+	public override String Title()
 	{
 		return "Given A Boolean Assertion";
 	}

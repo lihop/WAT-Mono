@@ -3,10 +3,6 @@ using System;
 
 public class FileTest : WAT.Test
 {
-	public override String GetTitle()
-	{
-		return "File Assertions";
-	}
 	
 	[Test]
 	public void ThisFileExists()

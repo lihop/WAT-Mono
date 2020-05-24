@@ -3,7 +3,7 @@ using System;
 
 public class NullTest : WAT.Test
 {
-	public override String GetTitle()
+	public override String Title()
 	{
 		return "Null Assertions";
 	}

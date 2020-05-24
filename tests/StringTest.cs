@@ -3,7 +3,7 @@ using System;
 
 public class StringTest : WAT.Test
 {
-	public override String GetTitle()
+	public override String Title()
 	{
 		return "Given A String Assertion";
 	}

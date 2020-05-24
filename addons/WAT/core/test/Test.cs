@@ -59,9 +59,9 @@ namespace WAT {
 			Connect("Described", Testcase, "_on_test_method_described");
 		}
 		
-		public virtual String GetTitle()
+		public virtual String Title()
 		{
-			return "Untitled Test";
+			return GetType().Name;
 		}
 		
 		public virtual String GetFilePath()

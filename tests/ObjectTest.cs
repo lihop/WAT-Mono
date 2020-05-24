@@ -3,7 +3,7 @@ using System;
 
 public class ObjectTest : WAT.Test
 {
-	public override String GetTitle()
+	public override String Title()
 	{
 		return "Object Assertions";
 	}
@@ -46,9 +46,9 @@ public class ObjectTest : WAT.Test
 	}
 	
 	[Test]
-	public void WhenCallingHasMethodGetTitle()
+	public void WhenCallingHasMethodTitle()
 	{
-		Assert.ObjectHasMethod(this, "GetTitle", "Then it passes");
+		Assert.ObjectHasMethod(this, "Title", "Then it passes");
 	}
 	
 	[Test]
