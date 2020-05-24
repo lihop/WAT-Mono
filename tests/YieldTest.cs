@@ -22,19 +22,19 @@ public class YieldTest : WAT.Test
 	
     public async override void Start()
 	{
-		await ToSignal(until_timeout(0.1), YIELD);
+		await ToSignal(UntilTimeout(0.1), YIELD);
 		a = true;
-		await ToSignal(until_timeout(0.1), YIELD);
+		await ToSignal(UntilTimeout(0.1), YIELD);
 		b = true;
 	}
 	
 	public async override void Pre()
 	{
-		await ToSignal(until_timeout(0.1), YIELD);
+		await ToSignal(UntilTimeout(0.1), YIELD);
 		c = true;
-		await ToSignal(until_timeout(0.1), YIELD);
+		await ToSignal(UntilTimeout(0.1), YIELD);
 		d = true;
-		await ToSignal(until_timeout(0.1), YIELD);
+		await ToSignal(UntilTimeout(0.1), YIELD);
 	}
 	
 	[Test]
@@ -54,9 +54,9 @@ public class YieldTest : WAT.Test
 	[Test]
 	public async void TestWhenWeYieldInExecute()
 	{
-		await ToSignal(until_timeout(0.1), YIELD);
+		await ToSignal(UntilTimeout(0.1), YIELD);
 		e = true;
-		await ToSignal(until_timeout(0.1), YIELD);
+		await ToSignal(UntilTimeout(0.1), YIELD);
 		f = true;
 		Assert.IsTrue(e, "Then we set var e to true");
 		Assert.IsTrue(f, "Then we set var f to true");
@@ -65,17 +65,17 @@ public class YieldTest : WAT.Test
 	[Test]
 	public async void YielderIsNotActiveWhenAsserting()
 	{
-		await ToSignal(until_timeout(0.1), YIELD);
-		bool result = (bool)_yielder.Call("is_active");
+		await ToSignal(UntilTimeout(0.1), YIELD);
+		bool result = (bool)Yielder.Call("is_active");
 		Assert.IsTrue(!result, "Then yielder is not active");
 	}
 	
 	[Test]
 	public async void WhenTheYielderTimesOut()
 	{
-		await ToSignal(until_timeout(0.1), YIELD);
-		bool paused = (bool)_yielder.Call("get", "paused");
-		bool connected = (bool)_yielder.Call("is_connected", "timeout", _yielder, "_on_resume");
+		await ToSignal(UntilTimeout(0.1), YIELD);
+		bool paused = (bool)Yielder.Call("get", "paused");
+		bool connected = (bool)Yielder.Call("is_connected", "timeout", Yielder, "_on_resume");
 		Assert.IsTrue(paused, "Then the yielder is paused");
 		Assert.IsTrue(!connected, "The timeout signal of the yielder is not connected");
 	}
@@ -100,17 +100,17 @@ public class YieldTest : WAT.Test
 	public async void WhenASignalBeingYieldedOnIsEmittedTheYielderIsStopped()
 	{
 		CallDeferred("EmitSignal", "abc");
-		await ToSignal(until_signal(this, "abc", 0.3), YIELD);
-		bool paused = (bool)_yielder.Call("get", "paused");
+		await ToSignal(UntilSignal(this, "abc", 0.3), YIELD);
+		bool paused = (bool)Yielder.Call("get", "paused");
 		Assert.IsTrue(paused, "Then the yielder is paused");
 	}
 	
 	[Test]
 	public async void WhenYielderIsFinishedSignalsAreDisconnected()
 	{
-		await ToSignal(until_signal(this, "abc", 0.1), YIELD);
-		bool connected = (bool)_yielder.Call("is_connected", "timeout", _yielder, "_on_resume");
-		bool connected2 = IsConnected("abc", _yielder, "_on_resume");
+		await ToSignal(UntilSignal(this, "abc", 0.1), YIELD);
+		bool connected = (bool)Yielder.Call("is_connected", "timeout", Yielder, "_on_resume");
+		bool connected2 = IsConnected("abc", Yielder, "_on_resume");
 		Assert.IsTrue(!connected, "Then the timeout signal is disconnected");
 		Assert.IsTrue(!connected2, "Then the signal signal is disconnected");
 	}
@@ -137,11 +137,12 @@ public class YieldTest : WAT.Test
 	public async void WhenTheYielderHearsOurSignal()
 	{
 		CallDeferred("EmitSignal", "abc");
-		await ToSignal(until_signal(this, "abc", 0.1), YIELD);
-		bool paused = (bool)_yielder.Call("get", "paused");
-		bool connected = (bool)_yielder.Call("is_connected", "timeout", _yielder, "_on_resume");
-		bool our_connected = IsConnected("abc", _yielder, "_on_resume");
+		await ToSignal(UntilSignal(this, "abc", 0.1), YIELD);
+		bool paused = (bool)Yielder.Call("get", "paused");
+		bool connected = (bool)Yielder.Call("is_connected", "timeout", Yielder, "_on_resume");
+		bool our_connected = IsConnected("abc", Yielder, "_on_resume");
 		Assert.IsTrue(paused, "Then the yielder is paused");
 		Assert.IsTrue(!connected, "Then the timeout signal of the yielder is disconnected");
 		Assert.IsTrue(!our_connected, "Then our signal to the yielder is disconnected");
 	}
+}

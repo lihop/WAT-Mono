@@ -19,9 +19,9 @@ func _init(test) -> void:
 	_test = test
 
 func _ready() -> void:
-	_test._yielder.connect("finished", self, "_next")
+	_test.Yielder.connect("finished", self, "_next")
 	add_child(_test)
-	add_child(_test._yielder)
+	add_child(_test.Yielder)
 
 func _next(vargs = null):
 	# When yielding until signals or timeouts, this gets called on resume
@@ -31,7 +31,7 @@ func _next(vargs = null):
 	call_deferred("_change_state")
 	
 func _change_state() -> void:
-	if _test._yielder.is_active():
+	if _test.Yielder.is_active():
 		return
 	match _state:
 		State.START:

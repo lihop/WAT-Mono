@@ -17,7 +17,7 @@ namespace WAT {
 		const bool TEST = true;
 		protected Assertions Assert;
 		private Reference Testcase;
-		public Timer _yielder;
+		public Timer Yielder;
 		public bool RerunMethod = false;
 		
 		public virtual void Start() {}
@@ -32,7 +32,7 @@ namespace WAT {
 			Testcase = testcase;
 			
 			Script yielder = (Script)ResourceLoader.Load("res://addons/WAT/core/test/yielder.gd");
-			_yielder = (Timer)yielder.Call("new");
+			Yielder = (Timer)yielder.Call("new");
 		}
 		
 		public override void _Ready()
@@ -73,14 +73,14 @@ namespace WAT {
 			return "WAT.Test";
 		}
 		
-		public Timer until_signal(Godot.Object Emitter, String Event, double TimeLimit)
+		public Timer UntilSignal(Godot.Object Emitter, String Event, double TimeLimit)
 		{
-			return (Timer)_yielder.Call("until_signal", TimeLimit, Emitter, Event);
+			return (Timer)Yielder.Call("until_signal", TimeLimit, Emitter, Event);
 		}
 		
-		public Timer until_timeout(double TimeLimit)
+		public Timer UntilTimeout(double TimeLimit)
 		{
-			return (Timer)_yielder.Call("until_timeout", TimeLimit);
+			return (Timer)Yielder.Call("until_timeout", TimeLimit);
 		}
 	}
 }
