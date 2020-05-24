@@ -54,6 +54,18 @@ public class RecorderTest : WAT.Test
 		GD.Print(Health[0]);
 		GD.Print(Health[Health.Count - 1]);
 		Assert.IsLessThan(Health[Health.Count-1], Health[0]);
+		
+		RemoveChild(_Hero);
+		_Hero.Free();
+	}
 	
+	[Test]
+	public void WhenAHeroIsPoisonedTheirHealthIs0After100Cycles()
+	{
+		Hero _Hero = new Hero();
+		Poison _Poison = new Poison(_Hero);
+		Simulate(_Hero, 100, 0.1F);
+		
+		Assert.IsEqual(0, _Hero.Health);
 	}
 }
