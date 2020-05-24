@@ -64,6 +64,7 @@
     <Compile Include="tests\ParameterizedTest.cs" />
     <Compile Include="tests\RangeTest.cs" />
     <Compile Include="tests\RecorderTest.cs" />
+    <Compile Include="tests\StringTest.cs" />
     <Compile Include="tests\WatcherTest.cs" />
     <Compile Include="tests\YieldTest.cs" />
   </ItemGroup>
