@@ -119,12 +119,12 @@ namespace WAT {
 		
 		public void IsNull(System.Object a, String Context)
 		{
-			assertions.Call("IsNull", a, Context);
+			assertions.Call("is_null", a, Context);
 		}
 		
 		public void IsNotNull(System.Object a, String Context)
 		{
-			assertions.Call("IsNotNull", a, Context);
+			assertions.Call("is_not_null", a, Context);
 		}
 		
 		public void StringContains(System.Object a, System.Object b, String Context)

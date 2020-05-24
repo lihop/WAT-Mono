@@ -60,6 +60,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tests\BooleanTest.cs" />
     <Compile Include="tests\EqualityTest.cs" />
+    <Compile Include="tests\NullTest.cs" />
     <Compile Include="tests\ParameterizedTest.cs" />
     <Compile Include="tests\RecorderTest.cs" />
     <Compile Include="tests\WatcherTest.cs" />
