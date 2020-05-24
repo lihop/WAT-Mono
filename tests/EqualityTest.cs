@@ -9,9 +9,44 @@ public class EqualityTest : WAT.Test
 	}
 	
 	[Test]
-	public void TestWhenCallingIsEqual()
+	public void WhenCallingIsEqual() 
+	{ 
+		Assert.IsEqual(1, 1, "Then it passes"); 
+	}
+	
+	[Test]
+	public void WhenCallingIsGreaterThan() 
+	{ 
+		Assert.IsGreaterThan(2, 1, "Then it passes");
+	}
+	
+	[Test]
+	public void WhenCallingIsLessThan()
 	{
-		//	describe("When calling asserts.is_equal(1, 1)")
-		Assert.IsEqual(1, 1, "Then it passes");
+		Assert.IsLessThan(1, 2, "Then it passes");
+	}
+	
+	[Test]
+	public void WhenCallingIsEqualOrGreaterThan()
+	{
+		Assert.IsEqualOrGreaterThan(2, 1, "Then it passes");
+	}
+	
+	[Test]
+	public void WhenCallingIsEqualOrGreaterThanWithEqualValues()
+	{
+		Assert.IsEqualOrGreaterThan(1, 1, "Then it passes");
+	}
+	
+	[Test]
+	public void WhenCallingIsEqualOrLessThanWithEqualValues()
+	{
+		Assert.IsEqualOrLessThan(1, 1, "Then it passes");
+	}
+	
+	[Test]
+	public void WhenCallingIsNotEqual()
+	{
+		Assert.IsNotEqual(5, 6, "Then it passes");
 	}
 }
