@@ -18,6 +18,7 @@ namespace WAT {
 		protected Assertions Assert;
 		private Reference Testcase;
 		public Timer Yielder;
+		public Reference Watcher;
 		public bool RerunMethod = false;
 		
 		public virtual void Start() {}
@@ -33,6 +34,9 @@ namespace WAT {
 			
 			Script yielder = (Script)ResourceLoader.Load("res://addons/WAT/core/test/yielder.gd");
 			Yielder = (Timer)yielder.Call("new");
+			
+			Script watcher = (Script)ResourceLoader.Load("res://addons/WAT/core/test/watcher.gd");
+			Watcher = (Reference)watcher.Call("new");
 		}
 		
 		public override void _Ready()
@@ -73,6 +77,16 @@ namespace WAT {
 			return "WAT.Test";
 		}
 		
+		public void Watch(Godot.Object Emitter, String Event)
+		{
+			Watcher.Call("watch", Emitter, Event);
+		}
+		
+		public void UnWatch(Godot.Object Emitter, String Event)
+		{
+			Watcher.Call("unwatch", Emitter, Event);
+		}
+
 		public Timer UntilSignal(Godot.Object Emitter, String Event, double TimeLimit)
 		{
 			return (Timer)Yielder.Call("until_signal", TimeLimit, Emitter, Event);
