@@ -31,6 +31,11 @@ public class Assertions : Reference
 		assertions.Call("is_equal", a, b, context);
 	}
 	
+	public void IsLessThan(dynamic a, dynamic b, String Context = "")
+	{
+		assertions.Call("is_less_than", a, b, Context);
+	}
+	
 	public void SignalWasEmitted(Godot.Object Emitter, String Event, String Context = "")
 	{
 		assertions.Call("signal_was_emitted", Emitter, Event, Context);

@@ -19,6 +19,7 @@ namespace WAT {
 		private Reference Testcase;
 		public Timer Yielder;
 		public Reference Watcher;
+		private Script recorder;
 		public bool RerunMethod = false;
 		
 		[Signal]
@@ -40,6 +41,9 @@ namespace WAT {
 			
 			Script watcher = (Script)ResourceLoader.Load("res://addons/WAT/core/test/watcher.gd");
 			Watcher = (Reference)watcher.Call("new");
+			
+			recorder = (Script)ResourceLoader.Load("res://addons/WAT/core/test/recorder.gd");
+
 		}
 		
 		public override void _Ready()
@@ -94,6 +98,15 @@ namespace WAT {
 		public void UnWatch(Godot.Object Emitter, String Event)
 		{
 			Watcher.Call("unwatch", Emitter, Event);
+		}
+		
+		public Godot.Node Record(Godot.Object Who, GodotArray Properties) 
+		{
+			Godot.Node Recorder = (Godot.Node)recorder.Call("new");
+			Recorder.Call("record", Who, Properties);
+			AddChild(Recorder);
+			return Recorder;
+
 		}
 
 		public Timer UntilSignal(Godot.Object Emitter, String Event, double TimeLimit)

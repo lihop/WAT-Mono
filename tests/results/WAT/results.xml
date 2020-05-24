@@ -1,39 +1,7 @@
 <?xml version="1.0" ?>
-<testsuites failures="0" name="TestXML" tests="3" time="0.976">
-<testsuite failures="0" name="Given an Equality Assertion" tests="1" time="0.004">
-<testcase name="TestWhenCallingIsEqual" time="0.224">
-</testcase>
-</testsuite>
-<testsuite failures="0" name="Given A Signal Watcher" tests="4" time="0.002">
-<testcase name="WhenWeWatchASignalAndEmitItMultipleTimes" time="0.001">
-</testcase>
-<testcase name="When we Watch and Do not Emit a Signal" time="0">
-</testcase>
-<testcase name="When we watch and emit a signal" time="0.001">
-</testcase>
-<testcase name="WhenWeWatchASignalFromAnObjectWithNoBoundVariables" time="0">
-</testcase>
-</testsuite>
-<testsuite failures="0" name="Given a Yield" tests="10" time="0.004">
-<testcase name="WhenTheYielderHearsOurSignal" time="0.422">
-</testcase>
-<testcase name="WhenWeCallUntilSignal" time="0.302">
-</testcase>
-<testcase name="WhenYielderIsFinishedSignalsAreDisconnected" time="0.397">
-</testcase>
-<testcase name="WhenASignalBeingYieldedOnIsEmittedTheYielderIsStopped" time="0.6">
-</testcase>
-<testcase name="WhenWeCallUntilTimeout" time="0.302">
-</testcase>
-<testcase name="WhenTheYielderTimesOut" time="0.398">
-</testcase>
-<testcase name="YielderIsNotActiveWhenAsserting" time="0.4">
-</testcase>
-<testcase name="TestWhenWeYieldInExecute" time="0.5">
-</testcase>
-<testcase name="TestWhenWeYieldInPre" time="0.299">
-</testcase>
-<testcase name="TestWhenWeYieldInStart" time="0.3">
+<testsuites failures="0" name="TestXML" tests="1" time="0.981">
+<testsuite failures="0" name="Recorder Test" tests="1" time="0.005">
+<testcase name="WhenAHeroIsPoisonedTheirHealthChangesOverTime" time="1.006">
 </testcase>
 </testsuite>
 </testsuites>
