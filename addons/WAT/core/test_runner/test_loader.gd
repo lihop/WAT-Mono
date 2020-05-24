@@ -58,15 +58,10 @@ func _load_tests() -> Array:
 		# Can't load WAT.Test here for whatever reason
 #		if path is String and not path.ends_with(".cs"):
 #			path = path.substr(0, path.find(".cs") + 3)
-		print("trying to load %s" % path)
 		var test = load(path) if path is String else path
-		print(test)
+
 		if test.get_instance_base_type() == "WAT.Test":
-			print("valid")
 			tests.append(test)
-		else:
-			print("not valid")
-		
 #		elif test.get("IS_WAT_SUITE") and Engine.get_version_info().minor == 2:
 #			tests += _suite_of_suites_3p2(test)
 #		elif test.get("IS_WAT_SUITE") and Engine.get_version_info().minor == 1:

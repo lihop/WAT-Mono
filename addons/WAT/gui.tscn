@@ -166,10 +166,8 @@ func _on_directory_selector_pressed() -> void:
 		DirectorySelector.add_item(directory)
 		
 func _on_script_selector_pressed() -> void:
-	print(\"ScriptSelector Pressed\")
 	ScriptSelector.clear()
 	for script in filesystem.scripts():
-		print(script)
 		if script.ends_with(\".cs\"):
 			if load(script).get_instance_base_type() == \"WAT.Test\":
 				ScriptSelector.add_item(script)
