@@ -41,13 +41,13 @@ public class Assertions : Reference
 		assertions.Call("signal_was_emitted_x_times", Emitter, Event, Times, Context);
 	}
 	
-	public void SignalWasNotEmitted(Godot.Object Emitter, String Event, int Times, String Context = "")
+	public void SignalWasNotEmitted(Godot.Object Emitter, String Event, String Context = "")
 	{
 		assertions.Call("signal_was_not_emitted", Emitter, Event, Context);
 	}
 
-	public void SignalWasEmittedWithArguments(Godot.Object Emitter, GDArray Args, String Context = "")
+	public void SignalWasEmittedWithArguments(Godot.Object Emitter, String Event, GDArray Args, String Context = "")
 	{
-		assertions.Call("signal_was_emitted_with_arguments", Emitter, Args, Context);
+		assertions.Call("signal_was_emitted_with_arguments", Emitter, Event, Args, Context);
 	}
 }
