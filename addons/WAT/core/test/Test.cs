@@ -2,6 +2,7 @@ using Godot;
 using System;
 using Godot.Collections;
 using GodotArray = Godot.Collections.Array;
+using GodotDictionary = Godot.Collections.Dictionary;
 using System.Reflection;
 using System.Threading.Tasks;
 
@@ -13,6 +14,13 @@ namespace WAT {
 		[AttributeUsage(AttributeTargets.Method)]
 		public class TestAttribute : Attribute {}
 		
+		[AttributeUsage(AttributeTargets.Method, AllowMultiple=true)]
+		public class RunWith : Attribute 
+		{
+			public System.Object[] arguments;
+			public RunWith(params System.Object[] args) { arguments = args; }
+		}
+		
 		public const String YIELD = "finished";
 		const bool TEST = true;
 		protected Assertions Assert;
@@ -20,7 +28,6 @@ namespace WAT {
 		public Timer Yielder;
 		public Reference Watcher;
 		private Script recorder;
-		public bool RerunMethod = false;
 		
 		[Signal]
 		delegate void Described(String MethodDescription);
@@ -65,13 +72,47 @@ namespace WAT {
 		public GodotArray GetMethods()
 		{
 			GodotArray Methods = new GodotArray();
+			
+			
 			foreach(MethodInfo m in GetType().GetMethods())
 			{
 				if(m.IsDefined(typeof(TestAttribute)))
 				{
-					Methods.Add(m.Name);
+					if(m.IsDefined(typeof(RunWith)))
+					{
+						System.Attribute[] attrs = System.Attribute.GetCustomAttributes(m);
+						foreach(System.Attribute attr in attrs)
+						{
+							if(attr is RunWith)
+							{
+								GodotDictionary Method = new GodotDictionary();
+								GodotArray Arguments = new GodotArray();
+								RunWith runWith = (RunWith)attr;
+								
+								foreach(var arg in runWith.arguments)
+								{
+									Arguments.Add(arg);
+								}
+								
+								Method["title"] = m.Name;
+								Method["args"] = Arguments;
+								Methods.Add(Method);
+							}
+						}
+					}
+					
+					else 
+					{
+						
+						GodotDictionary Method = new GodotDictionary();
+						Method["title"] = m.Name;
+						Method["args"] = new GodotArray();
+						Methods.Add(Method);
+					}
+					
 				}
 			}
+			
 			return Methods;
 		}
 		

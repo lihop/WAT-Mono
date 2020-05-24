@@ -5,36 +5,4 @@
 [resource]
 script = ExtResource( 1 )
 failures = [  ]
-_list = [ {
-"context": "Recorder Test",
-"methods": [ {
-"assertions": [ {
-"actual": "|int| 0 is equal to |int| 0",
-"context": "",
-"expected": "|int| 0 is equal to |int| 0",
-"success": true
-} ],
-"context": "WhenAHeroIsPoisonedTheirHealthIs0After100Cycles",
-"passed": 1,
-"success": true,
-"time": 0.235,
-"total": 1
-}, {
-"assertions": [ {
-"actual": "|int| 55 is less than |int| 100",
-"context": "",
-"expected": "|int| 55 is less than |int| 100",
-"success": true
-} ],
-"context": "WhenAHeroIsPoisonedTheirHealthChangesOverTime",
-"passed": 1,
-"success": true,
-"time": 0.759,
-"total": 1
-} ],
-"passed": 2,
-"path": "Undefined Script Path",
-"success": true,
-"time_taken": 0.003,
-"total": 2
-} ]
+_list = [  ]

@@ -1,9 +1,11 @@
 <?xml version="1.0" ?>
-<testsuites failures="0" name="TestXML" tests="1" time="0.985">
-<testsuite failures="0" name="Recorder Test" tests="2" time="0.003">
-<testcase name="WhenAHeroIsPoisonedTheirHealthIs0After100Cycles" time="0.235">
+<testsuites failures="0" name="TestXML" tests="1" time="0.953">
+<testsuite failures="0" name="Given The Addition Operator (Parameter Tests)" tests="3" time="0.005">
+<testcase name="When we add 7 to 6 we get 13" time="0.233">
 </testcase>
-<testcase name="WhenAHeroIsPoisonedTheirHealthChangesOverTime" time="0.759">
+<testcase name="When we add 5 to 3 we get 8" time="0">
+</testcase>
+<testcase name="When we add 2 to 2 we get 4" time="0">
 </testcase>
 </testsuite>
 </testsuites>

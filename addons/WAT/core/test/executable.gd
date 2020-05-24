@@ -10,7 +10,7 @@ class State:
 	
 var _state: String
 var _methods: Array = []
-var _method: String
+var _method: Dictionary = {}
 var time: float = 0.0
 var _test: Node
 signal completed
@@ -52,7 +52,7 @@ func _start():
 	
 func _pre():
 	time = OS.get_ticks_msec()
-	if _methods.empty() and not _test.RerunMethod:
+	if _methods.empty():
 		_state = State.END
 		_next()
 		return
@@ -62,9 +62,9 @@ func _pre():
 	
 func _execute():
 	_state = State.EXECUTE
-	_method = _method if _test.RerunMethod else _methods.pop_back()
-	_test.Testcase.add_method(_method)
-	_test.call(_method)
+	_method = _methods.pop_back()
+	_test.Testcase.add_method(_method.title)
+	_test.callv(_method.title, _method.args)
 	_next()
 	
 func _post():
