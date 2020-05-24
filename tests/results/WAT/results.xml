@@ -1,43 +1,43 @@
 <?xml version="1.0" ?>
-<testsuites failures="0" name="TestXML" tests="1" time="1.013">
-<testsuite failures="0" name="Is Instance ( class / type ) Assertions" tests="19" time="0.005">
-<testcase name="IsVector3" time="0">
+<testsuites failures="0" name="TestXML" tests="1" time="1.011">
+<testsuite failures="0" name="IsNotInstanceTest" tests="19" time="0.005">
+<testcase name="IsNotVector3" time="0">
 </testcase>
-<testcase name="IsVector2" time="0.018">
+<testcase name="IsNotVector2" time="0.001">
 </testcase>
-<testcase name="IsTransform2D" time="0.001">
+<testcase name="IsNotTransform2D" time="0">
 </testcase>
-<testcase name="IsTransform" time="0">
+<testcase name="IsNotTransform" time="0">
 </testcase>
-<testcase name="IsString" time="0">
+<testcase name="IsNotString" time="0">
 </testcase>
-<testcase name="IsRid" time="0.001">
+<testcase name="IsNotRID" time="0.001">
 </testcase>
-<testcase name="IsRect2" time="0">
+<testcase name="IsNotRect2" time="0">
 </testcase>
-<testcase name="IsQuat" time="0">
+<testcase name="IsNotQuat" time="0">
 </testcase>
-<testcase name="IsPlane" time="0">
+<testcase name="IsNotPlane" time="0">
 </testcase>
-<testcase name="IsObject" time="0.001">
+<testcase name="IsNotObject" time="0">
 </testcase>
-<testcase name="IsNodePath" time="0">
+<testcase name="IsNotNodePath" time="0">
 </testcase>
-<testcase name="IsInt" time="0">
+<testcase name="IsNotInt" time="0.001">
 </testcase>
-<testcase name="IsFloat" time="0.001">
+<testcase name="IsNotFloat" time="0">
 </testcase>
-<testcase name="IsDictionary" time="0">
+<testcase name="IsNotDictionary" time="0">
 </testcase>
-<testcase name="IsColor" time="0">
+<testcase name="IsNotColor" time="0">
 </testcase>
-<testcase name="IsBool" time="0">
+<testcase name="IsNotBool" time="0">
 </testcase>
-<testcase name="IsBasis" time="0.001">
+<testcase name="IsNotBasis" time="0">
 </testcase>
-<testcase name="IsArray" time="0">
+<testcase name="IsNotArray" time="0.001">
 </testcase>
-<testcase name="IsAABB" time="0">
+<testcase name="IsNotAABB" time="0">
 </testcase>
 </testsuite>
 </testsuites>

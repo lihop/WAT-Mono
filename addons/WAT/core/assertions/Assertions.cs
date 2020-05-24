@@ -422,7 +422,7 @@ namespace WAT {
 			assertions.Call("is_RID", a, Context);
 		}
 		
-		public void IsNotRid(System.Object a, String Context = "")
+		public void IsNotRID(System.Object a, String Context = "")
 		{
 			assertions.Call("is_not_RID", a, Context);
 		}
