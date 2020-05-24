@@ -45,14 +45,12 @@ public class RecorderTest : WAT.Test
 		Godot.Collections.Array Properties = new Godot.Collections.Array();
 		Properties.Add("Health");
 		Poison poison = new Poison(_Hero);
-		Godot.Node Recorder = Record(_Hero, Properties);
+		WAT.Recorder recorder = Record(_Hero, Properties);
 		AddChild(_Hero);
-		Recorder.Call("start");
+		recorder.Start();
 		await ToSignal(UntilTimeout(1.0F), YIELD);
-		Recorder.Call("stop");
-		Godot.Collections.Array Health = (Godot.Collections.Array)Recorder.Call("get_property_timeline", "Health");
-		GD.Print(Health[0]);
-		GD.Print(Health[Health.Count - 1]);
+		recorder.Stop();
+		Godot.Collections.Array Health = (Godot.Collections.Array)recorder.GetPropertyTimeline("Health");
 		Assert.IsLessThan(Health[Health.Count-1], Health[0]);
 		
 		RemoveChild(_Hero);

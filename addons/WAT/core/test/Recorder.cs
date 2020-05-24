@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using Godot.Collections;
 
 namespace WAT 
 {
@@ -7,7 +8,7 @@ namespace WAT
 	public class Recorder : Node
 	{
 		Godot.Object What;
-		Godot.Collections.Dictionary Properties;
+		Godot.Collections.Dictionary<String, System.Object> Properties = new Godot.Collections.Dictionary<String, System.Object>();
 		bool isRecording = false;
 	
 		public void Start() { isRecording = true; }
@@ -29,8 +30,9 @@ namespace WAT
 		private void Capture()
 		{
 			if(IsInstanceValid(What)){
-				foreach(string Property in Properties){
-					Properties[Property] = What.Get(Property);
+				foreach(var Property in Properties.Keys){
+					Godot.Collections.Array values = (Godot.Collections.Array)Properties[Property];
+					values.Add(What.Get(Property));
 				}
 			}
 		}
@@ -41,7 +43,7 @@ namespace WAT
 		
 		public Godot.Collections.Dictionary GetPropertyMap()
 		{
-			return Properties;
+			return (Godot.Collections.Dictionary)Properties;
 		}
 	}
 }

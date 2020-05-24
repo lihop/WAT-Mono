@@ -27,7 +27,7 @@ namespace WAT {
 		private Reference Testcase;
 		public Timer Yielder;
 		public Reference Watcher;
-		private Script recorder;
+		// private Script recorder;
 		
 		[Signal]
 		delegate void Described(String MethodDescription);
@@ -49,7 +49,7 @@ namespace WAT {
 			Script watcher = (Script)ResourceLoader.Load("res://addons/WAT/core/test/watcher.gd");
 			Watcher = (Reference)watcher.Call("new");
 			
-			recorder = (Script)ResourceLoader.Load("res://addons/WAT/core/test/recorder.gd");
+			// recorder = (Script)ResourceLoader.Load("res://addons/WAT/core/test/recorder.gd");
 
 		}
 		
@@ -159,12 +159,12 @@ namespace WAT {
 			}
 		}
 		
-		public Godot.Node Record(Godot.Object Who, GodotArray Properties) 
+		public Recorder Record(Godot.Object Who, GodotArray Properties) 
 		{
-			Godot.Node Recorder = (Godot.Node)recorder.Call("new");
-			Recorder.Call("record", Who, Properties);
-			AddChild(Recorder);
-			return Recorder;
+			Recorder recorder = new Recorder();
+			recorder.Record(Who, Properties);
+			AddChild(recorder);
+			return recorder;
 
 		}
 
