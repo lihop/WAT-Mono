@@ -58,6 +58,7 @@
     <Compile Include="addons\WAT\core\test\Test.cs" />
     <Compile Include="Node.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="tests\BooleanTest.cs" />
     <Compile Include="tests\EqualityTest.cs" />
     <Compile Include="tests\ParameterizedTest.cs" />
     <Compile Include="tests\RecorderTest.cs" />
