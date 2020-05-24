@@ -48,8 +48,6 @@ namespace WAT {
 			
 			Script watcher = (Script)ResourceLoader.Load("res://addons/WAT/core/test/watcher.gd");
 			Watcher = (Reference)watcher.Call("new");
-			
-			// recorder = (Script)ResourceLoader.Load("res://addons/WAT/core/test/recorder.gd");
 
 		}
 		
@@ -64,10 +62,10 @@ namespace WAT {
 			return GetType().Name;
 		}
 		
-		public virtual String GetFilePath()
-		{
-			return "Undefined Script Path";
-		}
+//		public virtual String GetFilePath()
+//		{
+//			return GetScript().GetPath();
+//		}
 		
 		public GodotArray GetMethods()
 		{
