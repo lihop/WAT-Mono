@@ -100,6 +100,24 @@ namespace WAT {
 			Watcher.Call("unwatch", Emitter, Event);
 		}
 		
+		public void Simulate(Node obj, int times, float delta)
+		{
+			for (int i = 0; i < times; i ++)
+			{
+				if(obj.HasMethod("_Process")) {
+					obj._Process(delta);
+				}
+				
+				if(obj.HasMethod("_PhysicsProcess")) {
+					obj._PhysicsProcess(delta);
+				}
+				
+				foreach(Node kid in obj.GetChildren()) {
+					Simulate(kid, 1, delta);
+				}
+			}
+		}
+		
 		public Godot.Node Record(Godot.Object Who, GodotArray Properties) 
 		{
 			Godot.Node Recorder = (Godot.Node)recorder.Call("new");
