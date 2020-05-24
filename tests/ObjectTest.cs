@@ -110,7 +110,7 @@ public class ObjectTest : WAT.Test
 	}
 	
 	[Test]
-	public void IsBlockingSignals()
+	public void TestIsBlockingSignals()
 	{
 		Node N = new Node();
 		N.SetBlockSignals(true);
