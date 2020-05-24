@@ -26,12 +26,12 @@ public class Assertions : Reference
 		assertions.Call("is_false", a, context);
 	}
 	
-	public void IsEqual(dynamic a, dynamic b, String context = "")
+	public void IsEqual(System.Object a, System.Object b, String context = "")
 	{
 		assertions.Call("is_equal", a, b, context);
 	}
 	
-	public void IsLessThan(dynamic a, dynamic b, String Context = "")
+	public void IsLessThan(System.Object a, System.Object b, String Context = "")
 	{
 		assertions.Call("is_less_than", a, b, Context);
 	}
