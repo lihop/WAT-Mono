@@ -17,7 +17,7 @@ func add_setting() -> void:
 	ProjectSettings.add_property_info(property_info)
 
 func can_handle(object):
-	if object is GDScript and object.get("TEST"):
+	if object is CSharpScript and object.get_instance_base_type() == "WAT.Test":
 		add_property_editor_for_multiple_properties("Tags", [], TagList.new(object))
 		return true
 		

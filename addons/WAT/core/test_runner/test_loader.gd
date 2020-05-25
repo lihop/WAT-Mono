@@ -55,10 +55,11 @@ func deposited() -> Array:
 func _load_tests() -> Array:
 	var tests: Array = []
 	for path in _tests:
+		print(path)
 		# Can't load WAT.Test here for whatever reason
-#		if path is String and not path.ends_with(".cs"):
-#			path = path.substr(0, path.find(".cs") + 3)
-		var test = load(path) # if path is String else path
+		if path is String and not path.ends_with(".cs"):
+			path = path.substr(0, path.find(".cs") + 3)
+		var test = load(path) if path is String else path
 
 		if test.get_instance_base_type() == "WAT.Test":
 			tests.append(test)

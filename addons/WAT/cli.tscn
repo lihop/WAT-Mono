@@ -112,7 +112,7 @@ static func set_run_path(path: String) -> void:
 
 func _on_testrunner_ended() -> void:
 	_runner.queue_free()
-	var caselist: Array = WAT.Results.withdraw()
+	var caselist: Array = load(\"res://addons/WAT/resources/results.tres\").withdraw()
 	var cases = {passed = 0, total = 0, crashed = 0}
 	for case in caselist:
 		cases.total += 1
