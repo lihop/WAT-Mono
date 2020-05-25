@@ -85,10 +85,10 @@ func _on_method_selector_pressed() -> void:
 	if not path.ends_with(\".cs\"):
 		MethodSelector.add_item(\"Please Select A Script First\")
 		return
-	var script = load(path)
-	for method in script.get_script_method_list():
-		if method.name.begins_with(\"test\"):
-			MethodSelector.add_item(method.name)
+	var n = load(path).new()
+	for method in n.GetTestMethods():
+		MethodSelector.add_item(method)
+	n.Free()
 
 func _on_run_pressed(option: int) -> void:
 	set_process(true)

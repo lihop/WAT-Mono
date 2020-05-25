@@ -71,7 +71,6 @@ const Executor = preload("res://addons/WAT/core/test/executable.gd")
 const TestCase = preload("res://addons/WAT/core/test/case.gd")
 
 func run(test = _tests.pop_front().new()) -> void:
-	print(test.get_script().resource_path)
 	var testcase = TestCase.new(test.Title(), test.get_script().resource_path as String)
 	test.SetUp(testcase)
 	var executable = Executor.new(test)
@@ -79,7 +78,7 @@ func run(test = _tests.pop_front().new()) -> void:
 	add_child(executable)
 	# Add Strategy Here?
 	if _strategy.has("method"):
-		test._methods = [_strategy.method]
+		executable._methods = test.GetTestMethod(_strategy.method)
 	else:
 		executable._methods = test.GetMethods()
 	executable._start()

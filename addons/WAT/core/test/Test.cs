@@ -62,10 +62,37 @@ namespace WAT {
 			return GetType().Name;
 		}
 		
-//		public virtual String GetFilePath()
-//		{
-//			return GetScript().GetPath();
-//		}
+		public GodotArray GetTestMethods()
+		{
+			
+			
+			GodotArray Methods = new GodotArray();
+			foreach(MethodInfo m in GetType().GetMethods())
+			{
+				if(m.IsDefined(typeof(TestAttribute)))
+				{
+					Methods.Add(m.Name);
+				}
+			}
+
+			return Methods;
+		}
+		
+		public GodotArray GetTestMethod(string MethodName)
+		{
+			// Inefficient but I'm so tired
+			GD.Print(MethodName);
+			GodotArray Methods = GetMethods();
+			GodotArray MethodCopies = new GodotArray();
+			foreach(GodotDictionary dict in Methods){
+				GD.Print(dict["title"]);
+				if((string)dict["title"] == (string)MethodName)
+				{
+					MethodCopies.Add(dict);
+				}
+			}
+			return MethodCopies;
+		}
 		
 		public GodotArray GetMethods()
 		{
