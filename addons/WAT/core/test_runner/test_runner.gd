@@ -97,6 +97,7 @@ func run(test = _tests.pop_front().new()) -> void:
 	testcase.calculate()
 	_cases.append(testcase.to_dictionary())
 	remove_child(executable)
+
 	
 func end() -> void:
 	print("Ending WAT Test Runner")

@@ -82,6 +82,8 @@ func _end():
 	emit_signal("completed")
 	
 func _exit_tree() -> void:
+	if _test.get_script() is GDScript:
+		_test.free()
 	queue_free()
 	
 func start():
