@@ -24,10 +24,9 @@ Test_Directory="res://tests"
 Results_Directory="res://tests/results/WAT"
 Minimize_Window_When_Running_Tests=false
 TestStrategy={
-"method": "ThisFileExists",
 "repeat": 1,
-"script": "res://tests/FileTest.cs",
-"strategy": "RunMethod"
+"script": "res://tests/BooleanTest.gd",
+"strategy": "RunScript"
 }
 Tags=PoolStringArray( "TestTag1", "TestTag2" )
 Display=8

@@ -5,6 +5,8 @@ using GodotArray = Godot.Collections.Array;
 using GodotDictionary = Godot.Collections.Dictionary;
 using System.Reflection;
 using System.Threading.Tasks;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace WAT {
 	
@@ -81,7 +83,6 @@ namespace WAT {
 		public GodotArray GetTestMethod(string MethodName)
 		{
 			// Inefficient but I'm so tired
-			GD.Print(MethodName);
 			GodotArray Methods = GetMethods();
 			GodotArray MethodCopies = new GodotArray();
 			foreach(GodotDictionary dict in Methods){
@@ -98,11 +99,8 @@ namespace WAT {
 		{
 			GodotArray Methods = new GodotArray();
 			
-			
-			foreach(MethodInfo m in GetType().GetMethods())
-			{
-				if(m.IsDefined(typeof(TestAttribute)))
-				{
+			List<MethodInfo> MethodInfos = GetType().GetMethods().Where(m => m.IsDefined(typeof(TestAttribute))).ToList();
+			foreach(MethodInfo m in MethodInfos) {
 					if(m.IsDefined(typeof(RunWith)))
 					{
 						System.Attribute[] attrs = System.Attribute.GetCustomAttributes(m);
@@ -134,8 +132,6 @@ namespace WAT {
 						Method["args"] = new GodotArray();
 						Methods.Add(Method);
 					}
-					
-				}
 			}
 			
 			return Methods;
