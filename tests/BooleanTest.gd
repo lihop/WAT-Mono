@@ -1,4 +1,4 @@
-extends WATTest
+extends WAT.Test
 
 func title() -> String:
 	return "Given A Boolean Assertion (GDScript WATTest)"
