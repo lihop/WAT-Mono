@@ -23,6 +23,7 @@ _global_script_class_icons={
 "WAT": "",
 "WATTest": ""
 }
+RunInEngine=true
 
 [WAT]
 
@@ -31,7 +32,8 @@ Results_Directory="res://tests/results/WAT"
 Minimize_Window_When_Running_Tests=false
 TestStrategy={
 "repeat": 1,
-"strategy": "RunAll"
+"script": "res://tests/NullTest.cs",
+"strategy": "RunScript"
 }
 Tags=PoolStringArray( "TestTag1", "TestTag2" )
 Display=8

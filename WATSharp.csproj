@@ -62,6 +62,7 @@
     <Compile Include="tests\FileTest.cs" />
     <Compile Include="tests\IsInstanceTest.cs" />
     <Compile Include="tests\IsNotInstanceTest.cs" />
+    <Compile Include="tests\NameSpaced.cs" />
     <Compile Include="tests\NullTest.cs" />
     <Compile Include="tests\ObjectTest.cs" />
     <Compile Include="tests\ParameterizedTest.cs" />
