@@ -8,11 +8,11 @@ jobs:
     steps:
         - checkout
         - run:
-            name: "Run & Quit"
-            command: godot -e -quit
-        - run:
             name: "Delete .import files"
             command: rm addons/WAT/assets/*.import
+        - run:
+            name: "Run & Quit"
+            command: godot -e -quit
         - run:
             name: "Run All Tests"
             command: godot addons/WAT/cli.tscn -run_all
