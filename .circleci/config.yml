@@ -8,9 +8,6 @@ jobs:
     steps:
         - checkout
         - run:
-            name: "Check dir"
-            command: dir
-        - run:
             name: "Delete .import files"
             command: rm addons/WAT/assets/*.import
         - run:
