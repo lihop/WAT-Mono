@@ -8,7 +8,10 @@ jobs:
     steps:
         - checkout
         - run:
-            name: "Open Once & Quit To Import Files"
+            name: "Remove Local Import Files"
+            command: rm addons/WAT/assets/*.import
+        - run:
+            name: "Open Once & Quit To ReImport Files"
             command: godot -e --quit
         - run:
             name: "Build Solution"
