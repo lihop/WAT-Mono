@@ -1,12 +1,12 @@
 <?xml version="1.0" ?>
-<testsuites failures="0" name="TestXML" tests="17" time="1.027">
-<testsuite failures="0" name="Given A Boolean Assertion" tests="2" time="0.009">
-<testcase name="FalseIsFalse" time="0.001">
+<testsuites failures="0" name="TestXML" tests="17" time="2.625">
+<testsuite failures="0" name="Given A Boolean Assertion" tests="2" time="0.05">
+<testcase name="FalseIsFalse" time="0">
 </testcase>
 <testcase name="TrueIsTrue" time="0">
 </testcase>
 </testsuite>
-<testsuite failures="0" name="Given A Boolean Assertion (GDScript WATTest)" tests="4" time="0.002">
+<testsuite failures="0" name="Given A Boolean Assertion (GDScript WATTest)" tests="4" time="0.003">
 <testcase name="True is true" time="0">
 </testcase>
 <testcase name=" Value is true" time="0">
@@ -16,24 +16,24 @@
 <testcase name=" False is false" time="0">
 </testcase>
 </testsuite>
-<testsuite failures="0" name="Given an Equality Assertion" tests="7" time="0.001">
-<testcase name="WhenCallingIsNotEqual" time="0">
+<testsuite failures="0" name="Given an Equality Assertion" tests="7" time="0">
+<testcase name="WhenCallingIsNotEqual" time="0.001">
 </testcase>
 <testcase name="WhenCallingIsEqualOrLessThanWithEqualValues" time="0">
 </testcase>
 <testcase name="WhenCallingIsEqualOrGreaterThanWithEqualValues" time="0">
 </testcase>
-<testcase name="WhenCallingIsEqualOrGreaterThan" time="0.001">
+<testcase name="WhenCallingIsEqualOrGreaterThan" time="0">
 </testcase>
 <testcase name="WhenCallingIsLessThan" time="0">
 </testcase>
-<testcase name="WhenCallingIsGreaterThan" time="0">
+<testcase name="WhenCallingIsGreaterThan" time="0.001">
 </testcase>
 <testcase name="WhenCallingIsEqual" time="0">
 </testcase>
 </testsuite>
-<testsuite failures="0" name="FileTest" tests="3" time="0">
-<testcase name="EmptyPathDoesNotExist" time="0.001">
+<testsuite failures="0" name="FileTest" tests="3" time="0.001">
+<testcase name="EmptyPathDoesNotExist" time="0">
 </testcase>
 <testcase name="ImaginaryFileDoesNotExist" time="0">
 </testcase>
@@ -49,13 +49,13 @@
 </testcase>
 <testcase name="IsTransform" time="0">
 </testcase>
-<testcase name="IsString" time="0">
+<testcase name="IsString" time="0.001">
 </testcase>
-<testcase name="IsRid" time="0.001">
+<testcase name="IsRid" time="0">
 </testcase>
 <testcase name="IsRect2" time="0">
 </testcase>
-<testcase name="IsQuat" time="0">
+<testcase name="IsQuat" time="0.001">
 </testcase>
 <testcase name="IsPlane" time="0">
 </testcase>
@@ -63,21 +63,21 @@
 </testcase>
 <testcase name="IsNodePath" time="0">
 </testcase>
-<testcase name="IsInt" time="0">
+<testcase name="IsInt" time="0.001">
 </testcase>
-<testcase name="IsFloat" time="0.001">
+<testcase name="IsFloat" time="0">
 </testcase>
 <testcase name="IsDictionary" time="0">
 </testcase>
-<testcase name="IsColor" time="0">
+<testcase name="IsColor" time="0.001">
 </testcase>
-<testcase name="IsBool" time="0.001">
+<testcase name="IsBool" time="0">
 </testcase>
 <testcase name="IsBasis" time="0">
 </testcase>
 <testcase name="IsArray" time="0">
 </testcase>
-<testcase name="IsAABB" time="0">
+<testcase name="IsAABB" time="0.001">
 </testcase>
 </testsuite>
 <testsuite failures="0" name="IsNotInstanceTest" tests="19" time="0.001">
@@ -87,7 +87,7 @@
 </testcase>
 <testcase name="IsNotTransform2D" time="0">
 </testcase>
-<testcase name="IsNotTransform" time="0">
+<testcase name="IsNotTransform" time="0.001">
 </testcase>
 <testcase name="IsNotString" time="0">
 </testcase>
@@ -107,9 +107,9 @@
 </testcase>
 <testcase name="IsNotFloat" time="0">
 </testcase>
-<testcase name="IsNotDictionary" time="0">
+<testcase name="IsNotDictionary" time="0.001">
 </testcase>
-<testcase name="IsNotColor" time="0.001">
+<testcase name="IsNotColor" time="0">
 </testcase>
 <testcase name="IsNotBool" time="0">
 </testcase>
@@ -139,9 +139,9 @@
 </testcase>
 <testcase name="WhenCallingObjIsNotConnectedWithAnInvalidConnection" time="0">
 </testcase>
-<testcase name="WhenCallingObjIsConnectedWithARealConnection" time="0">
+<testcase name="WhenCallingObjIsConnectedWithARealConnection" time="0.001">
 </testcase>
-<testcase name="WhenCallingObjectIsNotQueuedForDeletionAfterNotCallingQueueFree" time="0.001">
+<testcase name="WhenCallingObjectIsNotQueuedForDeletionAfterNotCallingQueueFree" time="0">
 </testcase>
 <testcase name="WhenCallingObjectIsQueuedForDeletionAfterCallingQueueFree" time="0">
 </testcase>
@@ -167,41 +167,41 @@
 </testcase>
 </testsuite>
 <testsuite failures="0" name="Given The Addition Operator (Parameter Tests)" tests="3" time="0.001">
-<testcase name="When we add 7 to 6 we get 13" time="0.003">
+<testcase name="When we add 7 to 6 we get 13" time="0.004">
 </testcase>
 <testcase name="When we add 5 to 3 we get 8" time="0">
 </testcase>
 <testcase name="When we add 2 to 2 we get 4" time="0">
 </testcase>
 </testsuite>
-<testsuite failures="0" name="Range Assertions" tests="2" time="0">
-<testcase name="WhenCallingIsNotInRange" time="0.001">
+<testsuite failures="0" name="Range Assertions" tests="2" time="0.001">
+<testcase name="WhenCallingIsNotInRange" time="0">
 </testcase>
 <testcase name="WhenCallingIsInRange" time="0">
 </testcase>
 </testsuite>
-<testsuite failures="0" name="Recorder Test" tests="2" time="0.001">
-<testcase name="WhenAHeroIsPoisonedTheirHealthIs0After100Cycles" time="0.002">
+<testsuite failures="0" name="Recorder Test" tests="2" time="0">
+<testcase name="WhenAHeroIsPoisonedTheirHealthIs0After100Cycles" time="0.003">
 </testcase>
-<testcase name="WhenAHeroIsPoisonedTheirHealthChangesOverTime" time="0.762">
+<testcase name="WhenAHeroIsPoisonedTheirHealthChangesOverTime" time="0.764">
 </testcase>
 </testsuite>
-<testsuite failures="0" name="Given A String Assertion" tests="6" time="0.002">
+<testsuite failures="0" name="Given A String Assertion" tests="6" time="0">
 <testcase name="WhenCallingStringDoesNotEndWith" time="0.001">
 </testcase>
 <testcase name="WhenCallingStringEndsWith" time="0">
 </testcase>
-<testcase name="WhenCallingStringDoesNotContain" time="0.001">
+<testcase name="WhenCallingStringDoesNotContain" time="0">
 </testcase>
 <testcase name="WhenCallingStringContains" time="0">
 </testcase>
-<testcase name="WhenCallingStringDoesNotBeginWith" time="0.001">
+<testcase name="WhenCallingStringDoesNotBeginWith" time="0">
 </testcase>
-<testcase name="WhenCallingStringBeginWith" time="0">
+<testcase name="WhenCallingStringBeginWith" time="0.001">
 </testcase>
 </testsuite>
 <testsuite failures="0" name="Inner Equality" tests="1" time="0.003">
-<testcase name=" 1 and 1 are equal" time="0.001">
+<testcase name=" 1 and 1 are equal" time="0">
 </testcase>
 </testsuite>
 <testsuite failures="0" name="Inner Bool" tests="1" time="0.002">
@@ -219,9 +219,9 @@
 </testcase>
 </testsuite>
 <testsuite failures="0" name="Given a Yield" tests="10" time="0.001">
-<testcase name="WhenTheYielderHearsOurSignal" time="0.4">
+<testcase name="WhenTheYielderHearsOurSignal" time="0.401">
 </testcase>
-<testcase name="WhenWeCallUntilSignal" time="0.301">
+<testcase name="WhenWeCallUntilSignal" time="0.3">
 </testcase>
 <testcase name="WhenYielderIsFinishedSignalsAreDisconnected" time="0.399">
 </testcase>
@@ -231,7 +231,7 @@
 </testcase>
 <testcase name="WhenTheYielderTimesOut" time="0.399">
 </testcase>
-<testcase name="YielderIsNotActiveWhenAsserting" time="0.4">
+<testcase name="YielderIsNotActiveWhenAsserting" time="0.399">
 </testcase>
 <testcase name="TestWhenWeYieldInExecute" time="0.5">
 </testcase>
