@@ -12,7 +12,7 @@ jobs:
             command: find . -name "*.import" -type f -delete
         - run:
             name: "Build Solution"
-            command: timeout 20 godot --build-solutions
+            command: timeout 20 godot --build-solutions || true
         - run:
             name: "Run All Tests"
             command: godot addons/WAT/cli.tscn -run_all
