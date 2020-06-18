@@ -8,14 +8,11 @@ jobs:
     steps:
         - checkout
         - run:
-            name: "Remove Local Import Files"
-            command: rm addons/WAT/assets/*.import
-        - run:
-            name: "Open Once & Quit To ReImport Files"
-            command: godot -e --quit
+            name: "Remove All Import Files"
+            command: find . -name "*.import" -type f -delete
         - run:
             name: "Build Solution"
-            command: godot --build-solutions
+            command: timeout 20 godot --build-solutions
         - run:
             name: "Run All Tests"
             command: godot addons/WAT/cli.tscn -run_all
