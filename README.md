@@ -1,4 +1,4 @@
-# WATSharp ![3.0](https://img.shields.io/badge/godotmono-3.0-%23478cbf) ![3.1](https://img.shields.io/badge/godotmono-3.1-%23478cbf) ![3.2](https://img.shields.io/badge/godotmono-3.2-%23478cbf)
+# WATSharp ![3.0](https://img.shields.io/badge/godot_mono-3.0-%23478cbf) ![3.1](https://img.shields.io/badge/godot_mono-3.1-%23478cbf) ![3.2](https://img.shields.io/badge/godot_mono-3.2-%23478cbf)
 
 WAT with a C# Wrapper around the Test Class;
 
