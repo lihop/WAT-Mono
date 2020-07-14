@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
-<testsuites failures="0" name="TestXML" tests="1" time="1.02">
-<testsuite failures="0" name="Given A Boolean Assertion" tests="2" time="0.011">
+<testsuites failures="0" name="TestXML" tests="1" time="1.157">
+<testsuite failures="0" name="Given A Boolean Assertion" tests="2" time="0.01">
 <testcase name="FalseIsFalse" time="0.001">
 </testcase>
 <testcase name="TrueIsTrue" time="0.001">
