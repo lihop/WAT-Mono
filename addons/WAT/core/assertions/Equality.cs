@@ -25,24 +25,40 @@ namespace WAT
             return Create(success, passed, result, context);
         }
 
-        public static object IsEqualOrGreaterThan()
+        public static object IsEqualOrGreaterThan(float a, float b, string context)
         {
-            throw new NotImplementedException();
+            var passed = $"|{a.GetType()}| {a} is equal to or greater than |{b.GetType()}|{b}";
+            var failed = $"|{a.GetType()}| {a} is less than |{b.GetType()}|{b}";
+            var success = a >= b;
+            var result = success ? passed : failed;
+            return Create(success, passed, result, context);
         }
 
-        public static object IsEqualOrLessThan()
+        public static object IsEqualOrLessThan(float a, float b, string context)
         {
-            throw new NotImplementedException();
+            var passed = $"|{a.GetType()}| {a} is equal to or less than |{b.GetType()}|{b}";
+            var failed = $"|{a.GetType()}| {a} is greater than |{b.GetType()}|{b}";
+            var success = a <= b;
+            var result = success ? passed : failed;
+            return Create(success, passed, result, context);
         }
 
-        public static object IsGreaterThan()
+        public static object IsGreaterThan(float a, float b, string context)
         {
-            throw new NotImplementedException();
+            var passed = $"|{a.GetType()}| {a} is greater than |{b.GetType()}|{b}";
+            var failed = $"|{a.GetType()}| {a} is equal to or less than |{b.GetType()}|{b}";
+            var success = a > b;
+            var result = success ? passed : failed;
+            return Create(success, passed, result, context);
         }
 
-        public static object IsLessThan()
+        public static object IsLessThan(float a, float b, string context)
         {
-            throw new NotImplementedException();
+            var passed = $"|{a.GetType()}| {a} is less than |{b.GetType()}|{b}";
+            var failed = $"|{a.GetType()}| {a} is equal to or greater than |{b.GetType()}|{b}";
+            var success = a < b;
+            var result = success ? passed : failed;
+            return Create(success, passed, result, context);
         }
     }
 }

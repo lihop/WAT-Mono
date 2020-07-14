@@ -41,24 +41,24 @@ namespace WAT {
 			Output(Equality.IsNotEqual(a, b, Context));
 		}
 		
-		public void IsGreaterThan(object a, object b, string Context = "")
+		public void IsGreaterThan(float a, float b, string Context = "")
 		{
-			assertions.Call("is_greater_than", a, b, Context);
+			Output(Equality.IsGreaterThan(a, b, Context));
 		}
 		
-		public void IsLessThan(object a, object b, string Context = "")
+		public void IsLessThan(float a, float b, string Context = "")
 		{
-			assertions.Call("is_less_than", a, b, Context);
+			Output(Equality.IsLessThan(a, b, Context));
 		}
 		
-		public void IsEqualOrGreaterThan(object a, object b, string Context = "")
+		public void IsEqualOrGreaterThan(float a, float b, string Context = "")
 		{
-			assertions.Call("is_equal_or_greater_than", a, b, Context);
+			Output(Equality.IsEqualOrGreaterThan(a, b, Context));
 		}
 		
-		public void IsEqualOrLessThan(object a, object b, string Context = "")
+		public void IsEqualOrLessThan(float a, float b, string Context = "")
 		{
-			assertions.Call("is_equal_or_less_than", a, b, Context);
+			Output(Equality.IsEqualOrLessThan(a, b, Context));
 		}
 
 		public void SignalWasEmitted(Godot.Object Emitter, string Event, string Context = "")
