@@ -56,8 +56,10 @@
     <Compile Include="addons\WAT\core\assertions\Assertion.cs" />
     <Compile Include="addons\WAT\core\assertions\Assertions.cs" />
     <Compile Include="addons\WAT\core\assertions\Boolean.cs" />
+    <Compile Include="addons\WAT\core\assertions\Equality.cs" />
     <Compile Include="addons\WAT\core\test\Recorder.cs" />
     <Compile Include="addons\WAT\core\test\Test.cs" />
+    <Compile Include="Node.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tests\BooleanTest.cs" />
     <Compile Include="tests\EqualityTest.cs" />

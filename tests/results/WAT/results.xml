@@ -1,9 +1,19 @@
 <?xml version="1.0" ?>
-<testsuites failures="0" name="TestXML" tests="1" time="0.966">
-<testsuite failures="0" name="Given A Boolean Assertion" tests="2" time="0.011">
-<testcase name="FalseIsFalse" time="0.001">
+<testsuites failures="0" name="TestXML" tests="1" time="1.034">
+<testsuite failures="0" name="Given an Equality Assertion" tests="7" time="0.01">
+<testcase name="WhenCallingIsNotEqual" time="0.004">
 </testcase>
-<testcase name="TrueIsTrue" time="0.001">
+<testcase name="WhenCallingIsEqualOrLessThanWithEqualValues" time="0.001">
+</testcase>
+<testcase name="WhenCallingIsEqualOrGreaterThanWithEqualValues" time="0">
+</testcase>
+<testcase name="WhenCallingIsEqualOrGreaterThan" time="0">
+</testcase>
+<testcase name="WhenCallingIsLessThan" time="0">
+</testcase>
+<testcase name="WhenCallingIsGreaterThan" time="0">
+</testcase>
+<testcase name="WhenCallingIsEqual" time="0.001">
 </testcase>
 </testsuite>
 </testsuites>

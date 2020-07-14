@@ -33,12 +33,12 @@ namespace WAT {
 		
 		public void IsEqual(object a, object b, string Context = "")
 		{
-			assertions.Call("is_equal", a, b, Context);
+			Output(Equality.IsEqual(a, b, Context));
 		}
 		
 		public void IsNotEqual(object a, object b, string Context = "")
 		{
-			assertions.Call("is_not_equal", a, b, Context);
+			Output(Equality.IsNotEqual(a, b, Context));
 		}
 		
 		public void IsGreaterThan(object a, object b, string Context = "")
