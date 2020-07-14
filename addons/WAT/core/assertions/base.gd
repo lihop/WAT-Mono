@@ -18,7 +18,7 @@ func to_dictionary() -> Dictionary:
 			 "context": context
 			}
 
-static func Create(success: bool, expected: String, actual: String, context: String, notes: String = "") -> Reference:
+static func create(success: bool, expected: String, actual: String, context: String, notes: String = "") -> Reference:
 	var result = load("res://addons/WAT/core/assertions/base.gd").new()
 	result.success = success
 	result.expected = expected

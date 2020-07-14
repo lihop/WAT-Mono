@@ -53,6 +53,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addons\WAT\core\assertions\Assertion.cs" />
     <Compile Include="addons\WAT\core\assertions\Assertions.cs" />
     <Compile Include="addons\WAT\core\assertions\Boolean.cs" />
     <Compile Include="addons\WAT\core\test\Recorder.cs" />
