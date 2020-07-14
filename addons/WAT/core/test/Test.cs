@@ -45,10 +45,10 @@ namespace WAT {
 			Assert = new Assertions();
 			Testcase = testcase;
 			
-			Script yielder = (Script)ResourceLoader.Load("res://addons/WAT/core/test/yielder.gd");
+			var yielder = (Script)ResourceLoader.Load("res://addons/WAT/core/test/yielder.gd");
 			Yielder = (Timer)yielder.Call("new");
 			
-			Script watcher = (Script)ResourceLoader.Load("res://addons/WAT/core/test/watcher.gd");
+			var watcher = (Script)ResourceLoader.Load("res://addons/WAT/core/test/watcher.gd");
 			Watcher = (Reference)watcher.Call("new");
 
 		}
@@ -56,6 +56,7 @@ namespace WAT {
 		public override void _Ready()
 		{
 			Assert.assertions.Call("connect", "asserted", Testcase, "_on_asserted");
+			Assert.Connect(nameof(Assertions.Asserted), Testcase, "_on_asserted");
 			Connect("Described", Testcase, "_on_test_method_described");
 		}
 		

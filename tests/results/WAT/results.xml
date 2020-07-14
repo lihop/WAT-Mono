@@ -1,19 +1,9 @@
 <?xml version="1.0" ?>
-<testsuites failures="0" name="TestXML" tests="3" time="1.051">
-<testsuite failures="0" name="Given A Boolean Assertion (GDScript WATTest)" tests="3" time="0.002">
-<testcase name="True is true" time="0">
+<testsuites failures="0" name="TestXML" tests="1" time="1.02">
+<testsuite failures="0" name="Given A Boolean Assertion" tests="2" time="0.011">
+<testcase name="FalseIsFalse" time="0.001">
 </testcase>
-<testcase name=" False is false" time="0">
-</testcase>
-<testcase name=" Value is true" time="0">
-</testcase>
-</testsuite>
-<testsuite failures="0" name="Inner Bool" tests="1" time="0.002">
-<testcase name=" true is true" time="0">
-</testcase>
-</testsuite>
-<testsuite failures="0" name="Inner Equality" tests="1" time="0.001">
-<testcase name=" 1 and 1 are equal" time="0">
+<testcase name="TrueIsTrue" time="0.001">
 </testcase>
 </testsuite>
 </testsuites>

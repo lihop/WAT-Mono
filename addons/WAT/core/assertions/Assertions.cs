@@ -7,7 +7,9 @@ namespace WAT {
 		
 	public class Assertions : Reference
 	{
-		
+		[Signal]
+		public delegate void Asserted();
+
 		public Reference assertions;
 	
 		public Assertions()
@@ -19,7 +21,8 @@ namespace WAT {
 		
 		public void IsTrue(bool a, String Context = "")
 		{
-			assertions.Call("is_true", a, Context);
+			EmitSignal(nameof(Asserted), Boolean.IsTrue(a, Context));
+			//assertions.Call("is_true", a, Context);
 		}
 		
 		public void IsFalse(bool a, String Context = "")
