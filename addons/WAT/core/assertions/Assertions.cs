@@ -22,12 +22,11 @@ namespace WAT {
 		public void IsTrue(bool a, String Context = "")
 		{
 			EmitSignal(nameof(Asserted), Boolean.IsTrue(a, Context));
-			//assertions.Call("is_true", a, Context);
 		}
 		
 		public void IsFalse(bool a, String Context = "")
 		{
-			assertions.Call("is_false", a, Context);
+			EmitSignal(nameof(Asserted), Boolean.IsFalse(a, Context));
 		}
 		
 		public void IsEqual(System.Object a, System.Object b, String Context = "")

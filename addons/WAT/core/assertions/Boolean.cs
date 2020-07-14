@@ -13,6 +13,15 @@ namespace WAT
             var result = success ? passed : failed;
             return Create(success, passed, result, context);
         }
+
+        public static object IsFalse(bool value, string context)
+        {
+            var passed = $"|boolean| {value.ToString()} == false";
+            var failed = $"|boolean| {value.ToString()} == true";
+            var success = !value;
+            var result = success ? passed : failed;
+            return Create(success, passed, result, context);
+        }
     }
 }
 
