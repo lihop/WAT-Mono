@@ -1,4 +1,7 @@
-﻿using System.Reflection;
+﻿using System;
+using System.Collections;
+using System.Globalization;
+using System.Reflection;
 
 namespace WAT
 {
@@ -24,22 +27,22 @@ namespace WAT
 
         public static object IsEqualOrGreaterThan()
         {
-            return new object();
+            throw new NotImplementedException();
         }
 
         public static object IsEqualOrLessThan()
         {
-            return new object();
+            throw new NotImplementedException();
         }
 
         public static object IsGreaterThan()
         {
-            return new object();
+            throw new NotImplementedException();
         }
 
         public static object IsLessThan()
         {
-            return new object();
+            throw new NotImplementedException();
         }
     }
 }
