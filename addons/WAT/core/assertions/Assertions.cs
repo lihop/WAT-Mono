@@ -18,15 +18,17 @@ namespace WAT {
 			var script = ResourceLoader.Load<Script>(path);
 			assertions = script.Call("new") as Reference;
 		}
+
+		private void Output(object result) => EmitSignal(nameof(Asserted), result);
 		
 		public void IsTrue(bool a, string Context = "")
 		{
-			EmitSignal(nameof(Asserted), Boolean.IsTrue(a, Context));
+			Output(Boolean.IsTrue(a, Context));
 		}
 		
 		public void IsFalse(bool a, string Context = "")
 		{
-			EmitSignal(nameof(Asserted), Boolean.IsFalse(a, Context));
+			Output(Boolean.IsFalse(a, Context));
 		}
 		
 		public void IsEqual(object a, object b, string Context = "")

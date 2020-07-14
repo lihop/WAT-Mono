@@ -1,43 +1,9 @@
 <?xml version="1.0" ?>
-<testsuites failures="0" name="TestXML" tests="1" time="1.015">
-<testsuite failures="0" name="IsNotInstanceTest" tests="19" time="0.01">
-<testcase name="IsNotVector3" time="0">
+<testsuites failures="0" name="TestXML" tests="1" time="0.966">
+<testsuite failures="0" name="Given A Boolean Assertion" tests="2" time="0.011">
+<testcase name="FalseIsFalse" time="0.001">
 </testcase>
-<testcase name="IsNotVector2" time="0.001">
-</testcase>
-<testcase name="IsNotTransform2D" time="0">
-</testcase>
-<testcase name="IsNotTransform" time="0">
-</testcase>
-<testcase name="IsNotString" time="0">
-</testcase>
-<testcase name="IsNotRID" time="0">
-</testcase>
-<testcase name="IsNotRect2" time="0.001">
-</testcase>
-<testcase name="IsNotQuat" time="0">
-</testcase>
-<testcase name="IsNotPlane" time="0">
-</testcase>
-<testcase name="IsNotObject" time="0">
-</testcase>
-<testcase name="IsNotNodePath" time="0">
-</testcase>
-<testcase name="IsNotInt" time="0">
-</testcase>
-<testcase name="IsNotFloat" time="0.001">
-</testcase>
-<testcase name="IsNotDictionary" time="0">
-</testcase>
-<testcase name="IsNotColor" time="0">
-</testcase>
-<testcase name="IsNotBool" time="0">
-</testcase>
-<testcase name="IsNotBasis" time="0">
-</testcase>
-<testcase name="IsNotArray" time="0">
-</testcase>
-<testcase name="IsNotAABB" time="0">
+<testcase name="TrueIsTrue" time="0.001">
 </testcase>
 </testsuite>
 </testsuites>
