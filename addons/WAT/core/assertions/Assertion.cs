@@ -1,15 +1,19 @@
-﻿using System.Dynamic;
+﻿using System.Diagnostics;
+using System.Dynamic;
 using Godot;
 
 namespace WAT
 {
     public class Assertion
     {
-        private static readonly Script Result = GD.Load<Script>("res://addons/WAT/core/assertions/base.gd");
+        private static readonly Script _Result = GD.Load<Script>("res://addons/WAT/core/assertions/assertion_result.gd");
 
-        protected static object Create(bool success, string expected, string actual, string context, string notes = "")
+        protected static object Result(bool success, string expected, string actual, string context, string notes = "")
         {
-            return Result.Call("create", success, expected, actual, context, notes);
+            var x =  _Result.Call("new", success, expected, actual, context, notes);
+            Debug.Assert(x != null, "Result Object Is Null");
+            return x;
         }
     }
 }
+

@@ -176,14 +176,14 @@ namespace WAT {
 			assertions.Call("was_called_with_arguments", a,  b,  c, Context);
 		}
 		
-		public void FileExists(string Context = "")
+		public void FileExists(string path, string Context = "")
 		{
-			assertions.Call("file_exists",Context);
+			Output(File.Exists(path, Context));
 		}
 		
-		public void FileDoesNotExist(string Context = "")
+		public void FileDoesNotExist(string path, string context = "")
 		{
-			assertions.Call("file_does_not_exist",Context);
+			Output(File.DoesNotExist(path, context));
 		}
 		
 		public void That(object a, object b, object c, object d, object e, string Context = "")

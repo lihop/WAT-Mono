@@ -11,7 +11,7 @@ namespace WAT
             var failed = $"|boolean| {value.ToString()} == false";
             var success = value;
             var result = success ? passed : failed;
-            return Create(success, passed, result, context);
+            return Result(success, passed, result, context);
         }
 
         public static object IsFalse(bool value, string context)
@@ -20,7 +20,7 @@ namespace WAT
             var failed = $"|boolean| {value.ToString()} == true";
             var success = !value;
             var result = success ? passed : failed;
-            return Create(success, passed, result, context);
+            return Result(success, passed, result, context);
         }
     }
 }
