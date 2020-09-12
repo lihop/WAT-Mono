@@ -2,7 +2,6 @@ extends Reference
 
 const Is: Script = preload("is.gd")
 const IsNot: Script = preload("is_not.gd")
-const RangeX: Script = preload("range.gd")
 const Signal: Script = preload("signal.gd")
 const StringX: Script = preload("string.gd")
 const Utility: Script = preload("utility.gd")
@@ -18,12 +17,6 @@ func output(data) -> void:
 func loop(method: String, data: Array) -> void:
 	for set in data:
 		callv(method, set)
-
-func is_in_range(value, low, high, context: String = "") -> void:
-	output(RangeX.is_in_range(value, low, high, context))
-
-func is_not_in_range(value, low, high, context: String = "") -> void:
-	output(RangeX.is_not_in_range(value, low, high, context))
 
 func has(value, container, context: String = "") -> void:
 	output(Property.has.new(value, container, context))
