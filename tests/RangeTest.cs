@@ -12,18 +12,18 @@ public class RangeTest : WAT.Test
 	[Test]
 	public void WhenCallingIsInRange()
 	{
-		int val = 0;
-		int low = 0;
-		int high = 10;
+		const int val = 0;
+		const int low = 0;
+		const int high = 10;
 		Assert.IsInRange(val, low, high, "Then it passes");
 	}
 	
 	[Test]
 	public void WhenCallingIsNotInRange()
 	{
-		int val = 10;
-		int low = 0;
-		int high = 10;
+		const int val = 10;
+		const int low = 0;
+		const int high = 10;
 		Assert.IsNotInRange(val, low, high, "Then it passes");
 	}
 }

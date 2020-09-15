@@ -5,7 +5,6 @@ const IsNot: Script = preload("is_not.gd")
 const Signal: Script = preload("signal.gd")
 const StringX: Script = preload("string.gd")
 const Utility: Script = preload("utility.gd")
-const Property: Script = preload("property.gd")
 const ObjectX: Script = preload("object.gd")
 
 signal OUTPUT
@@ -17,12 +16,6 @@ func output(data) -> void:
 func loop(method: String, data: Array) -> void:
 	for set in data:
 		callv(method, set)
-
-func has(value, container, context: String = "") -> void:
-	output(Property.has.new(value, container, context))
-
-func does_not_have(value, container, context: String = "") -> void:
-	output(Property.does_not_have.new(value, container, context))
 
 func is_class_instance(instance, type, context: String = "") -> void:
 	output(Is.is_class_instance(instance, type, context))

@@ -81,24 +81,24 @@ namespace WAT {
 			assertions.Call("signal_was_emitted_with_arguments", Emitter, Event, Args, Context);
 		}
 		
-		public void IsInRange(object a, object b, object c, string Context = "")
+		public void IsInRange(double a, double b, double c, string Context = "")
 		{
-			assertions.Call("is_in_range", a,  b,  c, Context);
+			Output(Range.IsInRange(a, b, c, Context));
 		}
 		
-		public void IsNotInRange(object a, object b, object c, string Context = "")
+		public void IsNotInRange(double a, double b, double c, string Context = "")
 		{
-			assertions.Call("is_not_in_range", a,  b,  c, Context);
+			Output(Range.IsNotInRange(a, b, c, Context));
 		}
-		
-		public void Has(object a, object b, string Context = "")
+
+		public void Contains<T>(object value, T container, string Context = "")
 		{
-			assertions.Call("has", a,  b, Context);
+			Output(Property.Contains(value, container, Context));
 		}
-		
-		public void DoesNotHave(object a, object b, string Context = "")
+
+		public void DoesNotContain<T>(object value, T container, string Context = "")
 		{
-			assertions.Call("does_not_have", a,  b, Context);
+			Output(Property.DoesNotContain(value, container, Context));
 		}
 		
 		public void IsClassInstance(object a, object b, string Context = "")
