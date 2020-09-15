@@ -22,164 +22,164 @@ namespace WAT {
 
 		private void Output(object result) => EmitSignal(nameof(Asserted), result);
 		
-		public void IsTrue(bool a, string Context = "")
+		public void IsTrue(bool a, string context = "")
 		{
-			Output(Boolean.IsTrue(a, Context));
+			Output(Boolean.IsTrue(a, context));
 		}
 		
-		public void IsFalse(bool a, string Context = "")
+		public void IsFalse(bool a, string context = "")
 		{
-			Output(Boolean.IsFalse(a, Context));
+			Output(Boolean.IsFalse(a, context));
 		}
 		
-		public void IsEqual(object a, object b, string Context = "")
+		public void IsEqual(object a, object b, string context = "")
 		{
-			Output(Equality.IsEqual(a, b, Context));
+			Output(Equality.IsEqual(a, b, context));
 		}
 		
-		public void IsNotEqual(object a, object b, string Context = "")
+		public void IsNotEqual(object a, object b, string context = "")
 		{
-			Output(Equality.IsNotEqual(a, b, Context));
+			Output(Equality.IsNotEqual(a, b, context));
 		}
 		
-		public void IsGreaterThan(float a, float b, string Context = "")
+		public void IsGreaterThan(float a, float b, string context = "")
 		{
-			Output(Equality.IsGreaterThan(a, b, Context));
+			Output(Equality.IsGreaterThan(a, b, context));
 		}
 		
-		public void IsLessThan(float a, float b, string Context = "")
+		public void IsLessThan(float a, float b, string context = "")
 		{
-			Output(Equality.IsLessThan(a, b, Context));
+			Output(Equality.IsLessThan(a, b, context));
 		}
 		
-		public void IsEqualOrGreaterThan(float a, float b, string Context = "")
+		public void IsEqualOrGreaterThan(float a, float b, string context = "")
 		{
-			Output(Equality.IsEqualOrGreaterThan(a, b, Context));
+			Output(Equality.IsEqualOrGreaterThan(a, b, context));
 		}
 		
-		public void IsEqualOrLessThan(float a, float b, string Context = "")
+		public void IsEqualOrLessThan(float a, float b, string context = "")
 		{
-			Output(Equality.IsEqualOrLessThan(a, b, Context));
+			Output(Equality.IsEqualOrLessThan(a, b, context));
 		}
 
-		public void SignalWasEmitted(Godot.Object Emitter, string Event, string Context = "")
+		public void SignalWasEmitted(Godot.Object emitter, string signal, string context = "")
 		{
-			Output(Signal.WasEmitted(Emitter, Event, Context));
+			Output(Signal.WasEmitted(emitter, signal, context));
 		}
 		
-		public void SignalWasEmittedXTimes(Godot.Object Emitter, string Event, int Times, string Context = "")
+		public void SignalWasEmittedXTimes(Godot.Object emitter, string signal, int times, string context = "")
 		{
-			Output(Signal.WasEmittedXTimes(Emitter, Event, Times, Context));
+			Output(Signal.WasEmittedXTimes(emitter, signal, times, context));
 		}
 		
-		public void SignalWasNotEmitted(Godot.Object Emitter, string Event, string Context = "")
+		public void SignalWasNotEmitted(Godot.Object emitter, string signal, string context = "")
 		{
-			Output(Signal.WasNotEmitted(Emitter, Event, Context));
+			Output(Signal.WasNotEmitted(emitter, signal, context));
 		}
 	
-		public void SignalWasEmittedWithArguments(Godot.Object Emitter, string Event, GDArray Args, string Context = "")
+		public void SignalWasEmittedWithArguments(Godot.Object emitter, string signal, GDArray args, string context = "")
 		{
-			assertions.Call("signal_was_emitted_with_arguments", Emitter, Event, Args, Context);
+			assertions.Call("signal_was_emitted_with_arguments", emitter, signal, args, context);
 		}
 		
-		public void IsInRange(double a, double b, double c, string Context = "")
+		public void IsInRange(double a, double b, double c, string context = "")
 		{
-			Output(Range.IsInRange(a, b, c, Context));
+			Output(Range.IsInRange(a, b, c, context));
 		}
 		
-		public void IsNotInRange(double a, double b, double c, string Context = "")
+		public void IsNotInRange(double a, double b, double c, string context = "")
 		{
-			Output(Range.IsNotInRange(a, b, c, Context));
+			Output(Range.IsNotInRange(a, b, c, context));
 		}
 
-		public void Contains<T>(object value, T container, string Context = "")
+		public void Contains<T>(object value, T container, string context = "")
 		{
-			Output(Property.Contains(value, container, Context));
+			Output(Property.Contains(value, container, context));
 		}
 
-		public void DoesNotContain<T>(object value, T container, string Context = "")
+		public void DoesNotContain<T>(object value, T container, string context = "")
 		{
-			Output(Property.DoesNotContain(value, container, Context));
+			Output(Property.DoesNotContain(value, container, context));
 		}
 		
-		public void IsClassInstance(object a, object b, string Context = "")
+		public void IsClassInstance(object a, object b, string context = "")
 		{
-			assertions.Call("is_class_instance", a,  b, Context);
+			assertions.Call("is_class_instance", a,  b, context);
 		}
 		
-		public void IsNotClassInstance(object a, object b, string Context = "")
+		public void IsNotClassInstance(object a, object b, string context = "")
 		{
-			assertions.Call("is_not_class_instance", a,  b, Context);
+			assertions.Call("is_not_class_instance", a,  b, context);
 		}
 		
-		public void IsBuiltInType(object a, object b, string Context = "")
+		public void IsBuiltInType(object a, object b, string context = "")
 		{
-			assertions.Call("is_built_in_type", a,  b, Context);
+			assertions.Call("is_built_in_type", a,  b, context);
 		}
 		
-		public void IsNotBuiltInType(object a, object b, string Context = "")
+		public void IsNotBuiltInType(object a, object b, string context = "")
 		{
-			assertions.Call("is_not_built_in_type", a,  b, Context);
+			assertions.Call("is_not_built_in_type", a,  b, context);
 		}
 		
-		public void IsNull(object a, string Context = "")
+		public void IsNull(object a, string context = "")
 		{
-			assertions.Call("is_null", a, Context);
+			assertions.Call("is_null", a, context);
 		}
 		
-		public void IsNotNull(object a, string Context = "")
+		public void IsNotNull(object a, string context = "")
 		{
-			assertions.Call("is_not_null", a, Context);
+			assertions.Call("is_not_null", a, context);
 		}
 		
-		public void StringContains(string value, string str, string Context = "")
+		public void StringContains(string value, string str, string context = "")
 		{
-			Output(StringX.Contains(value, str, Context));
+			Output(StringX.Contains(value, str, context));
 		}
 		
-		public void StringDoesNotContain(string value, string str, string Context = "")
+		public void StringDoesNotContain(string value, string str, string context = "")
 		{
-			Output(StringX.DoesNotContain(value, str, Context));
+			Output(StringX.DoesNotContain(value, str, context));
 		}
 		
-		public void StringBeginsWith(string value, string str, string Context = "")
+		public void StringBeginsWith(string value, string str, string context = "")
 		{
-			Output(StringX.BeginsWith(value, str, Context));
+			Output(StringX.BeginsWith(value, str, context));
 		}
 		
-		public void StringDoesNotBeginWith(string value, string str, string Context = "")
+		public void StringDoesNotBeginWith(string value, string str, string context = "")
 		{
-			Output(StringX.DoesNotBeginWith(value, str, Context));
+			Output(StringX.DoesNotBeginWith(value, str, context));
 		}
 		
-		public void StringEndsWith(string value, string str, string Context = "")
+		public void StringEndsWith(string value, string str, string context = "")
 		{
-			Output(StringX.EndsWith(value, str, Context));
+			Output(StringX.EndsWith(value, str, context));
 		}
 		
-		public void StringDoesNotEndWith(string value, string str, string Context = "")
+		public void StringDoesNotEndWith(string value, string str, string context = "")
 		{
-			Output(StringX.DoesNotEndWith(value, str, Context));
+			Output(StringX.DoesNotEndWith(value, str, context));
 		}
 		
-		public void WasCalled(object a, object b, string Context = "")
+		public void WasCalled(object a, object b, string context = "")
 		{
-			assertions.Call("was_called", a,  b, Context);
+			assertions.Call("was_called", a,  b, context);
 		}
 		
-		public void WasNotCalled(object a, object b, string Context = "")
+		public void WasNotCalled(object a, object b, string context = "")
 		{
-			assertions.Call("was_not_called", a,  b, Context);
+			assertions.Call("was_not_called", a,  b, context);
 		}
 		
-		public void WasCalledWithArguments(object a, object b, object c, string Context = "")
+		public void WasCalledWithArguments(object a, object b, object c, string context = "")
 		{
-			assertions.Call("was_called_with_arguments", a,  b,  c, Context);
+			assertions.Call("was_called_with_arguments", a,  b,  c, context);
 		}
 		
-		public void FileExists(string path, string Context = "")
+		public void FileExists(string path, string context = "")
 		{
-			Output(File.Exists(path, Context));
+			Output(File.Exists(path, context));
 		}
 		
 		public void FileDoesNotExist(string path, string context = "")
@@ -187,284 +187,284 @@ namespace WAT {
 			Output(File.DoesNotExist(path, context));
 		}
 		
-		public void That(object a, object b, object c, object d, object e, string Context = "")
+		public void That(object a, object b, object c, object d, object e, string context = "")
 		{
-			assertions.Call("that", a,  b,  c,  d,  e, Context);
+			assertions.Call("that", a,  b,  c,  d,  e, context);
 		}
 		
-		public void ObjectHasMeta(object a, object b, string Context = "")
+		public void ObjectHasMeta(object a, object b, string context = "")
 		{
-			assertions.Call("object_has_meta", a,  b, Context);
+			assertions.Call("object_has_meta", a,  b, context);
 		}
 		
-		public void ObjectDoesNotHaveMeta(object a, object b, string Context = "")
+		public void ObjectDoesNotHaveMeta(object a, object b, string context = "")
 		{
-			assertions.Call("object_does_not_have_meta", a,  b, Context);
+			assertions.Call("object_does_not_have_meta", a,  b, context);
 		}
 		
-		public void ObjectHasMethod(object a, object b, string Context = "")
+		public void ObjectHasMethod(object a, object b, string context = "")
 		{
-			assertions.Call("object_has_method", a,  b, Context);
+			assertions.Call("object_has_method", a,  b, context);
 		}
 		
-		public void ObjectDoesNotHaveMethod(object a, object b, string Context = "")
+		public void ObjectDoesNotHaveMethod(object a, object b, string context = "")
 		{
-			assertions.Call("object_does_not_have_method", a,  b, Context);
+			assertions.Call("object_does_not_have_method", a,  b, context);
 		}
 		
-		public void ObjectIsQueuedForDeletion(object a, string Context = "")
+		public void ObjectIsQueuedForDeletion(object a, string context = "")
 		{
-			assertions.Call("object_is_queued_for_deletion", a, Context);
+			assertions.Call("object_is_queued_for_deletion", a, context);
 		}
 		
-		public void ObjectIsNotQueuedForDeletion(object a, string Context = "")
+		public void ObjectIsNotQueuedForDeletion(object a, string context = "")
 		{
-			assertions.Call("object_is_not_queued_for_deletion", a, Context);
+			assertions.Call("object_is_not_queued_for_deletion", a, context);
 		}
 		
-		public void ObjectIsConnected(object a, object b, object c, object d, string Context = "")
+		public void ObjectIsConnected(object a, object b, object c, object d, string context = "")
 		{
-			assertions.Call("object_is_connected", a,  b,  c,  d, Context);
+			assertions.Call("object_is_connected", a,  b,  c,  d, context);
 		}
 		
-		public void ObjectIsNotConnected(object a, object b, object c, object d, string Context = "")
+		public void ObjectIsNotConnected(object a, object b, object c, object d, string context = "")
 		{
-			assertions.Call("object_is_not_connected", a,  b,  c,  d, Context);
+			assertions.Call("object_is_not_connected", a,  b,  c,  d, context);
 		}
 		
-		public void ObjectIsBlockingSignals(object a, string Context = "")
+		public void ObjectIsBlockingSignals(object a, string context = "")
 		{
-			assertions.Call("object_is_blocking_signals", a, Context);
+			assertions.Call("object_is_blocking_signals", a, context);
 		}
 		
-		public void ObjectIsNotBlockingSignals(object a, string Context = "")
+		public void ObjectIsNotBlockingSignals(object a, string context = "")
 		{
-			assertions.Call("object_is_not_blocking_signals", a, Context);
+			assertions.Call("object_is_not_blocking_signals", a, context);
 		}
 		
-		public void ObjectHasUserSignal(object a, object b, string Context = "")
+		public void ObjectHasUserSignal(object a, object b, string context = "")
 		{
-			assertions.Call("object_has_user_signal", a,  b, Context);
+			assertions.Call("object_has_user_signal", a,  b, context);
 		}
 		
-		public void ObjectDoesNotHaveUserSignal(object a, object b, string Context = "")
+		public void ObjectDoesNotHaveUserSignal(object a, object b, string context = "")
 		{
-			assertions.Call("object_does_not_have_user_signal", a,  b, Context);
+			assertions.Call("object_does_not_have_user_signal", a,  b, context);
 		}
 		
-		public void IsFreed(object a, string Context = "")
+		public void IsFreed(object a, string context = "")
 		{
-			assertions.Call("is_freed", a, Context);
+			assertions.Call("is_freed", a, context);
 		}
 		
-		public void IsNotFreed(object a, string Context = "")
+		public void IsNotFreed(object a, string context = "")
 		{
-			assertions.Call("is_not_freed", a, Context);
+			assertions.Call("is_not_freed", a, context);
 		}
 		
-		public void IsAABB(object a, string Context = "")
+		public void IsAABB(object a, string context = "")
 		{
-			assertions.Call("is_AABB", a, Context);
+			assertions.Call("is_AABB", a, context);
 		}
 		
-		public void IsNotAABB(object a, string Context = "")
+		public void IsNotAABB(object a, string context = "")
 		{
-			assertions.Call("is_not_AABB", a, Context);
+			assertions.Call("is_not_AABB", a, context);
 		}
 		
-		public void IsBool(object a, string Context = "")
+		public void IsBool(object a, string context = "")
 		{
-			assertions.Call("is_bool", a, Context);
+			assertions.Call("is_bool", a, context);
 		}
 		
-		public void IsNotBool(object a, string Context = "")
+		public void IsNotBool(object a, string context = "")
 		{
-			assertions.Call("is_not_bool", a, Context);
+			assertions.Call("is_not_bool", a, context);
 		}
 		
-		public void IsInt(object a, string Context = "")
+		public void IsInt(object a, string context = "")
 		{
-			assertions.Call("is_int", a, Context);
+			assertions.Call("is_int", a, context);
 		}
 		
-		public void IsNotInt(object a, string Context = "")
+		public void IsNotInt(object a, string context = "")
 		{
-			assertions.Call("is_not_int", a, Context);
+			assertions.Call("is_not_int", a, context);
 		}
 		
-		public void IsFloat(object a, string Context = "")
+		public void IsFloat(object a, string context = "")
 		{
-			assertions.Call("is_float", a, Context);
+			assertions.Call("is_float", a, context);
 		}
 		
-		public void IsNotFloat(object a, string Context = "")
+		public void IsNotFloat(object a, string context = "")
 		{
-			assertions.Call("is_not_float", a, Context);
+			assertions.Call("is_not_float", a, context);
 		}
 		
-		public void IsString(object a, string Context = "")
+		public void IsString(object a, string context = "")
 		{
-			assertions.Call("is_String", a, Context);
+			assertions.Call("is_String", a, context);
 		}
 		
-		public void IsNotString(object a, string Context = "")
+		public void IsNotString(object a, string context = "")
 		{
-			assertions.Call("is_not_String", a, Context);
+			assertions.Call("is_not_String", a, context);
 		}
 		
-		public void IsVector2(object a, string Context = "")
+		public void IsVector2(object a, string context = "")
 		{
-			assertions.Call("is_Vector2", a, Context);
+			assertions.Call("is_Vector2", a, context);
 		}
 		
-		public void IsNotVector2(object a, string Context = "")
+		public void IsNotVector2(object a, string context = "")
 		{
-			assertions.Call("is_not_Vector2", a, Context);
+			assertions.Call("is_not_Vector2", a, context);
 		}
 		
-		public void IsRect2(object a, string Context = "")
+		public void IsRect2(object a, string context = "")
 		{
-			assertions.Call("is_Rect2", a, Context);
+			assertions.Call("is_Rect2", a, context);
 		}
 		
-		public void IsNotRect2(object a, string Context = "")
+		public void IsNotRect2(object a, string context = "")
 		{
-			assertions.Call("is_not_Rect2", a, Context);
+			assertions.Call("is_not_Rect2", a, context);
 		}
 		
-		public void IsVector3(object a, string Context = "")
+		public void IsVector3(object a, string context = "")
 		{
-			assertions.Call("is_Vector3", a, Context);
+			assertions.Call("is_Vector3", a, context);
 		}
 		
-		public void IsNotVector3(object a, string Context = "")
+		public void IsNotVector3(object a, string context = "")
 		{
-			assertions.Call("is_not_Vector3", a, Context);
+			assertions.Call("is_not_Vector3", a, context);
 		}
 		
-		public void IsTransform2D(object a, string Context = "")
+		public void IsTransform2D(object a, string context = "")
 		{
-			assertions.Call("is_Transform2D", a, Context);
+			assertions.Call("is_Transform2D", a, context);
 		}
 		
-		public void IsNotTransform2D(object a, string Context = "")
+		public void IsNotTransform2D(object a, string context = "")
 		{
-			assertions.Call("is_not_Transform2D", a, Context);
+			assertions.Call("is_not_Transform2D", a, context);
 		}
 		
-		public void IsPlane(object a, string Context = "")
+		public void IsPlane(object a, string context = "")
 		{
-			assertions.Call("is_Plane", a, Context);
+			assertions.Call("is_Plane", a, context);
 		}
 		
-		public void IsNotPlane(object a, string Context = "")
+		public void IsNotPlane(object a, string context = "")
 		{
-			assertions.Call("is_not_Plane", a, Context);
+			assertions.Call("is_not_Plane", a, context);
 		}
 		
-		public void IsQuat(object a, string Context = "")
+		public void IsQuat(object a, string context = "")
 		{
-			assertions.Call("is_Quat", a, Context);
+			assertions.Call("is_Quat", a, context);
 		}
 		
-		public void IsNotQuat(object a, string Context = "")
+		public void IsNotQuat(object a, string context = "")
 		{
-			assertions.Call("is_not_Quat", a, Context);
+			assertions.Call("is_not_Quat", a, context);
 		}
 		
-		public void IsAabb(object a, string Context = "")
+		public void IsAabb(object a, string context = "")
 		{
-			assertions.Call("is_AABB", a, Context);
+			assertions.Call("is_AABB", a, context);
 		}
 		
-		public void IsNotAabb(object a, string Context = "")
+		public void IsNotAabb(object a, string context = "")
 		{
-			assertions.Call("is_not_AABB", a, Context);
+			assertions.Call("is_not_AABB", a, context);
 		}
 		
-		public void IsBasis(object a, string Context = "")
+		public void IsBasis(object a, string context = "")
 		{
-			assertions.Call("is_Basis", a, Context);
+			assertions.Call("is_Basis", a, context);
 		}
 		
-		public void IsNotBasis(object a, string Context = "")
+		public void IsNotBasis(object a, string context = "")
 		{
-			assertions.Call("is_not_Basis", a, Context);
+			assertions.Call("is_not_Basis", a, context);
 		}
 		
-		public void IsTransform(object a, string Context = "")
+		public void IsTransform(object a, string context = "")
 		{
-			assertions.Call("is_Transform", a, Context);
+			assertions.Call("is_Transform", a, context);
 		}
 		
-		public void IsNotTransform(object a, string Context = "")
+		public void IsNotTransform(object a, string context = "")
 		{
-			assertions.Call("is_not_Transform", a, Context);
+			assertions.Call("is_not_Transform", a, context);
 		}
 		
-		public void IsColor(object a, string Context = "")
+		public void IsColor(object a, string context = "")
 		{
-			assertions.Call("is_Color", a, Context);
+			assertions.Call("is_Color", a, context);
 		}
 		
-		public void IsNotColor(object a, string Context = "")
+		public void IsNotColor(object a, string context = "")
 		{
-			assertions.Call("is_not_Color", a, Context);
+			assertions.Call("is_not_Color", a, context);
 		}
 		
-		public void IsNodePath(object a, string Context = "")
+		public void IsNodePath(object a, string context = "")
 		{
-			assertions.Call("is_NodePath", a, Context);
+			assertions.Call("is_NodePath", a, context);
 		}
 		
-		public void IsNotNodePath(object a, string Context = "")
+		public void IsNotNodePath(object a, string context = "")
 		{
-			assertions.Call("is_not_NodePath", a, Context);
+			assertions.Call("is_not_NodePath", a, context);
 		}
 		
-		public void IsRID(object a, string Context = "")
+		public void IsRID(object a, string context = "")
 		{
-			assertions.Call("is_RID", a, Context);
+			assertions.Call("is_RID", a, context);
 		}
 		
-		public void IsNotRID(object a, string Context = "")
+		public void IsNotRID(object a, string context = "")
 		{
-			assertions.Call("is_not_RID", a, Context);
+			assertions.Call("is_not_RID", a, context);
 		}
 		
-		public void IsObject(object a, string Context = "")
+		public void IsObject(object a, string context = "")
 		{
-			assertions.Call("is_Object", a, Context);
+			assertions.Call("is_Object", a, context);
 		}
 		
-		public void IsNotObject(object a, string Context = "")
+		public void IsNotObject(object a, string context = "")
 		{
-			assertions.Call("is_not_Object", a, Context);
+			assertions.Call("is_not_Object", a, context);
 		}
 		
-		public void IsDictionary(object a, string Context = "")
+		public void IsDictionary(object a, string context = "")
 		{
-			assertions.Call("is_Dictionary", a, Context);
+			assertions.Call("is_Dictionary", a, context);
 		}
 		
-		public void IsNotDictionary(object a, string Context = "")
+		public void IsNotDictionary(object a, string context = "")
 		{
-			assertions.Call("is_not_Dictionary", a, Context);
+			assertions.Call("is_not_Dictionary", a, context);
 		}
 		
-		public void IsArray(object a, string Context = "")
+		public void IsArray(object a, string context = "")
 		{
-			assertions.Call("is_Array", a, Context);
+			assertions.Call("is_Array", a, context);
 		}
 		
-		public void IsNotArray(object a, string Context = "")
+		public void IsNotArray(object a, string context = "")
 		{
-			assertions.Call("is_not_Array", a, Context);
+			assertions.Call("is_not_Array", a, context);
 		}
 		
-		public void Fail(string Context = "")
+		public void Fail(string context = "")
 		{
-			assertions.Call("fail",Context);
+			assertions.Call("fail",context);
 		}
 	}
 }
