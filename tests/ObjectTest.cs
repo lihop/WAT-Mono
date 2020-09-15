@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using Object = Godot.Object;
 
 public class ObjectTest : WAT.Test
 {
@@ -13,6 +14,7 @@ public class ObjectTest : WAT.Test
 	{
 		Node N = new Node();
 		N.Free();
+		GD.Print(Object.IsInstanceValid(N));
 		Assert.IsFreed(N, "Then it passes");
 	}
 	

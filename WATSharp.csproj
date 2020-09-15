@@ -58,10 +58,11 @@
     <Compile Include="addons\WAT\core\assertions\Boolean.cs" />
     <Compile Include="addons\WAT\core\assertions\Equality.cs" />
     <Compile Include="addons\WAT\core\assertions\File.cs" />
+    <Compile Include="addons\WAT\core\assertions\ObjectX.cs" />
     <Compile Include="addons\WAT\core\assertions\Property.cs" />
     <Compile Include="addons\WAT\core\assertions\Range.cs" />
     <Compile Include="addons\WAT\core\assertions\Signal.cs" />
-    <Compile Include="addons\WAT\core\assertions\String.cs" />
+    <Compile Include="addons\WAT\core\assertions\StringX.cs" />
     <Compile Include="addons\WAT\core\test\Recorder.cs" />
     <Compile Include="addons\WAT\core\test\Test.cs" />
     <Compile Include="Node.cs" />
@@ -114,7 +115,6 @@
     <Content Include="addons\WAT\core\assertions\constants\type_library.gd" />
     <Content Include="addons\WAT\core\assertions\is.gd" />
     <Content Include="addons\WAT\core\assertions\is_not.gd" />
-    <Content Include="addons\WAT\core\assertions\object.gd" />
     <Content Include="addons\WAT\core\assertions\utility.gd" />
     <Content Include="addons\WAT\gui.gd" />
     <Content Include="addons\WAT\gui.tscn" />

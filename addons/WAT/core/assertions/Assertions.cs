@@ -3,6 +3,7 @@ using System;
 using System.CodeDom;
 using System.Collections.Generic;
 using GDArray = Godot.Collections.Array;
+using Object = Godot.Object;
 
 namespace WAT {
 		
@@ -193,74 +194,74 @@ namespace WAT {
 			assertions.Call("that", a,  b,  c,  d,  e, context);
 		}
 		
-		public void ObjectHasMeta(object a, object b, string context = "")
+		public void ObjectHasMeta(Godot.Object obj, string meta, string context = "")
 		{
-			assertions.Call("object_has_meta", a,  b, context);
+			Output(ObjectX.HasMeta(obj, meta, context));
 		}
 		
-		public void ObjectDoesNotHaveMeta(object a, object b, string context = "")
+		public void ObjectDoesNotHaveMeta(Godot.Object obj, string meta, string context = "")
 		{
-			assertions.Call("object_does_not_have_meta", a,  b, context);
+			Output(ObjectX.DoesNotHaveMeta(obj, meta, context));
 		}
 		
-		public void ObjectHasMethod(object a, object b, string context = "")
+		public void ObjectHasMethod(Godot.Object obj, string method, string context = "")
 		{
-			assertions.Call("object_has_method", a,  b, context);
+			Output(ObjectX.HasMethod(obj, method, context));
 		}
 		
-		public void ObjectDoesNotHaveMethod(object a, object b, string context = "")
+		public void ObjectDoesNotHaveMethod(Godot.Object obj, string method, string context = "")
 		{
-			assertions.Call("object_does_not_have_method", a,  b, context);
+			Output(ObjectX.DoesNotHaveMethod(obj, method, context));
 		}
 		
-		public void ObjectIsQueuedForDeletion(object a, string context = "")
+		public void ObjectIsQueuedForDeletion(Godot.Object obj, string context = "")
 		{
-			assertions.Call("object_is_queued_for_deletion", a, context);
+			Output(ObjectX.IsQueuedForDeletion(obj, context));
 		}
 		
-		public void ObjectIsNotQueuedForDeletion(object a, string context = "")
+		public void ObjectIsNotQueuedForDeletion(Godot.Object obj, string context = "")
 		{
-			assertions.Call("object_is_not_queued_for_deletion", a, context);
+			Output(ObjectX.IsNotQueuedForDeletion(obj, context));
 		}
 		
-		public void ObjectIsConnected(object a, object b, object c, object d, string context = "")
+		public void ObjectIsConnected(Object sender, string signal, Object receiver, string method, string context = "")
 		{
-			assertions.Call("object_is_connected", a,  b,  c,  d, context);
+			Output(ObjectX.IsConnected(sender, signal, receiver, method, context));
 		}
 		
-		public void ObjectIsNotConnected(object a, object b, object c, object d, string context = "")
+		public void ObjectIsNotConnected(Object sender, string signal, Object receiver, string method, string context = "")
 		{
-			assertions.Call("object_is_not_connected", a,  b,  c,  d, context);
+			Output(ObjectX.IsNotConnected(sender, signal, receiver, method, context));
 		}
 		
-		public void ObjectIsBlockingSignals(object a, string context = "")
+		public void ObjectIsBlockingSignals(Object obj, string context = "")
 		{
-			assertions.Call("object_is_blocking_signals", a, context);
+			Output(ObjectX.IsBlockingSignals(obj, context));
 		}
 		
-		public void ObjectIsNotBlockingSignals(object a, string context = "")
+		public void ObjectIsNotBlockingSignals(Object obj, string context = "")
 		{
-			assertions.Call("object_is_not_blocking_signals", a, context);
+			Output(ObjectX.IsNotBlockingSignals(obj, context));
 		}
 		
-		public void ObjectHasUserSignal(object a, object b, string context = "")
+		public void ObjectHasUserSignal(Object obj, string signal, string context = "")
 		{
-			assertions.Call("object_has_user_signal", a,  b, context);
+			Output(ObjectX.HasUserSignal(obj, signal, context));
 		}
 		
-		public void ObjectDoesNotHaveUserSignal(object a, object b, string context = "")
+		public void ObjectDoesNotHaveUserSignal(Object obj, string signal, string context = "")
 		{
-			assertions.Call("object_does_not_have_user_signal", a,  b, context);
+			Output(ObjectX.DoesNotHaveUserSignal(obj, signal, context));
 		}
 		
-		public void IsFreed(object a, string context = "")
+		public void IsFreed(object obj, string context = "")
 		{
-			assertions.Call("is_freed", a, context);
+			Output(ObjectX.IsFreed(obj, context));
 		}
 		
-		public void IsNotFreed(object a, string context = "")
+		public void IsNotFreed(object obj, string context = "")
 		{
-			assertions.Call("is_not_freed", a, context);
+			Output(ObjectX.IsNotFreed(obj, context));
 		}
 		
 		public void IsAABB(object a, string context = "")

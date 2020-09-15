@@ -1,13 +1,39 @@
 <?xml version="1.0" ?>
-<testsuites failures="0" name="TestXML" tests="1" time="0.995">
-<testsuite failures="0" name="Given A Signal Watcher" tests="4" time="0.009">
-<testcase name="WhenWeWatchASignalAndEmitItMultipleTimes" time="0.005">
+<testsuites failures="1" name="TestXML" tests="1" time="1.014">
+<testsuite failures="2" name="Object Assertions" tests="16" time="0.009">
+<testcase name="IsNotBlockingSignals" time="0.004">
 </testcase>
-<testcase name="When we Watch and Do not Emit a Signal" time="0">
+<testcase name="TestIsBlockingSignals" time="0.001">
 </testcase>
-<testcase name="When we watch and emit a signal" time="0.001">
+<testcase name="WhenCallingObjIsNotConnectedWithAnInvalidConnection" time="0.001">
 </testcase>
-<testcase name="WhenWeWatchASignalFromAnObjectWithNoBoundVariables" time="0.002">
+<testcase name="WhenCallingObjIsConnectedWithARealConnection" time="0">
+</testcase>
+<testcase name="WhenCallingObjectIsNotQueuedForDeletionAfterNotCallingQueueFree" time="0">
+</testcase>
+<testcase name="WhenCallingObjectIsQueuedForDeletionAfterCallingQueueFree" time="0.001">
+</testcase>
+<testcase name="WhenCallingDoesNotHaveUserSignalWithClassSignalConstant" time="0">
+</testcase>
+<testcase name="WhenCallingDoesNotHaveUserSignal" time="0">
+</testcase>
+<testcase name="WhenCallingHasUserSignalAfterAddingASignal" time="0">
+</testcase>
+<testcase name="WhenCallingDoesNotHaveMethodFalseMethod" time="0.001">
+</testcase>
+<testcase name="WhenCallingHasMethodTitle" time="0">
+</testcase>
+<testcase name="WhenCallingDoesNotHaveMetalRealKeyButNullValue" time="0">
+</testcase>
+<testcase name="WhenCallingDoesNotHaveMeta" time="0.001">
+</testcase>
+<testcase name="WhenCallingHasMetaAfterAddingMetadata" time="0">
+</testcase>
+<testcase name="WhenCallingUnfreedObjectIsNotFreed" time="0">
+<failure message="EXPECTED: [Node:1266] is not freed from memory but GOT [Node:1266] is freed from memory"></failure>
+</testcase>
+<testcase name="WhenCallingFreedObjectIsFreed" time="0.003">
+<failure message="EXPECTED: Object is freed from memory but GOT Object is not freed from memory"></failure>
 </testcase>
 </testsuite>
 </testsuites>
