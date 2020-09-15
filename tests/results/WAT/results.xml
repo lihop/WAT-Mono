@@ -1,9 +1,17 @@
 <?xml version="1.0" ?>
-<testsuites failures="0" name="TestXML" tests="1" time="1.078">
-<testsuite failures="0" name="Given A Collection" tests="2" time="0.013">
-<testcase name="WhenCallingDoesNotContainWhenListDoesNotHaveValue" time="0.007">
+<testsuites failures="0" name="TestXML" tests="1" time="1.127">
+<testsuite failures="0" name="Given A String Assertion" tests="6" time="0.009">
+<testcase name="WhenCallingStringDoesNotEndWith" time="0.015">
 </testcase>
-<testcase name="WhenCallingHasValueWhenListHasValue" time="0">
+<testcase name="WhenCallingStringEndsWith" time="0.003">
+</testcase>
+<testcase name="WhenCallingStringDoesNotContain" time="0">
+</testcase>
+<testcase name="WhenCallingStringContains" time="0">
+</testcase>
+<testcase name="WhenCallingStringDoesNotBeginWith" time="0.001">
+</testcase>
+<testcase name="WhenCallingStringBeginWith" time="0">
 </testcase>
 </testsuite>
 </testsuites>

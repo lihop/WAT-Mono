@@ -3,7 +3,7 @@ using System;
 
 public class ParameterizedTest : WAT.Test
 {
-	public override String Title()
+	public override string Title()
 	{
 		return "Given The Addition Operator (Parameter Tests)";
 	}
@@ -14,7 +14,7 @@ public class ParameterizedTest : WAT.Test
 	[RunWith(7, 6, 13)]
 	public void Add(int Addend, int Augend, int Result)
 	{
-		Describe(String.Format("When we add {0} to {1} we get {2}", Addend, Augend, Result));
+		Describe(string.Format("When we add {0} to {1} we get {2}", Addend, Augend, Result));
 		
 		Assert.IsEqual(Result, Addend + Augend);
 	}

@@ -14,7 +14,7 @@ using GDArray = Godot.Collections.Array;
 
 public class WatcherTest : WAT.Test
 {
-	public override String Title()
+	public override string Title()
 	{
 		return "Given A Signal Watcher";
 	}

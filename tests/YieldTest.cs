@@ -15,7 +15,7 @@ public class YieldTest : WAT.Test
 	[Signal]
 	delegate void abc();
 	
-	public override String Title()
+	public override string Title()
 	{
 		return "Given a Yield";
 	}
@@ -83,7 +83,7 @@ public class YieldTest : WAT.Test
 	[Test]
 	public void WhenWeCallUntilTimeout()
 	{
-		String yPath = "res://addons/WAT/core/test/yielder.gd";
+		string yPath = "res://addons/WAT/core/test/yielder.gd";
 		Script script = (Script)ResourceLoader.Load(yPath);
 		Timer yielder = (Timer)script.Call("new");
 		AddChild(yielder);
@@ -118,7 +118,7 @@ public class YieldTest : WAT.Test
 	[Test]
 	public void WhenWeCallUntilSignal()
 	{
-		String yPath = "res://addons/WAT/core/test/yielder.gd";
+		string yPath = "res://addons/WAT/core/test/yielder.gd";
 		Script script = (Script)ResourceLoader.Load(yPath);
 		Timer yielder = (Timer)script.Call("new");
 		AddChild(yielder);

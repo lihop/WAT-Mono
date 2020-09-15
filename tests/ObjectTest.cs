@@ -3,7 +3,7 @@ using System;
 
 public class ObjectTest : WAT.Test
 {
-	public override String Title()
+	public override string Title()
 	{
 		return "Object Assertions";
 	}

@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using GDArray = Godot.Collections.Array;
 
@@ -131,34 +132,34 @@ namespace WAT {
 			assertions.Call("is_not_null", a, Context);
 		}
 		
-		public void StringContains(object a, object b, string Context = "")
+		public void StringContains(string value, string str, string Context = "")
 		{
-			assertions.Call("string_contains", a,  b, Context);
+			Output(StringX.Contains(value, str, Context));
 		}
 		
-		public void StringDoesNotContain(object a, object b, string Context = "")
+		public void StringDoesNotContain(string value, string str, string Context = "")
 		{
-			assertions.Call("string_does_not_contain", a,  b, Context);
+			Output(StringX.DoesNotContain(value, str, Context));
 		}
 		
-		public void StringBeginsWith(object a, object b, string Context = "")
+		public void StringBeginsWith(string value, string str, string Context = "")
 		{
-			assertions.Call("string_begins_with", a,  b, Context);
+			Output(StringX.BeginsWith(value, str, Context));
 		}
 		
-		public void StringDoesNotBeginWith(object a, object b, string Context = "")
+		public void StringDoesNotBeginWith(string value, string str, string Context = "")
 		{
-			assertions.Call("string_does_not_begin_with", a,  b, Context);
+			Output(StringX.DoesNotBeginWith(value, str, Context));
 		}
 		
-		public void StringEndsWith(object a, object b, string Context = "")
+		public void StringEndsWith(string value, string str, string Context = "")
 		{
-			assertions.Call("string_ends_with", a,  b, Context);
+			Output(StringX.EndsWith(value, str, Context));
 		}
 		
-		public void StringDoesNotEndWith(object a, object b, string Context = "")
+		public void StringDoesNotEndWith(string value, string str, string Context = "")
 		{
-			assertions.Call("string_does_not_end_with", a,  b, Context);
+			Output(StringX.DoesNotEndWith(value, str, Context));
 		}
 		
 		public void WasCalled(object a, object b, string Context = "")

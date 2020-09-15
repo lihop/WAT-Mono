@@ -19,11 +19,11 @@ namespace WAT {
 		[AttributeUsage(AttributeTargets.Method, AllowMultiple=true)]
 		public class RunWith : Attribute 
 		{
-			public System.Object[] arguments;
-			public RunWith(params System.Object[] args) { arguments = args; }
+			public object[] arguments;
+			public RunWith(params object[] args) { arguments = args; }
 		}
 		
-		public const String YIELD = "finished";
+		public const string YIELD = "finished";
 		const bool TEST = true;
 		protected Assertions Assert;
 		private Reference Testcase;
@@ -32,7 +32,7 @@ namespace WAT {
 		// private Script recorder;
 		
 		[Signal]
-		delegate void Described(String MethodDescription);
+		delegate void Described(string MethodDescription);
 		
 		public virtual void Start() {}
 		public virtual void Pre() {}
@@ -60,7 +60,7 @@ namespace WAT {
 			Connect("Described", Testcase, "_on_test_method_described");
 		}
 		
-		public virtual String Title()
+		public virtual string Title()
 		{
 			return GetType().Name;
 		}
@@ -143,22 +143,22 @@ namespace WAT {
 			return true;
 		}
 		
-		static public String get_instance_base_type()
+		static public string get_instance_base_type()
 		{
 			return "WAT.Test";
 		}
 		
-		protected void Describe(String MethodDescription)
+		protected void Describe(string MethodDescription)
 		{
 			EmitSignal("Described", MethodDescription);
 		}
 		
-		public void Watch(Godot.Object Emitter, String Event)
+		public void Watch(Godot.Object Emitter, string Event)
 		{
 			Watcher.Call("watch", Emitter, Event);
 		}
 		
-		public void UnWatch(Godot.Object Emitter, String Event)
+		public void UnWatch(Godot.Object Emitter, string Event)
 		{
 			Watcher.Call("unwatch", Emitter, Event);
 		}
@@ -190,7 +190,7 @@ namespace WAT {
 
 		}
 
-		public Timer UntilSignal(Godot.Object Emitter, String Event, double TimeLimit)
+		public Timer UntilSignal(Godot.Object Emitter, string Event, double TimeLimit)
 		{
 			Watcher.Call("watch", Emitter, Event);
 			return (Timer)Yielder.Call("until_signal", TimeLimit, Emitter, Event);

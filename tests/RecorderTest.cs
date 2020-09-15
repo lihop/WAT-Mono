@@ -33,7 +33,7 @@ public class Poison : Node
 
 public class RecorderTest : WAT.Test
 {
-	public override String Title()
+	public override string Title()
 	{
 		return "Recorder Test";
 	}

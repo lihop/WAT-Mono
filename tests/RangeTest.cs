@@ -4,7 +4,7 @@ using System;
 public class RangeTest : WAT.Test
 
 {
-	public override String Title()
+	public override string Title()
 	{
 		return "Range Assertions";
 	}

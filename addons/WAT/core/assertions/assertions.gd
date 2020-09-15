@@ -3,7 +3,6 @@ extends Reference
 const Is: Script = preload("is.gd")
 const IsNot: Script = preload("is_not.gd")
 const Signal: Script = preload("signal.gd")
-const StringX: Script = preload("string.gd")
 const Utility: Script = preload("utility.gd")
 const ObjectX: Script = preload("object.gd")
 
@@ -22,24 +21,6 @@ func is_class_instance(instance, type, context: String = "") -> void:
 
 func is_not_class_instance(instance, type, context: String = "") -> void:
 	output(Is.is_not_class_instance(instance, type, context))
-
-func string_contains(value, string: String, context: String = "") -> void:
-	output(StringX.contains(value, string, context))
-
-func string_does_not_contain(value, string: String, context: String = "") -> void:
-	output(StringX.does_not_contain(value, string, context))
-
-func string_begins_with(value, string: String, context: String = "") -> void:
-	output(StringX.begins_with(value, string, context))
-
-func string_does_not_begin_with(value, string: String, context: String = "") -> void:
-	output(StringX.does_not_begin_with(value, string, context))
-
-func string_ends_with(value, string: String, context: String = "") -> void:
-	output(StringX.ends_with(value, string, context))
-
-func string_does_not_end_with(value, string: String, context: String = "") -> void:
-	output(StringX.does_not_end_with(value, string, context))
 
 func signal_was_emitted(emitter, _signal, context: String = "") -> void:
 	output(Signal.was_emitted(emitter, _signal, context))
