@@ -64,17 +64,17 @@ namespace WAT {
 
 		public void SignalWasEmitted(Godot.Object Emitter, string Event, string Context = "")
 		{
-			assertions.Call("signal_was_emitted", Emitter, Event, Context);
+			Output(Signal.WasEmitted(Emitter, Event, Context));
 		}
 		
 		public void SignalWasEmittedXTimes(Godot.Object Emitter, string Event, int Times, string Context = "")
 		{
-			assertions.Call("signal_was_emitted_x_times", Emitter, Event, Times, Context);
+			Output(Signal.WasEmittedXTimes(Emitter, Event, Times, Context));
 		}
 		
 		public void SignalWasNotEmitted(Godot.Object Emitter, string Event, string Context = "")
 		{
-			assertions.Call("signal_was_not_emitted", Emitter, Event, Context);
+			Output(Signal.WasNotEmitted(Emitter, Event, Context));
 		}
 	
 		public void SignalWasEmittedWithArguments(Godot.Object Emitter, string Event, GDArray Args, string Context = "")

@@ -60,6 +60,7 @@
     <Compile Include="addons\WAT\core\assertions\File.cs" />
     <Compile Include="addons\WAT\core\assertions\Property.cs" />
     <Compile Include="addons\WAT\core\assertions\Range.cs" />
+    <Compile Include="addons\WAT\core\assertions\Signal.cs" />
     <Compile Include="addons\WAT\core\assertions\String.cs" />
     <Compile Include="addons\WAT\core\test\Recorder.cs" />
     <Compile Include="addons\WAT\core\test\Test.cs" />

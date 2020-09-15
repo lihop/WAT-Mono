@@ -1,17 +1,13 @@
 <?xml version="1.0" ?>
-<testsuites failures="0" name="TestXML" tests="1" time="1.127">
-<testsuite failures="0" name="Given A String Assertion" tests="6" time="0.009">
-<testcase name="WhenCallingStringDoesNotEndWith" time="0.015">
+<testsuites failures="0" name="TestXML" tests="1" time="1.112">
+<testsuite failures="0" name="Given A Signal Watcher" tests="4" time="0.011">
+<testcase name="WhenWeWatchASignalAndEmitItMultipleTimes" time="0.005">
 </testcase>
-<testcase name="WhenCallingStringEndsWith" time="0.003">
+<testcase name="When we Watch and Do not Emit a Signal" time="0.001">
 </testcase>
-<testcase name="WhenCallingStringDoesNotContain" time="0">
+<testcase name="When we watch and emit a signal" time="0">
 </testcase>
-<testcase name="WhenCallingStringContains" time="0">
-</testcase>
-<testcase name="WhenCallingStringDoesNotBeginWith" time="0.001">
-</testcase>
-<testcase name="WhenCallingStringBeginWith" time="0">
+<testcase name="WhenWeWatchASignalFromAnObjectWithNoBoundVariables" time="0.001">
 </testcase>
 </testsuite>
 </testsuites>

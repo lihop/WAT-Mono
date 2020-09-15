@@ -32,7 +32,7 @@ Results_Directory="res://tests/results/WAT"
 Minimize_Window_When_Running_Tests=false
 TestStrategy={
 "repeat": 1,
-"script": "res://tests/StringTest.cs",
+"script": "res://tests/WatcherTest.cs",
 "strategy": "RunScript"
 }
 Tags=PoolStringArray( "TestTag1", "TestTag2" )
