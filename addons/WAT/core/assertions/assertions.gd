@@ -2,7 +2,6 @@ extends Reference
 
 const Is: Script = preload("is.gd")
 const IsNot: Script = preload("is_not.gd")
-const Signal: Script = preload("signal.gd")
 const Utility: Script = preload("utility.gd")
 const ObjectX: Script = preload("object.gd")
 
@@ -21,18 +20,6 @@ func is_class_instance(instance, type, context: String = "") -> void:
 
 func is_not_class_instance(instance, type, context: String = "") -> void:
 	output(Is.is_not_class_instance(instance, type, context))
-
-func signal_was_emitted(emitter, _signal, context: String = "") -> void:
-	output(Signal.was_emitted(emitter, _signal, context))
-	
-func signal_was_emitted_x_times(emitter, _signal, times: int, context: String = "") -> void:
-	output(Signal.was_emitted_x_times(emitter, _signal, times, context))
-
-func signal_was_not_emitted(emitter, _signal: String, context: String = "") -> void:
-	output(Signal.was_not_emitted(emitter, _signal, context))
-
-func signal_was_emitted_with_arguments(emitter, _signal, arguments: Array, context: String = "") -> void:
-	output(Signal.was_emitted_with_args(emitter, _signal, arguments, context))
 	
 func that(obj: Object, method: String, arguments: Array = [], context: String = "", passed: String = "", failed: String = "") -> void:
 	output(Utility.that(obj, method, arguments, context, passed, failed))

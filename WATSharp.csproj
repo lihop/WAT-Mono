@@ -115,7 +115,6 @@
     <Content Include="addons\WAT\core\assertions\is.gd" />
     <Content Include="addons\WAT\core\assertions\is_not.gd" />
     <Content Include="addons\WAT\core\assertions\object.gd" />
-    <Content Include="addons\WAT\core\assertions\signal.gd" />
     <Content Include="addons\WAT\core\assertions\utility.gd" />
     <Content Include="addons\WAT\gui.gd" />
     <Content Include="addons\WAT\gui.tscn" />

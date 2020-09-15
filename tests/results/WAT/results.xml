@@ -1,13 +1,13 @@
 <?xml version="1.0" ?>
-<testsuites failures="0" name="TestXML" tests="1" time="1.112">
-<testsuite failures="0" name="Given A Signal Watcher" tests="4" time="0.011">
+<testsuites failures="0" name="TestXML" tests="1" time="0.995">
+<testsuite failures="0" name="Given A Signal Watcher" tests="4" time="0.009">
 <testcase name="WhenWeWatchASignalAndEmitItMultipleTimes" time="0.005">
 </testcase>
-<testcase name="When we Watch and Do not Emit a Signal" time="0.001">
+<testcase name="When we Watch and Do not Emit a Signal" time="0">
 </testcase>
-<testcase name="When we watch and emit a signal" time="0">
+<testcase name="When we watch and emit a signal" time="0.001">
 </testcase>
-<testcase name="WhenWeWatchASignalFromAnObjectWithNoBoundVariables" time="0.001">
+<testcase name="WhenWeWatchASignalFromAnObjectWithNoBoundVariables" time="0.002">
 </testcase>
 </testsuite>
 </testsuites>

@@ -79,7 +79,8 @@ namespace WAT {
 	
 		public void SignalWasEmittedWithArguments(Godot.Object emitter, string signal, GDArray args, string context = "")
 		{
-			assertions.Call("signal_was_emitted_with_arguments", emitter, signal, args, context);
+			//assertions.Call("signal_was_emitted_with_arguments", emitter, signal, args, context);
+			Output(Signal.WasEmittedWithArgs(emitter, signal, args, context));
 		}
 		
 		public void IsInRange(double a, double b, double c, string context = "")
