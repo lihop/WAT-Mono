@@ -114,7 +114,6 @@
     <Content Include="addons\WAT\core\assertions\assertions.gd" />
     <Content Include="addons\WAT\core\assertions\assertion_result.gd" />
     <Content Include="addons\WAT\core\assertions\constants\type_library.gd" />
-    <Content Include="addons\WAT\core\assertions\is_not.gd" />
     <Content Include="addons\WAT\core\assertions\utility.gd" />
     <Content Include="addons\WAT\gui.gd" />
     <Content Include="addons\WAT\gui.tscn" />

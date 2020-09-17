@@ -11,114 +11,114 @@ public class IsNotInstanceTest : WAT.Test
 	[Test]
 	public void IsNotAABB()
 	{
-		Assert.IsNotAABB(null);
+		Assert.IsNotType<AABB>(null);
 	}
 	
 	[Test]
 	public void IsNotArray()
 	{
-		Assert.IsNotArray(null);
+		Assert.IsNotType<Array>(null);
 	}
 	
 	[Test]
 	public void IsNotBasis()
 	{
-		Assert.IsNotBasis(null);
+		Assert.IsNotType<Basis>(null);
 	}
 	
 	[Test]
 	public void IsNotBool()
 	{
-		Assert.IsNotBool(null);
+		Assert.IsNotType<bool>(null);
 	}
 	
 	[Test]
 	public void IsNotColor()
 	{
-		Assert.IsNotColor(null);
+		Assert.IsNotType<Color>(null);
 	}
 	
 	[Test]
 	public void IsNotDictionary()
 	{
-		Assert.IsNotDictionary(null);
+		Assert.IsNotType<Godot.Collections.Dictionary>(null);
 	}
 	
 	[Test]
 	public void IsNotFloat()
 	{
-		Assert.IsNotFloat(null);
+		Assert.IsNotType<float>(null);
 	}
 	
 	[Test]
 	public void IsNotInt()
 	{
-		Assert.IsNotInt(null);
+		Assert.IsNotType<int>(null);
 	}
 	
 	[Test]
 	public void IsNotNodePath()
 	{
-		Assert.IsNotNodePath(null);
+		Assert.IsNotType<NodePath>(null);
 	}
 	
 	[Test]
 	public void IsNotObject()
 	{
-		Assert.IsNotObject(null);
+		Assert.IsNotType<Godot.Object>(null);
 	}
 	
 	[Test]
 	public void IsNotPlane()
 	{
-		Assert.IsNotPlane(null);
+		Assert.IsNotType<Plane>(null);
 	}
 	
 	[Test]
 	public void IsNotQuat()
 	{
-		Assert.IsNotQuat(null);
+		Assert.IsNotType<Quat>(null);
 	}
 	
 	[Test]
 	public void IsNotRect2()
 	{
-		Assert.IsNotRect2(null);
+		Assert.IsNotType<Rect2>(null);
 	}
 	
 	[Test]
 	public void IsNotRID()
 	{
-		Assert.IsNotRID(null);
+		Assert.IsNotType<RID>(null);
 	}
 	
 	[Test]
 	public void IsNotString()
 	{
-		Assert.IsNotString(null);
+		Assert.IsNotType<String>(null);
 	}
 	
 	[Test]
 	public void IsNotTransform()
 	{
-		Assert.IsNotTransform(null);
+		Assert.IsNotType<Transform>(null);
 	}
 	
 	[Test]
 	public void IsNotTransform2D()
 	{
-		Assert.IsNotTransform2D(null);
+		Assert.IsNotType<Transform2D>(null);
 	}
 	
 	[Test]
 	public void IsNotVector2()
 	{
-		Assert.IsNotVector2(null);
+		Assert.IsNotType<Vector2>(null);
 	}
 	
 	[Test]
 	public void IsNotVector3()
 	{
-		Assert.IsNotVector3(null);
+		Assert.IsNotType<Vector3>(null);
 	}
 }
