@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using Object = Godot.Object;
 
 public class IsInstanceTest : WAT.Test
 {
@@ -11,121 +12,120 @@ public class IsInstanceTest : WAT.Test
 	[Test]
 	public void IsAABB()
 	{
-		Assert.IsAABB(new AABB());
+		Assert.IsType<AABB>(new AABB());
 	}
 	
 	[Test]
 	public void IsArray()
 	{
-		Godot.Collections.Array array = new Godot.Collections.Array();
-		Assert.IsArray(array);
+		var array = new Godot.Collections.Array();
+		Assert.IsType<Godot.Collections.Array>(array);
 	}
 	
 	[Test]
 	public void IsBasis()
 	{
-		Assert.IsBasis(new Basis());
+		Assert.IsType<Basis>(new Basis());
 	}
 	
 	[Test]
 	public void IsBool()
 	{
-		Assert.IsBool(true);
+		Assert.IsType<bool>(true);
 	}
 	
 	[Test]
 	public void IsColor()
 	{
-		Assert.IsColor(new Color());
+		Assert.IsType<Color>(new Color());
 	}
 	
 	[Test]
 	public void IsDictionary()
 	{
-		Godot.Collections.Dictionary dictionary = new Godot.Collections.Dictionary();
-		Assert.IsDictionary(dictionary);
+		var dictionary = new Godot.Collections.Dictionary();
+		Assert.IsType<Godot.Collections.Dictionary>(dictionary);
 	}
 	
 	[Test]
 	public void IsFloat()
 	{
-		Assert.IsFloat(3.0F);
+		Assert.IsType<float>(3.0F);
 	}
 	
 	[Test]
 	public void IsInt()
 	{
-		Assert.IsInt(1);
+		Assert.IsType<int>(1);
 	}
 	
 	[Test]
 	public void IsNodePath()
 	{
-		NodePath nodepath = new NodePath();
-		Assert.IsNodePath(nodepath);
+		var nodepath = new NodePath();
+		Assert.IsType<NodePath>(nodepath);
 	}
 	
 	[Test]
 	public void IsObject()
 	{
-		Node N = new Node();
-		Assert.IsObject(N);
-		N.Free();
+		var o = new Node();
+		Assert.IsType<Object>(o);
 	}
 	
 	[Test]
 	public void IsPlane()
 	{
-		Plane Plain = new Plane();
-		Assert.IsPlane(Plain);
+		var plane = new Plane();
+		Assert.IsType<Plane>(plane);
 	}
 	
 	[Test]
 	public void IsQuat()
 	{
-		Assert.IsQuat(new Quat());
+		Assert.IsType<Quat>(new Quat());
 	}
 	
 	[Test]
 	public void IsRect2()
 	{
-		Assert.IsRect2(new Rect2());
+		Assert.IsType<Rect2>(new Rect2());
 	}
 	
 	[Test]
 	public void IsRid()
 	{
-		Assert.IsRID(new RID(this));
+		Assert.IsType<RID>(new RID(this));
 	}
 	
 	[Test]
 	public void IsString()
 	{
-		Assert.IsString("strs");
+		Assert.IsType<string>("strs");
 	}
 	
 	
 	[Test]
 	public void IsTransform()
 	{
-		Assert.IsTransform(new Transform());
+		Assert.IsType<Transform>(new Transform());
 	}
 	
 	[Test]
 	public void IsTransform2D()
 	{
-		Assert.IsTransform2D(new Transform2D());
+		Assert.IsType<Transform2D>(new Transform2D());
 	}
 	
 	[Test]
 	public void IsVector2()
 	{
-		Assert.IsVector2(new Vector2());
+		Assert.IsType<Vector2>(new Vector2());
 	}
 	
 	[Test]
 	public void IsVector3()
 	{
-		Assert.IsVector3(new Vector3());
+		Assert.IsType<Vector3>(new Vector3());
 	}
 }

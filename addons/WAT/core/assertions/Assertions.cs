@@ -273,12 +273,12 @@ namespace WAT {
 		{
 			assertions.Call("is_not_AABB", a, context);
 		}
-		
-		public void IsBool(object a, string context = "")
+
+		public void IsType<T>(object value, string context = "")
 		{
-			assertions.Call("is_bool", a, context);
+			Output(Is.IsType<T>(value, context));
 		}
-		
+
 		public void IsNotBool(object a, string context = "")
 		{
 			assertions.Call("is_not_bool", a, context);

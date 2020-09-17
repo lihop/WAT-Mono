@@ -58,6 +58,7 @@
     <Compile Include="addons\WAT\core\assertions\Boolean.cs" />
     <Compile Include="addons\WAT\core\assertions\Equality.cs" />
     <Compile Include="addons\WAT\core\assertions\File.cs" />
+    <Compile Include="addons\WAT\core\assertions\Is.cs" />
     <Compile Include="addons\WAT\core\assertions\ObjectX.cs" />
     <Compile Include="addons\WAT\core\assertions\Property.cs" />
     <Compile Include="addons\WAT\core\assertions\Range.cs" />
@@ -113,7 +114,6 @@
     <Content Include="addons\WAT\core\assertions\assertions.gd" />
     <Content Include="addons\WAT\core\assertions\assertion_result.gd" />
     <Content Include="addons\WAT\core\assertions\constants\type_library.gd" />
-    <Content Include="addons\WAT\core\assertions\is.gd" />
     <Content Include="addons\WAT\core\assertions\is_not.gd" />
     <Content Include="addons\WAT\core\assertions\utility.gd" />
     <Content Include="addons\WAT\gui.gd" />
