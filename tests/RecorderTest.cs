@@ -51,7 +51,7 @@ public class RecorderTest : WAT.Test
 		await ToSignal(UntilTimeout(1.0F), YIELD);
 		recorder.Stop();
 		Godot.Collections.Array Health = (Godot.Collections.Array)recorder.GetPropertyTimeline("Health");
-		Assert.IsLessThan((float)Health[Health.Count-1], (float)Health[0]);
+		Assert.IsLessThan((int)Health[Health.Count-1], (int)Health[0]);
 		
 		RemoveChild(_Hero);
 		_Hero.Free();

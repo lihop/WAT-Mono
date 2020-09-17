@@ -55,7 +55,6 @@ namespace WAT {
 		
 		public override void _Ready()
 		{
-			Assert.assertions.Call("connect", "asserted", Testcase, "_on_asserted");
 			Assert.Connect(nameof(Assertions.Asserted), Testcase, "_on_asserted");
 			Connect("Described", Testcase, "_on_test_method_described");
 		}

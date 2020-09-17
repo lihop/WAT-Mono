@@ -9,17 +9,9 @@ namespace WAT {
 		
 	public class Assertions : Reference
 	{
-		[Signal]
-		public delegate void Asserted();
-
-		public Reference assertions;
-	
-		public Assertions()
-		{
-			const string path = "res://addons/WAT/core/assertions/assertions.gd";
-			var script = ResourceLoader.Load<Script>(path);
-			assertions = script.Call("new") as Reference;
-		}
+		[Signal] public delegate void Asserted();
+		
+		public Assertions() { }
 
 		private void Output(object result) => EmitSignal(nameof(Asserted), result);
 		
@@ -80,7 +72,6 @@ namespace WAT {
 	
 		public void SignalWasEmittedWithArguments(Godot.Object emitter, string signal, GDArray args, string context = "")
 		{
-			//assertions.Call("signal_was_emitted_with_arguments", emitter, signal, args, context);
 			Output(Signal.WasEmittedWithArgs(emitter, signal, args, context));
 		}
 		
@@ -102,36 +93,6 @@ namespace WAT {
 		public void DoesNotContain<T>(object value, T container, string context = "")
 		{
 			Output(Property.DoesNotContain(value, container, context));
-		}
-		
-		public void IsClassInstance(object a, object b, string context = "")
-		{
-			assertions.Call("is_class_instance", a,  b, context);
-		}
-		
-		public void IsNotClassInstance(object a, object b, string context = "")
-		{
-			assertions.Call("is_not_class_instance", a,  b, context);
-		}
-		
-		public void IsBuiltInType(object a, object b, string context = "")
-		{
-			assertions.Call("is_built_in_type", a,  b, context);
-		}
-		
-		public void IsNotBuiltInType(object a, object b, string context = "")
-		{
-			assertions.Call("is_not_built_in_type", a,  b, context);
-		}
-		
-		public void IsNull(object a, string context = "")
-		{
-			assertions.Call("is_null", a, context);
-		}
-		
-		public void IsNotNull(object a, string context = "")
-		{
-			assertions.Call("is_not_null", a, context);
 		}
 		
 		public void StringContains(string value, string str, string context = "")
@@ -164,21 +125,6 @@ namespace WAT {
 			Output(StringX.DoesNotEndWith(value, str, context));
 		}
 		
-		public void WasCalled(object a, object b, string context = "")
-		{
-			assertions.Call("was_called", a,  b, context);
-		}
-		
-		public void WasNotCalled(object a, object b, string context = "")
-		{
-			assertions.Call("was_not_called", a,  b, context);
-		}
-		
-		public void WasCalledWithArguments(object a, object b, object c, string context = "")
-		{
-			assertions.Call("was_called_with_arguments", a,  b,  c, context);
-		}
-		
 		public void FileExists(string path, string context = "")
 		{
 			Output(File.Exists(path, context));
@@ -187,11 +133,6 @@ namespace WAT {
 		public void FileDoesNotExist(string path, string context = "")
 		{
 			Output(File.DoesNotExist(path, context));
-		}
-		
-		public void That(object a, object b, object c, object d, object e, string context = "")
-		{
-			assertions.Call("that", a,  b,  c,  d,  e, context);
 		}
 		
 		public void ObjectHasMeta(Godot.Object obj, string meta, string context = "")
@@ -254,17 +195,6 @@ namespace WAT {
 			Output(ObjectX.DoesNotHaveUserSignal(obj, signal, context));
 		}
 		
-		public void IsFreed(object obj, string context = "")
-		{
-			Output(ObjectX.IsFreed(obj, context));
-		}
-		
-		public void IsNotFreed(object obj, string context = "")
-		{
-			Output(ObjectX.IsNotFreed(obj, context));
-		}
-		
-
 		public void IsType<T>(object value, string context = "")
 		{
 			Output(Is.IsType<T>(value, context));
@@ -277,7 +207,7 @@ namespace WAT {
 		
 		public void Fail(string context = "")
 		{
-			assertions.Call("fail",context);
+			Output(Utility.Fail(context));
 		}
 	}
 }

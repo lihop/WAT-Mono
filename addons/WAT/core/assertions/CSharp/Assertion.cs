@@ -6,7 +6,7 @@ namespace WAT
 {
     public class Assertion
     {
-        private static readonly Script _Result = GD.Load<Script>("res://addons/WAT/core/assertions/assertion_result.gd");
+        private static readonly Script _Result = GD.Load<Script>("res://addons/WAT/core/assertions/GDScript/assertion_result.gd");
 
         protected static object Result(bool success, string expected, string actual, string context, string notes = "")
         {

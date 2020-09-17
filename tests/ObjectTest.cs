@@ -10,23 +10,6 @@ public class ObjectTest : WAT.Test
 	}
 	
 	[Test]
-	public void WhenCallingFreedObjectIsFreed()
-	{
-		Node N = new Node();
-		N.Free();
-		GD.Print(Object.IsInstanceValid(N));
-		Assert.IsFreed(N, "Then it passes");
-	}
-	
-	[Test]
-	public void WhenCallingUnfreedObjectIsNotFreed()
-	{
-		Node N = new Node();
-		Assert.IsNotFreed(N, "Then it passes");
-		N.Free();
-	}
-	
-	[Test]
 	public void WhenCallingHasMetaAfterAddingMetadata()
 	{
 		SetMeta("Dummy", 1);
