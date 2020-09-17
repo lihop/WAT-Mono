@@ -86,7 +86,6 @@ namespace WAT {
 			GodotArray Methods = GetMethods();
 			GodotArray MethodCopies = new GodotArray();
 			foreach(GodotDictionary dict in Methods){
-				GD.Print(dict["title"]);
 				if((string)dict["title"] == (string)MethodName)
 				{
 					MethodCopies.Add(dict);

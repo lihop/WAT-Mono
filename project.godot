@@ -31,8 +31,10 @@ Test_Directory="res://tests"
 Results_Directory="res://tests/results/WAT"
 Minimize_Window_When_Running_Tests=false
 TestStrategy={
+"method": "WhenAHeroIsPoisonedTheirHealthIs0After100Cycles",
 "repeat": 1,
-"strategy": "RunAll"
+"script": "res://tests/RecorderTest.cs",
+"strategy": "RunMethod"
 }
 Tags=PoolStringArray( "TestTag1", "TestTag2" )
 Display=8
