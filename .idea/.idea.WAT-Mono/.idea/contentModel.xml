@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Alex\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Alex\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_WAT-Mono.-65362718.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Alex\Projects\PersonalWork\WAT-Mono" t="IncludeRecursive">
+      <e p=".mono" t="Include">
+        <e p="temp" t="Include">
+          <e p="bin" t="ExcludeRecursive" />
+          <e p="obj" t="ExcludeRecursive">
+            <e p="Debug" t="Include">
+              <e p="WAT-Mono.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="addons" t="Include">
+        <e p="WAT" t="Include">
+          <e p="core" t="Include">
+            <e p="assertions" t="Include">
+              <e p="CSharp" t="Include">
+                <e p="Assertion.cs" t="Include" />
+                <e p="Assertions.cs" t="Include" />
+                <e p="Boolean.cs" t="Include" />
+                <e p="Equality.cs" t="Include" />
+                <e p="File.cs" t="Include" />
+                <e p="Is.cs" t="Include" />
+                <e p="ObjectX.cs" t="Include" />
+                <e p="Property.cs" t="Include" />
+                <e p="Range.cs" t="Include" />
+                <e p="Signal.cs" t="Include" />
+                <e p="StringX.cs" t="Include" />
+                <e p="Utility.cs" t="Include" />
+              </e>
+            </e>
+            <e p="test" t="Include">
+              <e p="Recorder.cs" t="Include" />
+              <e p="Test.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="SampleBuild.cs" t="Include" />
+      <e p="tests" t="Include">
+        <e p="BasicCSharpTest.cs" t="Include" />
+      </e>
+      <e p="WAT-Mono.csproj" t="IncludeRecursive" />
+      <e p="WAT-Mono.sln" t="IncludeFlat" />
+    </e>
+  </component>
+</project>
