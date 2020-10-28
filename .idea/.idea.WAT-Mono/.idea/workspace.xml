@@ -20,17 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2fb970b2-b1e9-4d24-a525-b68c59688c24" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/BooleanTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/BooleanTest.gd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/EqualityTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/FileTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/NameSpaced.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/ParameterizedTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/RangeTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/StringTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/SuiteTest.gd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/WatcherTest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/IsInstanceTest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/IsNotInstanceTest.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WAT-Mono/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WAT-Mono/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WAT-Mono/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WAT-Mono/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.test/metadata.tres" beforeDir="false" afterPath="$PROJECT_DIR$/.test/metadata.tres" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project.godot" beforeDir="false" afterPath="$PROJECT_DIR$/project.godot" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/results/WAT/results.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tests/results/WAT/results.xml" afterDir="false" />
     </list>
@@ -41,6 +35,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/tests/IsInstanceTest.cs" />
+        <option value="$PROJECT_DIR$/tests/IsNotInstanceTest.cs" />
+      </list>
+    </option>
   </component>
   <component name="ProjectId" id="1jWSOfX1Yo38dVt8vxm2lycZAZV" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -64,7 +66,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1603918328451</updated>
-      <workItem from="1603918334014" duration="280000" />
+      <workItem from="1603918334014" duration="737000" />
     </task>
     <servers />
   </component>

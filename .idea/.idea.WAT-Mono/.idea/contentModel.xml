@@ -47,6 +47,8 @@
         <e p="BooleanTest.cs" t="Include" />
         <e p="EqualityTest.cs" t="Include" />
         <e p="FileTest.cs" t="Include" />
+        <e p="IsInstanceTest.cs" t="Include" />
+        <e p="IsNotInstanceTest.cs" t="Include" />
         <e p="NameSpaced.cs" t="Include" />
         <e p="ParameterizedTest.cs" t="Include" />
         <e p="RangeTest.cs" t="Include" />
