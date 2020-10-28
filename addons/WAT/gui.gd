@@ -83,7 +83,6 @@ func _on_method_selector_pressed() -> void:
 		var csharp = n.new()
 		for method in csharp.GetTestMethods():
 			MethodSelector.add_item(method)
-		n.Free()
 	else:
 		for method in n.get_script_method_list():
 			if method.name.begins_with("test"):

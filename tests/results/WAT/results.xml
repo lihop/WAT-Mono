@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
-<testsuites failures="0" name="TestXML" tests="1" time="1">
-<testsuite failures="0" name="Given a Yield" tests="1" time="0.016">
-<testcase name="WhenASignalBeingYieldedOnIsEmittedTheYielderIsStopped" time="0.335">
+<testsuites failures="0" name="TestXML" tests="1" time="1.026">
+<testsuite failures="0" name="Given a Yield" tests="1" time="0.017">
+<testcase name="WhenTheYielderHearsOurSignal" time="0.336">
 </testcase>
 </testsuite>
 </testsuites>
