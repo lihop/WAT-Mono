@@ -1,7 +1,97 @@
 <?xml version="1.0" ?>
-<testsuites failures="0" name="TestXML" tests="1" time="1.047">
+<testsuites failures="0" name="TestXML" tests="12" time="1">
 <testsuite failures="0" name="BasicCSharpTest" tests="1" time="0.01">
 <testcase name="CSharpTestsWorking" time="0.003">
+</testcase>
+</testsuite>
+<testsuite failures="0" name="Given A Boolean Assertion" tests="2" time="0">
+<testcase name="FalseIsFalse" time="0">
+</testcase>
+<testcase name="TrueIsTrue" time="0.001">
+</testcase>
+</testsuite>
+<testsuite failures="0" name="Given A Boolean Assertion (GDScript WATTest)" tests="4" time="0.003">
+<testcase name=" Value is true" time="0">
+</testcase>
+<testcase name=" Value is true" time="0">
+</testcase>
+<testcase name=" False is false" time="0">
+</testcase>
+<testcase name="True is true" time="0">
+</testcase>
+</testsuite>
+<testsuite failures="0" name="Given an Equality Assertion" tests="7" time="0.001">
+<testcase name="WhenCallingIsNotEqual" time="0.003">
+</testcase>
+<testcase name="WhenCallingIsEqualOrLessThanWithEqualValues" time="0.005">
+</testcase>
+<testcase name="WhenCallingIsEqualOrGreaterThanWithEqualValues" time="0.001">
+</testcase>
+<testcase name="WhenCallingIsEqualOrGreaterThan" time="0">
+</testcase>
+<testcase name="WhenCallingIsLessThan" time="0">
+</testcase>
+<testcase name="WhenCallingIsGreaterThan" time="0.001">
+</testcase>
+<testcase name="WhenCallingIsEqual" time="0">
+</testcase>
+</testsuite>
+<testsuite failures="0" name="FileTest" tests="3" time="0.001">
+<testcase name="EmptyPathDoesNotExist" time="0.001">
+</testcase>
+<testcase name="ImaginaryFileDoesNotExist" time="0.001">
+</testcase>
+<testcase name="ThisFileExists" time="0.001">
+</testcase>
+</testsuite>
+<testsuite failures="0" name="NameSpaced" tests="1" time="0.001">
+<testcase name="x" time="0">
+</testcase>
+</testsuite>
+<testsuite failures="0" name="Given The Addition Operator (Parameter Tests)" tests="3" time="0.001">
+<testcase name="When we add 7 to 6 we get 13" time="0">
+</testcase>
+<testcase name="When we add 5 to 3 we get 8" time="0">
+</testcase>
+<testcase name="When we add 2 to 2 we get 4" time="0.001">
+</testcase>
+</testsuite>
+<testsuite failures="0" name="Range Assertions" tests="2" time="0">
+<testcase name="WhenCallingIsNotInRange" time="0.001">
+</testcase>
+<testcase name="WhenCallingIsInRange" time="0">
+</testcase>
+</testsuite>
+<testsuite failures="0" name="Given A String Assertion" tests="6" time="0">
+<testcase name="WhenCallingStringDoesNotEndWith" time="0.012">
+</testcase>
+<testcase name="WhenCallingStringEndsWith" time="0.004">
+</testcase>
+<testcase name="WhenCallingStringDoesNotContain" time="0">
+</testcase>
+<testcase name="WhenCallingStringContains" time="0">
+</testcase>
+<testcase name="WhenCallingStringDoesNotBeginWith" time="0.001">
+</testcase>
+<testcase name="WhenCallingStringBeginWith" time="0">
+</testcase>
+</testsuite>
+<testsuite failures="0" name="Inner Bool" tests="1" time="0.002">
+<testcase name=" true is true" time="0">
+</testcase>
+</testsuite>
+<testsuite failures="0" name="Inner Equality" tests="1" time="0.002">
+<testcase name=" 1 and 1 are equal" time="0.001">
+</testcase>
+</testsuite>
+<testsuite failures="0" name="Given A Signal Watcher" tests="4" time="0.001">
+<testcase name="WhenWeWatchASignalAndEmitItMultipleTimes" time="0.001">
+</testcase>
+<testcase name="When we Watch and Do not Emit a Signal" time="0">
+</testcase>
+<testcase name="When we watch and emit a signal" time="0.001">
+</testcase>
+<testcase name="WhenWeWatchASignalFromAnObjectWithNoBoundVariables" time="0.002">
 </testcase>
 </testsuite>
 </testsuites>
