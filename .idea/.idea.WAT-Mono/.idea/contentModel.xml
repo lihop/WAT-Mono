@@ -53,6 +53,7 @@
         <e p="ObjectTest.cs" t="Include" />
         <e p="ParameterizedTest.cs" t="Include" />
         <e p="RangeTest.cs" t="Include" />
+        <e p="RecorderTest.cs" t="Include" />
         <e p="StringTest.cs" t="Include" />
         <e p="WatcherTest.cs" t="Include" />
         <e p="YieldTest.cs" t="Include" />

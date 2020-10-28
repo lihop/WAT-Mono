@@ -31,10 +31,9 @@ Test_Directory="res://tests"
 Results_Directory="res://tests/results/WAT"
 Minimize_Window_When_Running_Tests=false
 TestStrategy={
-"method": "WhenTheYielderHearsOurSignal",
 "repeat": 1,
-"script": "res://tests/YieldTest.cs",
-"strategy": "RunMethod"
+"script": "res://tests/RecorderTest.cs",
+"strategy": "RunScript"
 }
 Tags=PoolStringArray(  )
 Display=8

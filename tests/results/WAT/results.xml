@@ -1,7 +1,9 @@
 <?xml version="1.0" ?>
-<testsuites failures="0" name="TestXML" tests="1" time="1.026">
-<testsuite failures="0" name="Given a Yield" tests="1" time="0.017">
-<testcase name="WhenTheYielderHearsOurSignal" time="0.336">
+<testsuites failures="0" name="TestXML" tests="1" time="1.015">
+<testsuite failures="0" name="Recorder Test" tests="2" time="0.01">
+<testcase name="WhenAHeroIsPoisonedTheirHealthIs0After100Cycles" time="0.008">
+</testcase>
+<testcase name="WhenAHeroIsPoisonedTheirHealthChangesOverTime" time="0.804">
 </testcase>
 </testsuite>
 </testsuites>
