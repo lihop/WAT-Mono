@@ -31,9 +31,10 @@ Test_Directory="res://tests"
 Results_Directory="res://tests/results/WAT"
 Minimize_Window_When_Running_Tests=false
 TestStrategy={
+"method": "WhenASignalBeingYieldedOnIsEmittedTheYielderIsStopped",
 "repeat": 1,
-"script": "res://tests/ObjectTest.cs",
-"strategy": "RunScript"
+"script": "res://tests/YieldTest.cs",
+"strategy": "RunMethod"
 }
 Tags=PoolStringArray(  )
 Display=8

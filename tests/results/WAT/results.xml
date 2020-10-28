@@ -1,33 +1,7 @@
 <?xml version="1.0" ?>
-<testsuites failures="0" name="TestXML" tests="1" time="1.014">
-<testsuite failures="0" name="Object Assertions" tests="14" time="0.01">
-<testcase name="IsNotBlockingSignals" time="0.005">
-</testcase>
-<testcase name="TestIsBlockingSignals" time="0.001">
-</testcase>
-<testcase name="WhenCallingObjIsNotConnectedWithAnInvalidConnection" time="0">
-</testcase>
-<testcase name="WhenCallingObjIsConnectedWithARealConnection" time="0.001">
-</testcase>
-<testcase name="WhenCallingObjectIsNotQueuedForDeletionAfterNotCallingQueueFree" time="0">
-</testcase>
-<testcase name="WhenCallingObjectIsQueuedForDeletionAfterCallingQueueFree" time="0.001">
-</testcase>
-<testcase name="WhenCallingDoesNotHaveUserSignalWithClassSignalConstant" time="0">
-</testcase>
-<testcase name="WhenCallingDoesNotHaveUserSignal" time="0.001">
-</testcase>
-<testcase name="WhenCallingHasUserSignalAfterAddingASignal" time="0">
-</testcase>
-<testcase name="WhenCallingDoesNotHaveMethodFalseMethod" time="0">
-</testcase>
-<testcase name="WhenCallingHasMethodTitle" time="0.001">
-</testcase>
-<testcase name="WhenCallingDoesNotHaveMetalRealKeyButNullValue" time="0">
-</testcase>
-<testcase name="WhenCallingDoesNotHaveMeta" time="0">
-</testcase>
-<testcase name="WhenCallingHasMetaAfterAddingMetadata" time="0.001">
+<testsuites failures="0" name="TestXML" tests="1" time="1">
+<testsuite failures="0" name="Given a Yield" tests="1" time="0.016">
+<testcase name="WhenASignalBeingYieldedOnIsEmittedTheYielderIsStopped" time="0.335">
 </testcase>
 </testsuite>
 </testsuites>
