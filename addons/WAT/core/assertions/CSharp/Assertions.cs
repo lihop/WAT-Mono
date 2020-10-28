@@ -194,7 +194,7 @@ namespace WAT {
 		{
 			Output(ObjectX.DoesNotHaveUserSignal(obj, signal, context));
 		}
-		
+
 		public void IsType<T>(object value, string context = "")
 		{
 			Output(Is.IsType<T>(value, context));

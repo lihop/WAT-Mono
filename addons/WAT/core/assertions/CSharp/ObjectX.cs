@@ -77,9 +77,11 @@ namespace WAT
             return Result(success, passed, result, context);
         }
 
-        /*public static object IsFreed(object obj, string context)
+        /*
+        public static object IsFreed(object obj, string context)
         {
             // This && IsNotFreed Need A Second Look
+            // If users manage to get an object this far in CSharp, then something went wrong
             var passed = $"Object is freed from memory";
             var failed = $"Object is not freed from memory";
             var success = Object.IsInstanceValid((Object) obj);
@@ -94,7 +96,8 @@ namespace WAT
             var success = !Object.IsInstanceValid((Object) obj);
             var result = success ? passed : failed;
             return Result(success, passed, result, context);
-        }*/
+        }
+        */
 
         public static object IsNotBlockingSignals(Object obj, string context)
         {
