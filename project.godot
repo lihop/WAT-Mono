@@ -31,9 +31,7 @@ Test_Directory="res://tests"
 Results_Directory="res://tests/results/WAT"
 Minimize_Window_When_Running_Tests=false
 TestStrategy={
-"repeat": 1,
-"script": "res://tests/RecorderTest.cs",
-"strategy": "RunScript"
+
 }
 Tags=PoolStringArray(  )
 Display=8
@@ -42,6 +40,12 @@ Display=8
 
 config/name="WAT-Mono"
 config/icon="res://icon.png"
+config/windows_native_icon=""
+
+[display]
+
+window/size/width=1024
+window/size/height=600
 
 [editor_plugins]
 

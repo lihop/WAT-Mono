@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: codedarigan/godotsharp:latest
+      - image: codedarigan/godot-mono:latest
 
     steps:
         - checkout
