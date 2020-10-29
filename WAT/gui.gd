@@ -34,6 +34,9 @@ func _on_view_pressed(id: int) -> void:
 			Results.expand_failures()
 
 func _ready() -> void:
+	if not Engine.is_editor_hint():
+		OS.window_size = ProjectSettings.get_setting("WAT/Window_Size")
+		rect_size = OS.window_size
 	set_process(false)
 	More.connect("pressed", self, "_show_more")
 	_link($GUI/Links/Issue, "https://github.com/CodeDarigan/WAT/issues/new")
