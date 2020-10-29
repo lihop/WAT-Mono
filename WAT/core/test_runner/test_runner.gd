@@ -22,7 +22,6 @@ func strategy() -> Dictionary:
 	
 var _time: float
 func _ready() -> void:
-	if(ProjectSettings.get_setting())
 	_time = OS.get_ticks_msec()
 	_strategy = strategy()
 	if get_tree().root.get_child(0) == self:
