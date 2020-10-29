@@ -119,5 +119,6 @@ func _create_test_double_registry() -> void:
 func clear() -> void:
 	if ProjectSettings.has_setting("WAT/TestDouble"):
 		ProjectSettings.get_setting("WAT/TestDouble").clear()
-		ProjectSettings.get_setting("WAT/TestDouble").free()
+		if ProjectSettings.get("RunInEngine"):
+			ProjectSettings.get_setting("WAT/TestDouble").free()
 
