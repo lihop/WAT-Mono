@@ -24,6 +24,10 @@ onready var MethodSelector: OptionButton = $GUI/Method
 onready var More: Button = $GUI/Interact/More
 var execute = preload("res://addons/WAT/core/test_runner/execute.gd").new()
 
+# An Attempt To Handle Error On Exit
+func _exit_tree():
+	queue_free()
+
 func _on_view_pressed(id: int) -> void:
 	match id:
 		RESULTS.EXPAND_ALL:
@@ -34,6 +38,9 @@ func _on_view_pressed(id: int) -> void:
 			Results.expand_failures()
 
 func _ready() -> void:
+	if not Engine.is_editor_hint():
+		OS.window_size = ProjectSettings.get_setting("WAT/Window_Size")
+		rect_size = OS.window_size
 	set_process(false)
 	More.connect("pressed", self, "_show_more")
 	_link($GUI/Links/Issue, "https://github.com/CodeDarigan/WAT/issues/new")
