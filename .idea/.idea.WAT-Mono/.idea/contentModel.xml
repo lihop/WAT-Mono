@@ -130,6 +130,7 @@
               <e p="docker.gd" t="Include" />
               <e p="gui.gd" t="Include" />
               <e p="links.gd" t="Include" />
+              <e p="methodgetter.cs" t="Include" />
               <e p="result_forest.gd" t="Include" />
               <e p="result_tree.gd" t="Include" />
               <e p="run_settings.gd" t="Include" />

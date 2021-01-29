@@ -157,10 +157,16 @@ func _on_methods_about_to_show(methods, scripts) -> void:
 	methods.set_item_icon(0, load("res://addons/WAT/assets/script.png"))
 	methods.set_item_icon(1, load("res://addons/WAT/assets/label.png"))
 	var script = test.scripts[currentScript]["script"]
-	var methodlist = script.get_script_method_list()
+	var methodlist = []
+	if script is GDScript:
+		methodlist = script.get_script_method_list()
+	else:
+		var instance = script.new()
+		methodlist = instance.GetScriptMethodList()
+		instance.free()
 	var idx: int = methods.get_item_count()
 	for method in methodlist:
-		if method.name.begins_with("test"):
+		if method.name.begins_with("test") or script is CSharpScript:
 			methods.add_item(method.name)
 			methods.set_item_metadata(idx, {command = RUN_METHOD, path = script.get_path(), method = method.name})
 			methods.set_item_icon(idx, load("res://addons/WAT/assets/function.png"))

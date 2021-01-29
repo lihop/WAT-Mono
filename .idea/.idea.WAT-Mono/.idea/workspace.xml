@@ -20,11 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2fb970b2-b1e9-4d24-a525-b68c59688c24" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/addons/WAT/ui/scripts/MethodGetter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WAT-Mono/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WAT-Mono/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WAT-Mono/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WAT-Mono/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SampleBuild.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/SampleBuild.tscn" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/addons/WAT/core/test/Test.cs" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/test/Test.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/test/test.gd" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/test/test.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/editor/test_gatherer.gd" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/editor/test_gatherer.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addons/WAT/ui/scripts/test_menu.gd" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/ui/scripts/test_menu.gd" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,8 +40,11 @@
       <option value="$PROJECT_DIR$/addons/WAT/core/assertions/Assertions.cs" />
       <option value="$PROJECT_DIR$/addons/WAT/core/test/Recorder.cs" />
       <option value="$PROJECT_DIR$/addons/WAT/editor/test_gatherer.gd" />
-      <option value="$PROJECT_DIR$/addons/WAT/core/test/Test.cs" />
       <option value="$PROJECT_DIR$/addons/WAT/core/test/test.gd" />
+      <option value="$PROJECT_DIR$/addons/WAT/ui/scripts/methodgetter.cs" />
+      <option value="$PROJECT_DIR$/addons/WAT/ui/scripts/MethodGetter.cs" />
+      <option value="$PROJECT_DIR$/addons/WAT/ui/scripts/test_menu.gd" />
+      <option value="$PROJECT_DIR$/addons/WAT/core/test/Test.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1jWSOfX1Yo38dVt8vxm2lycZAZV" />
@@ -56,6 +60,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Start and Debug.WATSharpGui">
@@ -108,7 +113,8 @@
       <updated>1603918328451</updated>
       <workItem from="1603918334014" duration="3027000" />
       <workItem from="1604090795908" duration="322000" />
-      <workItem from="1611945774469" duration="3862000" />
+      <workItem from="1611945774469" duration="4705000" />
+      <workItem from="1611954997581" duration="3117000" />
     </task>
     <servers />
   </component>
