@@ -11,7 +11,7 @@
 		"tags": [
 
 		],
-		"passing": false
+		"passing": true
 	},
 	"res://tests/BooleanTest.gd": {
 		"path": "res://tests/BooleanTest.gd",

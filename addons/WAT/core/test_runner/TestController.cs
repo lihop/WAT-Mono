@@ -1,4 +1,7 @@
 ﻿using System;
+using System.ComponentModel;
+using System.Diagnostics.Eventing.Reader;
+using System.Numerics;
 using Godot;
 using Godot.Collections;
 using Array = Godot.Collections.Array;
@@ -56,14 +59,144 @@ namespace WAT
         public void Run(Dictionary test)
         {
             Console.WriteLine("Adding");
-            CSharpScript _test = (CSharpScript) test["script"];
-            Test = (Test) _test.New();
+            Test = (Test) ((CSharpScript) test["script"]).New();
             Console.WriteLine("Reached");
+            TestCase = (Node) Case.New(Test, test["path"]);
+            Test.Assert = this.Assertions;
+            Test.Watcher = this.Watcher;
+            Test.Yielder = this._Yielder;
+            if (test.Contains("method"))
+            {
+                Methods.Add(test["method"]);
+            }
+            else
+            {
+                Methods = Test.GetMethodList();
+            }
+
+            if (Methods.Count == 0)
+            {
+                GD.PushWarning("No Tests found in " + test["path"] + "");
+                CallDeferred("Complete");
+            }
+
+            Test.Connect(nameof(Test.Described), TestCase, "_on_test_method_described");
+            Assertions.Connect(nameof(Assertions.Asserted), TestCase, "_on_asserted");
+            Assertions.Contains(nameof(Assertions.Asserted), Test, nameof(Test.OnLastAssertion));
+            AddChild(Test);
+            Start();
+        }
+
+        private void Start()
+        {
+            Cursor = -1;
+            State = STATE.START;
+            Test.Start();
+            Next();
+            Console.WriteLine("BEGINS");
+        }
+
+        private void Pre()
+        {
+            State = STATE.PRE;
+            Test.Pre();
+            Next();
+        }
+
+        private void Execute()
+        {
+            State = STATE.EXECUTE;
+            CurrentMethod = NextTestMethod();
+            TestCase.Call("add_method", CurrentMethod);
+            Test.Call(CurrentMethod);
+            Next();
+        }
+
+        private void Post()
+        {
+            State = STATE.POST;
+            Test.Post();
+            Next();
+        }
+
+        private void End()
+        {
+            State = STATE.END;
+            Test.End();
+            Next();
+        }
+
+        public string NextTestMethod()
+        {
+            // Implement Reruns
+            Cursor += 1;
+            return Methods[Cursor] as string;
         }
 
         public void Next()
         {
-            
+            CallDeferred("ChangeState");
         }
+
+        private void ChangeState()
+        {
+            if ((bool) _Yielder.Call("is_active"))
+            {
+                return;
+            }
+
+            if (State == STATE.END)
+            {
+                Complete();
+            }
+
+            switch (State)
+            {
+                case STATE.START:
+                    Pre();
+                    break;
+                case STATE.PRE:
+                    Execute();
+                    break;
+                case STATE.EXECUTE:
+                    Post();
+                    break;
+                case STATE.POST:
+                    if (IsDone())
+                    {
+                        End();
+                    }
+                    else
+                    {
+                        Pre();
+                    }
+                    break;
+                case STATE.END:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+        }
+
+        private void Complete()
+        {
+            Test.Free();
+            EmitSignal(nameof(finished));
+        }
+
+        private bool IsDone()
+        {
+            return Cursor == Methods.Count - 1;
+        }
+
+        public Dictionary GetResults()
+        {
+            TestCase.Call("calculate");
+            Dictionary results = TestCase.Call("to_dictionary") as Dictionary;
+            TestCase.Free();
+            return results;
+        }
+        
+        
     }
 }

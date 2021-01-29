@@ -32,16 +32,21 @@ namespace WAT
 
         protected const String YIELD = "finished";
         public const bool TEST = true;
-        protected Assertions Assert;
-        protected Timer Yielder;
+        public Assertions Assert;
+        public Timer Yielder;
         public Reference Watcher;
 
         [Signal]
-        delegate void Described(string MethodDescription);
+        public delegate void Described(string MethodDescription);
 
         public virtual string Title()
         {
             return GetType().Name;
+        }
+
+        public void OnLastAssertion(Dictionary assertion)
+        {
+            
         }
 
         protected void Describe(string message)
