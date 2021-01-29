@@ -15,7 +15,7 @@ enum { START, PRE, EXECUTE, POST, END }
 signal finished
 signal done
 
-var _test: Test
+var _test
 var _case: Node
 var _state: int = START
 var _cursor: int = -1

@@ -97,6 +97,7 @@
               <e p="single_threaded_runner.gd" t="Include" />
               <e p="test_controller.gd" t="Include" />
               <e p="test_runner.gd" t="Include" />
+              <e p="TestController.cs" t="Include" />
               <e p="TestRunner.tscn" t="Include" />
             </e>
           </e>
@@ -130,7 +131,6 @@
               <e p="docker.gd" t="Include" />
               <e p="gui.gd" t="Include" />
               <e p="links.gd" t="Include" />
-              <e p="methodgetter.cs" t="Include" />
               <e p="result_forest.gd" t="Include" />
               <e p="result_tree.gd" t="Include" />
               <e p="run_settings.gd" t="Include" />
