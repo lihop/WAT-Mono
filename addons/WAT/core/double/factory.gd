@@ -1,9 +1,7 @@
-extends Reference
+extends Object
 
 const ScriptDirector = preload("script_director.gd")
 const SceneDirector = preload("scene_director.gd")
-
-# Set by test
 var registry
 
 func script(path, inner: String = "", deps: Array = []) -> ScriptDirector:
@@ -28,5 +26,18 @@ func scene(tscn) -> SceneDirector:
 			nodes[path] = script(next.get_script().resource_path)
 		elif ClassDB.class_exists(next.get_class()):
 			nodes[path] = script(next.get_class())
+	_set_nodepath_variables(instance, nodes)
 	instance.queue_free()
 	return SceneDirector.new(nodes)
+	
+func _set_nodepath_variables(instance, nodes: Dictionary):
+	# Nodepath Variables Are Exported
+	# Which means they are typically not shared by instances
+	# Therefore we got to do it manually
+	for path in nodes:
+		var source = instance.get_node(path)
+		var copy = nodes[path]
+		for prop in source.get_property_list():
+			if(prop.type == TYPE_NODE_PATH and prop.name != "_import_path"):
+				var exported_value = source.get(prop.name) as NodePath
+				copy.nodepaths[prop.name] = exported_value as NodePath

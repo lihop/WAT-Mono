@@ -1,122 +1,55 @@
 extends Node
 
-const COMPLETED: String = "completed"
-var JunitXML = preload("res://addons/WAT/resources/JUnitXML.gd").new()
-var test_loader: Reference = preload("test_loader.gd").new()
-var test_results: Resource = preload("res://addons/WAT/resources/results.tres")
-var test_double_registry = preload("res://addons/WAT/core/double/registry.gd").new()
-var _tests: Array = []
-var _cases: Array = []
-var _strategy: Dictionary = {}
-signal ended
+const Client: Script = preload("res://addons/WAT/network/client.gd")
+const Log: Script = preload("res://addons/WAT/log.gd")
+const SingleThreadedRunner: Script = preload("single_threaded_runner.gd")
+const MultiThreadedRunner: Script = preload("multi_threaded_runner.gd")
+var _runner: Node
+var _client: Client
+var tests: Array
+var threads: int = 1
+signal run_completed
 
-func strategy() -> Dictionary:
-	# We consume this so we can avoid worrying about mutatiosn
-	var m_strategy = {}
-	var strat = ProjectSettings.get_setting("WAT/TestStrategy")
-	for key in strat:
-		m_strategy[key] = strat[key]
-	ProjectSettings.set_setting("WAT/TestStrategy", {})
-	ProjectSettings.save()
-	m_strategy["repeat"] = m_strategy["repeat"] as int
-	return m_strategy
+func _init(_tests: Array = [], _threads: int = 1) -> void:
+	threads = _threads
+	tests = _tests
+	if not Engine.is_editor_hint():
+		_set_window_size()
+		_minimize_window()
 	
-var _time: float
 func _ready() -> void:
-	_time = OS.get_ticks_msec()
-	_strategy = strategy()
-	if get_tree().root.get_child(0) == self:
-		print("Starting WAT Test Runner")
-	OS.window_minimized = ProjectSettings.get_setting(
-			"WAT/Minimize_Window_When_Running_Tests")
-	_begin()
-	
-func _begin():
-	_tests = get_tests()
-	
-	if _tests.empty():
-		push_warning("No Scripts To Test")
-	_run_tests()
-	
-func get_tests() -> Array:
-	match _strategy["strategy"]:
-		"RunAll":
-			return test_loader.all()
-		"RunDirectory":
-			return test_loader.directory(_strategy["directory"])
-		"RunScript":
-			return test_loader.script(_strategy["script"])
-		"RunTag":
-			return test_loader.tag(_strategy["tag"])
-		"RunMethod":
-			return test_loader.script(_strategy["script"])
-		"RerunFailures":
-			return test_loader.last_failed()
-		_:
-			return _tests
-
-
-var time_taken: float
-func _run_tests() -> void:
-	while not _tests.empty():
-		yield(run(), COMPLETED)
-	_strategy["repeat"] -= 1
-	if _strategy["repeat"] > 0:
-		call_deferred("_begin")
+	name = "TestRunner"
+	if tests.empty() and not Engine.is_editor_hint():
+		print("WAT: Seeking Tests from Test Server")
+		_client = Client.new()
+		_client.connect("test_strategy", self, "run")
+		connect("run_completed", _client, "_on_run_completed")
+		add_child(_client)
 	else:
-		time_taken = _time / 1000.0
-		end()
+		run()
 
-const Executor = preload("res://addons/WAT/core/test/executable.gd")
-const TestCase = preload("res://addons/WAT/core/test/case.gd")
-
-func run(test = _tests.pop_front().new()) -> void:
-	var testcase: TestCase
-	if test.get_script() is CSharpScript:
-		testcase = TestCase.new(test.Title(), test.get_script().resource_path as String)
-		test.SetUp(testcase)
-	elif test.get_script() is GDScript:
-		testcase = TestCase.new(test.title(), test.path())
-		test.setup(testcase, test_double_registry)
-	var executable = Executor.new(test)
-	var start_time = OS.get_ticks_msec()
-	add_child(executable)
-	# Add Strategy Here?
-	if _strategy.has("method") and test.get_script() is CSharpScript:
-		executable._methods = test.GetTestMethod(_strategy.method)
-	elif _strategy.has("method") and test.get_script() is GDScript:
-		executable._methods = [{"title": _strategy.method, "args": []}]
-	elif test.get_script() is CSharpScript:
-		executable._methods = test.GetMethods()
-	elif test.get_script() is GDScript:
-		executable._methods = test.methods()
-	executable._start()
-	var time = OS.get_ticks_msec() - start_time
-	testcase.time_taken = time / 1000.0
-	yield(executable, COMPLETED)
-	testcase.calculate()
-	_cases.append(testcase.to_dictionary())
-	remove_child(executable)
-
-	
-func end() -> void:
-	print("Ending WAT Test Runner")
-	OS.window_minimized = false
-	JunitXML.save(_cases, time_taken)
-	test_results.deposit(_cases)
-	emit_signal("ended")
-	clear()
-	if ProjectSettings.get("RunInEngine"):
-		get_tree().quit()
+func run(_tests = tests, _threads = threads) -> void:
+	tests = _tests
+	Log.method("run", self)
+	if _threads > 1:
+		print("WAT: Tests Received from Test Server")
+		_runner = MultiThreadedRunner.new()
+		_runner.name = "MultiThreadedRunner"
 	else:
-		queue_free()
+		_runner = SingleThreadedRunner.new()
+		_runner.name = "SingleThreadedRunner"
+	_runner.connect("run_completed", self, "_on_run_completed")
+	add_child(_runner, true)
+	_runner.run(_tests, _threads)
 
-func clear() -> void:
-	pass
-#	if ProjectSettings.has_setting("WAT/TestDouble"):
-#		ProjectSettings.get_setting("WAT/TestDouble").clear()
-#		if ProjectSettings.get("RunInEngine"):
-#			var testDouble = ProjectSettings.get_setting("WAT/TestDouble")
-			#ProjectSettings.set_setting("WAT/TestDouble", "Disabled")
-			#ProjectSettings.get_setting("WAT/TestDouble").free()
+
+func _on_run_completed(results: Array) -> void:
+	_runner.queue_free()
+	emit_signal("run_completed", results)
+	
+func _set_window_size() -> void:
+	OS.window_size = ProjectSettings.get_setting("WAT/Window_Size")
+	
+func _minimize_window() -> void:
+	OS.window_minimized = ProjectSettings.get_setting("WAT/Minimize_Window_When_Running_Tests")
 

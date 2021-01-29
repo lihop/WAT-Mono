@@ -37,10 +37,17 @@ TestStrategy={
 Tags=PoolStringArray(  )
 Display=8
 Window_Size=Vector2( 1280, 720 )
+Test_Metadata_Directory="res://tests"
+Port=6008
+Default_Launch=0
+Run_All_Tests=Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"unicode":0,"echo":false,"script":null)
+
+Auto_Refresh_Tests=false
 
 [application]
 
 config/name="WAT-Mono"
+run/main_scene="res://SampleBuild.tscn"
 config/icon="res://icon.png"
 
 [editor_plugins]

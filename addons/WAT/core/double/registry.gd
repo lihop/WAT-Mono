@@ -1,4 +1,4 @@
-extends Node
+extends Object
 
 var test_directors: Dictionary = {}
 

@@ -1,25 +1,30 @@
 extends Node
 class_name WATTest
 
+const Assertions: Script = preload("res://addons/WAT/core/assertions/assertions.gd")
 const TEST: bool = true
 const YIELD: String = "finished"
-const CRASH_IF_TEST_FAILS: bool = true
-
-var asserts
-var direct: Reference
-var rerun_method: bool = false
-
-# This is used to access variable data with the user test
-# e.g assert.is_equal(p.augend + p.addend, p.result, etc;
-var p: Dictionary
- 
-var _watcher: Reference
-var _parameters: Reference
-var Yielder: Timer
-var Testcase: Reference
-var _recorder
-
 signal described
+signal cancelled
+var asserts: Assertions
+var parameters: Reference
+var recorder: Script
+var any: Script
+var watcher
+var rerun_method: bool
+var direct: Object
+var yielder: Timer
+var p: Dictionary
+var _last_assertion_passed: bool = false
+
+func _on_last_assertion(assertion: Dictionary) -> void:
+	_last_assertion_passed = assertion["success"]
+
+func previous_assertion_failed() -> bool:
+	return not _last_assertion_passed
+
+func _ready() -> void:
+	p = parameters.parameters
 
 func start():
 	pass
@@ -32,69 +37,22 @@ func post():
 	
 func end():
 	pass
-
-func methods() -> Array:
-	var output: Array = []
-	for method in get_method_list():
-		if method.name.begins_with("test"):
-			output.append({"title": method.name, "args": []})
-	return output
 	
-static func get_instance_base_type() -> String:
-	return "WAT.Test"
+func any():
+	return any.new()
 	
-# I think the best idea is to remove everything
-# Change this to a c# test suite object
-# and then work back up from there
-# We may also need to create an external script when loading tests
-# so we can collect them via c# attributes
-func setup(testcase, registry):
-	asserts = load("res://addons/WAT/core/assertions/GDscript/assertions.gd").new()
-	direct = load("res://addons/WAT/core/double/factory.gd").new()
-	direct.registry = registry
-	Testcase = testcase # No changes needed
-	Yielder = load("res://addons/WAT/core/test/yielder.gd").new() # Research C# Yield
-	_watcher = load("res://addons/WAT/core/test/watcher.gd").new() # Research signal-interoperation
-	_parameters = load("res://addons/WAT/core/test/parameters.gd").new()# Use C# Attributes
-	_recorder = load("res://addons/WAT/core/test/recorder.gd").new() # Maybe require more research
+func watch(emitter, event: String) -> void:
+	watcher.watch(emitter, event)
+	
+func unwatch(emitter, event: String) -> void:
+	watcher.unwatch(emitter, event)
 	
 func record(who: Object, properties: Array) -> Node:
-	var record = _recorder.new()
+	var record = recorder.new()
 	record.record(who, properties)
 	add_child(record)
 	return record
 	
-func _ready() -> void:
-	p = _parameters.parameters
-	asserts.connect("asserted", Testcase, "_on_asserted")
-	connect("described", Testcase, "_on_test_method_described")
-
-func any():
-	return preload("any.gd").new()
-
-func describe(message: String) -> void:
-	emit_signal("described", message)
-
-func parameters(list: Array) -> void:
-	rerun_method = _parameters.parameters(list)
-
-func path() -> String:
-	var path = get_script().get_path()
-	return path if path != "" else get_script().get_meta("path")
-	
-func title() -> String:
-	var path: String = get_script().get_path()
-	var substr: String = path.substr(path.find_last("/") + 1, 
-	path.find(".gd")).replace(".gd", "").replace("test", "").replace(".", " ").capitalize()
-	return substr
-
-func watch(emitter, event: String) -> void:
-	_watcher.watch(emitter, event)
-	
-func unwatch(emitter, event: String) -> void:
-	_watcher.unwatch(emitter, event)
-
-## Untested
 ## Thanks to bitwes @ https://github.com/bitwes/Gut/
 func simulate(obj, times, delta):
 	for i in range(times):
@@ -105,16 +63,34 @@ func simulate(obj, times, delta):
 
 		for kid in obj.get_children():
 			simulate(kid, 1, delta)
-
+	
+func describe(message: String) -> void:
+	emit_signal("described", message)
+	
+func title() -> String:
+	var path: String = get_script().get_path()
+	var substr: String = path.substr(path.find_last("/") + 1, 
+	path.find(".gd")).replace(".gd", "").replace("test", "").replace(".", " ").capitalize()
+	return substr
+	
+func path() -> String:
+	# Expand for suites
+	return get_script().get_path()
+	
+func parameters(list: Array) -> void:
+	rerun_method = parameters.parameters(list)
+	
 func until_signal(emitter: Object, event: String, time_limit: float) -> Node:
 	watch(emitter, event)
-	return Yielder.until_signal(time_limit, emitter, event)
+	return yielder.until_signal(time_limit, emitter, event)
 
 func until_timeout(time_limit: float) -> Node:
-	return Yielder.until_timeout(time_limit)
-
-func _notification(what: int) -> void:
-	if what == NOTIFICATION_PREDELETE:
-		_watcher.clear()
-		Yielder.free()
-		_recorder.free()
+	return yielder.until_timeout(time_limit)
+	
+func methods() -> PoolStringArray:
+	# In future, this may be done in a container else where
+	var output: PoolStringArray = []
+	for method in get_method_list():
+		if method.name.begins_with("test"):
+			output.append(method.name)
+	return output

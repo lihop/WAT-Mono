@@ -1,0 +1,9 @@
+{
+	"res://tests/BooleanTest.gd": {
+		"path": "res://tests/BooleanTest.gd",
+		"tags": [
+
+		],
+		"passing": false
+	}
+}
