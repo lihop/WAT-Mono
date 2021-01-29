@@ -156,7 +156,7 @@ func _on_methods_about_to_show(methods, scripts) -> void:
 	methods.set_item_metadata(1, {command = RUN_TAG, tag = "?"})
 	methods.set_item_icon(0, load("res://addons/WAT/assets/script.png"))
 	methods.set_item_icon(1, load("res://addons/WAT/assets/label.png"))
-	var script: GDScript = test.scripts[currentScript]["script"]
+	var script = test.scripts[currentScript]["script"]
 	var methodlist = script.get_script_method_list()
 	var idx: int = methods.get_item_count()
 	for method in methodlist:
@@ -285,7 +285,7 @@ func _on_folder_removed(source: String) -> void:
 	test.dirs.erase(src)
 	
 func _on_resource_saved(resource: Resource) -> void:
-	if not resource is GDScript or not resource.get("TEST") == true:
+	if (not resource is Script) or (resource.get_instance_base_type() == "WAT.Test"):
 		# Not a valid test
 		return
 	var dir: String = resource.resource_path.substr(0, resource.resource_path.find_last("/"))

@@ -26,7 +26,7 @@ namespace WAT
         }
 
         protected const String YIELD = "finished";
-        private const bool TEST = true;
+        public const bool TEST = true;
         protected Assertions Assert;
         protected Timer Yielder;
         public Reference Watcher;
@@ -105,6 +105,11 @@ namespace WAT
                     Simulate(kid, 1, delta);
                 }
             }
+        }
+        
+        public static string get_instance_base_type()
+        {
+            return "WAT.Test";
         }
     }
 }

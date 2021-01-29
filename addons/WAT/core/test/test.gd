@@ -94,3 +94,7 @@ func methods() -> PoolStringArray:
 		if method.name.begins_with("test"):
 			output.append(method.name)
 	return output
+	
+static func get_instance_base_type():
+    return "WAT.Test"
+        

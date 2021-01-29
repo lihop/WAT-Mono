@@ -20,98 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2fb970b2-b1e9-4d24-a525-b68c59688c24" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.WAT-Mono/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WAT-Mono/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WAT-Mono/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WAT-Mono/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.test/metadata.tres" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WAT-Mono.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WAT-Mono.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/assets/crash_warning.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/assets/crash_warning.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/assets/down.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/assets/down.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/assets/failed.png" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/assets/failed.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/assets/failed.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/assets/failed.png.import" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/assets/function.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/assets/function.png.import" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/assets/icon_add.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/assets/icon_add.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/assets/kofi.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/assets/kofi.png.import" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/assets/more_button.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/assets/more_button.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/assets/play.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/assets/play.png.import" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/assets/remove.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/assets/remove.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/assets/replace.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/assets/replace.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/assets/success.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/assets/success.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/assets/summary.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/assets/summary.png.import" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/cli.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/cli.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/assertions/GDScript/assertion.gd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/assertions/GDScript/assertion_result.gd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/assertions/GDScript/assertions.gd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/assertions/GDScript/boolean.gd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/assertions/GDScript/constants/type_library.gd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/assertions/GDScript/double.gd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/assertions/GDScript/equality.gd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/assertions/GDScript/file.gd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/assertions/GDScript/is.gd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/assertions/GDScript/is_not.gd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/assertions/GDScript/null.gd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/assertions/GDScript/object.gd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/assertions/GDScript/property.gd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/assertions/GDScript/range.gd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/assertions/GDScript/signal.gd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/assertions/GDScript/string.gd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/assertions/GDScript/utility.gd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/double/factory.gd" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/double/factory.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/double/method.gd" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/double/method.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/double/registry.gd" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/double/registry.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/double/scene_director.gd" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/double/scene_director.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/double/script_director.gd" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/double/script_director.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/double/script_writer.gd" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/double/script_writer.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/test/Recorder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/test/Recorder.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/addons/WAT/core/test/Test.cs" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/test/Test.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/test/case.gd" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/test/case.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/test/executable.gd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/test/parameters.gd" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/test/parameters.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/test/suite.gd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/test/template.gd" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/addons/WAT/core/test/test.gd" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/test/test.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/test/timer.gd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/test/watcher.gd" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/test/watcher.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/test/yielder.gd" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/test/yielder.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/test_runner/TestRunner.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/test_runner/TestRunner.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/test_runner/directory.gd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/test_runner/execute.gd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/test_runner/test_loader.gd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/test_runner/test_runner.gd" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/test_runner/test_runner.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/gui.gd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/gui.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/gui.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/namespace.gd" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/namespace.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/plugin.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/plugin.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/plugin.gd" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/plugin.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/resources/JUnitXML.gd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/resources/base/results.gd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/resources/results.tres" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/system/filesystem.gd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/system/initializer.gd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/ui/dock.gd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/ui/metadata/Metadata.tscn" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/ui/metadata/Tag.tscn" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/ui/metadata/TagArray.tscn" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/ui/metadata/editor.gd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/ui/metadata/index.gd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/ui/metadata/metadata.gd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/ui/metadata/tag.gd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/ui/results/ResultTree.tscn" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/ui/results/ResultsForest.tscn" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/ui/results/result_forest.gd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/ui/results/result_tree.gd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/default_env.tres" beforeDir="false" afterPath="$PROJECT_DIR$/default_env.tres" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/icon.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/icon.png.import" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project.godot" beforeDir="false" afterPath="$PROJECT_DIR$/project.godot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/SuiteTest.gd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addons/WAT/editor/test_gatherer.gd" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/editor/test_gatherer.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_metadata.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,10 +36,11 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/addons/WAT/editor/test_gatherer.gd" />
       <option value="$PROJECT_DIR$/addons/WAT/core/assertions/Assertions.cs" />
       <option value="$PROJECT_DIR$/addons/WAT/core/test/Recorder.cs" />
+      <option value="$PROJECT_DIR$/addons/WAT/editor/test_gatherer.gd" />
       <option value="$PROJECT_DIR$/addons/WAT/core/test/Test.cs" />
+      <option value="$PROJECT_DIR$/addons/WAT/core/test/test.gd" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1jWSOfX1Yo38dVt8vxm2lycZAZV" />
@@ -174,9 +88,9 @@
       </method>
     </configuration>
     <configuration name="WATSharpGui" type="GODOT_DEBUG_RUN_CONFIGURATION" factoryName="Start and Debug">
-      <option name="EXE_PATH" value="C:\\Program Files\\Godot\\GodotMono.exe" />
+      <option name="EXE_PATH" value="$USER_HOME$/Apps/GodotC.exe" />
       <option name="PROGRAM_PARAMETERS" value="--path &quot;$PROJECT_DIR$&quot; &quot;res://addons/WAT/gui.tscn&quot;" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Apps" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <method v="2">
@@ -194,7 +108,7 @@
       <updated>1603918328451</updated>
       <workItem from="1603918334014" duration="3027000" />
       <workItem from="1604090795908" duration="322000" />
-      <workItem from="1611945774469" duration="2626000" />
+      <workItem from="1611945774469" duration="3862000" />
     </task>
     <servers />
   </component>
