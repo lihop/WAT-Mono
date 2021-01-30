@@ -96,5 +96,5 @@ func methods() -> PoolStringArray:
 	return output
 	
 static func get_instance_base_type():
-    return "WAT.Test"
-        
+	return "WAT.Test"
+		

@@ -95,7 +95,7 @@
 		"tags": [
 
 		],
-		"passing": false
+		"passing": true
 	},
 	"res://tests/YieldTest.cs": {
 		"path": "res://tests/YieldTest.cs",

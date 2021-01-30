@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using Godot;
 using Godot.Collections;
 using Array = Godot.Collections.Array;
@@ -15,7 +16,7 @@ namespace WAT
 			var passed = $"Signal {signal} was emitted from {emitter}";
 			var failed = $"Signal {signal} was not emitted from {emitter}";
 			
-			var watcher = (Object) emitter.GetMeta("watcher");
+			var watcher = (Reference) emitter.GetMeta("watcher");
 			var success = (int) watcher.Call("get_emit_count", signal) > 0;
 			var result = success ? passed : failed;
 
