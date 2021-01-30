@@ -35,6 +35,7 @@ namespace WAT
 		public Assertions Assert;
 		public Timer Yielder;
 		public Reference Watcher;
+		private bool lastAssertionSuccess;
 
 		[Signal]
 		public delegate void Described(string MethodDescription);
@@ -46,7 +47,12 @@ namespace WAT
 
 		public void OnLastAssertion(Dictionary assertion)
 		{
-			
+			lastAssertionSuccess = (bool) assertion["success"];
+		}
+
+		public bool PreviousAssertionFailed()
+		{
+			return !lastAssertionSuccess;
 		}
 
 		protected void Describe(string message)
@@ -72,12 +78,13 @@ namespace WAT
 
 		protected Timer UntilTimeout(double time)
 		{
-			return Yielder;
+			return (Timer) Yielder.Call("until_timeout", time);
 		}
 
-		protected Timer UntilSignal(Godot.Object obj, string signal, double time)
+		protected Timer UntilSignal(Godot.Object emitter, string signal, double time)
 		{
-			return Yielder;
+			Watcher.Call("watch", emitter, signal);
+			return (Timer) Yielder.Call("until_signal", time, emitter, signal);
 		}
 
 		protected void Watch(Godot.Object emitter, string signal)

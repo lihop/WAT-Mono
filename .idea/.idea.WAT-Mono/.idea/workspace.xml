@@ -20,13 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2fb970b2-b1e9-4d24-a525-b68c59688c24" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.WAT-Mono/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WAT-Mono/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/Signal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/Signal.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/addons/WAT/core/test/Test.cs" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/test/Test.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/test/test.gd" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/test/test.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/test/watcher.gd" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/test/watcher.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/test_runner/TestController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/test_runner/TestController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/ui/scripts/gui.gd" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/ui/scripts/gui.gd" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,9 +57,9 @@
       <option value="$PROJECT_DIR$/addons/WAT/core/test/case.gd" />
       <option value="$PROJECT_DIR$/addons/WAT/ui/scripts/test_menu.gd" />
       <option value="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/Assertions.cs" />
-      <option value="$PROJECT_DIR$/addons/WAT/core/test/Test.cs" />
       <option value="$PROJECT_DIR$/addons/WAT/core/test/watcher.gd" />
       <option value="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/Signal.cs" />
+      <option value="$PROJECT_DIR$/addons/WAT/core/test/Test.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1jWSOfX1Yo38dVt8vxm2lycZAZV" />
@@ -140,7 +134,7 @@
       <workItem from="1611954997581" duration="8229000" />
       <workItem from="1611963922962" duration="1429000" />
       <workItem from="1611968041563" duration="3535000" />
-      <workItem from="1612005957493" duration="1402000" />
+      <workItem from="1612005957493" duration="1578000" />
     </task>
     <servers />
   </component>

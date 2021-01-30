@@ -132,7 +132,7 @@ namespace WAT
 			return Methods[Cursor] as string;
 		}
 
-		public void Next()
+		public void Next(params object[] garbage)
 		{
 			CallDeferred("ChangeState");
 		}
