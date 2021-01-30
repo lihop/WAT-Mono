@@ -30,10 +30,8 @@ func _discover(path: String = Settings.test_directory()) -> Array:
 	while current_name != BLANK:
 		var title: String = path + "/" + current_name
 		# The third slash is for the leading dir
-		print(title)
 		if is_script(title) and (load(title).get_instance_base_type() == "WAT.Test") and is_not_original(title):
 			var script = load(title)
-			print("Loading: ", title)#
 			var test = {"script": script, "path": title, "tags": [], "passing": false}
 			scripts.append(test)
 			tests.scripts[title] = test

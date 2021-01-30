@@ -1,11 +1,14 @@
+using System;
+using System.Drawing.Printing;
 using System.Dynamic;
 using Godot;
+using Godot.Collections;
 
 namespace WAT
 {
 	public class Boolean: Assertion
 	{
-		public static object IsTrue(bool value, string context)
+		public static Dictionary IsTrue(bool value, string context)
 		{
 			var passed = $"|boolean| {value.ToString()} == true";
 			var failed = $"|boolean| {value.ToString()} == false";
@@ -14,7 +17,7 @@ namespace WAT
 			return Result(success, passed, result, context);
 		}
 
-		public static object IsFalse(bool value, string context)
+		public static Dictionary IsFalse(bool value, string context)
 		{
 			var passed = $"|boolean| {value.ToString()} == false";
 			var failed = $"|boolean| {value.ToString()} == true";

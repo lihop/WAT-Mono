@@ -48,7 +48,6 @@ namespace WAT
 
         public TestController()
         {
-            Console.WriteLine("Mono!");
             Assertions = new Assertions();
             _Watcher = (Object) Watcher.New();
             _Yielder = (Timer) Yielder.New();
@@ -58,9 +57,7 @@ namespace WAT
 
         public void Run(Dictionary test)
         {
-            Console.WriteLine("Adding");
             Test = (Test) ((CSharpScript) test["script"]).New();
-            Console.WriteLine("Reached");
             TestCase = (Node) Case.New(Test, test["path"]);
             Test.Assert = this.Assertions;
             Test.Watcher = this.Watcher;
@@ -71,7 +68,10 @@ namespace WAT
             }
             else
             {
-                Methods = Test.GetMethodList();
+                foreach (Dictionary method in Test.GetScriptMethodList())
+                {
+                   Methods.Add(method["name"]);
+                }
             }
 
             if (Methods.Count == 0)
@@ -82,7 +82,7 @@ namespace WAT
 
             Test.Connect(nameof(Test.Described), TestCase, "_on_test_method_described");
             Assertions.Connect(nameof(Assertions.Asserted), TestCase, "_on_asserted");
-            Assertions.Contains(nameof(Assertions.Asserted), Test, nameof(Test.OnLastAssertion));
+            Assertions.Connect(nameof(Assertions.Asserted), Test, nameof(Test.OnLastAssertion));
             AddChild(Test);
             Start();
         }
@@ -93,7 +93,6 @@ namespace WAT
             State = STATE.START;
             Test.Start();
             Next();
-            Console.WriteLine("BEGINS");
         }
 
         private void Pre()

@@ -1,11 +1,12 @@
 ﻿using System.Runtime.Remoting;
 using Godot;
+using Godot.Collections;
 
 namespace WAT
 {
     public class ObjectX: Assertion
     {
-        public static object DoesNotHaveMeta(Object obj, string meta, string context)
+        public static Dictionary DoesNotHaveMeta(Object obj, string meta, string context)
         {
             var passed = $"{obj} does not have meta {meta}";
             var failed = $"{obj} has meta {meta}";
@@ -14,7 +15,7 @@ namespace WAT
             return Result(success, passed, result, context);
         }
 
-        public static object DoesNotHaveMethod(Object obj, string method, string context)
+        public static Dictionary DoesNotHaveMethod(Object obj, string method, string context)
         {
             var passed = $"{obj} does not have method {method}";
             var failed = $"{obj} has method {method}";
@@ -23,7 +24,7 @@ namespace WAT
             return Result(success, passed, result, context);
         }
 
-        public static object DoesNotHaveUserSignal(Object obj, string signal, string context)
+        public static Dictionary DoesNotHaveUserSignal(Object obj, string signal, string context)
         {
             var passed = $"{obj} does not have user signal {signal}";
             var failed = $"{obj} does have user signal {signal}";
@@ -32,7 +33,7 @@ namespace WAT
             return Result(success, passed, result, context);
         }
 
-        public static object HasMeta(Object obj, string meta, string context)
+        public static Dictionary HasMeta(Object obj, string meta, string context)
         {
             var passed = $"{obj} has meta {meta}";
             var failed = $"{obj} does not have meta {meta}";
@@ -41,7 +42,7 @@ namespace WAT
             return Result(success, passed, result, context);
         }
 
-        public static object HasMethod(Object obj, string method, string context)
+        public static Dictionary HasMethod(Object obj, string method, string context)
         {
             var passed = $"{obj} has method {method}";
             var failed = $"{obj} does not have method {method}";
@@ -50,7 +51,7 @@ namespace WAT
             return Result(success, passed, result, context);
         }
 
-        public static object HasUserSignal(Object obj, string signal, string context)
+        public static Dictionary HasUserSignal(Object obj, string signal, string context)
         {
             var passed = $"{obj} does has signal {signal}";
             var failed = $"{obj} does not have user signal {signal}";
@@ -59,7 +60,7 @@ namespace WAT
             return Result(success, passed, result, context);
         }
 
-        public static object IsBlockingSignals(Object obj, string context)
+        public static Dictionary IsBlockingSignals(Object obj, string context)
         {
             var passed = $"{obj} is blocking signals";
             var failed = $"{obj} is not blocking signals";
@@ -68,7 +69,7 @@ namespace WAT
             return Result(success, passed, result, context);
         }
 
-        public static object IsConnected(Object sender, string signal, Object receiver, string method, string context)
+        public static Dictionary IsConnected(Object sender, string signal, Object receiver, string method, string context)
         {
             var passed = $"{sender}.{signal} is connected to {receiver}.{method}";
             var failed = $"{sender}.{signal} is not connected to {receiver}.{method}";
@@ -78,10 +79,10 @@ namespace WAT
         }
 
         /*
-        public static object IsFreed(object obj, string context)
+        public static Dictionary IsFreed(object obj, string context)
         {
             // This && IsNotFreed Need A Second Look
-            // If users manage to get an object this far in CSharp, then something went wrong
+            // If users manage to get an Dictionary this far in CSharp, then something went wrong
             var passed = $"Object is freed from memory";
             var failed = $"Object is not freed from memory";
             var success = Object.IsInstanceValid((Object) obj);
@@ -89,7 +90,7 @@ namespace WAT
             return Result(success, passed, result, context);
         }
         
-        public static object IsNotFreed(object obj, string context)
+        public static Dictionary IsNotFreed(object obj, string context)
         {
             var passed = $"{obj} is not freed from memory";
             var failed = $"{obj} is freed from memory";
@@ -99,7 +100,7 @@ namespace WAT
         }
         */
 
-        public static object IsNotBlockingSignals(Object obj, string context)
+        public static Dictionary IsNotBlockingSignals(Object obj, string context)
         {
             var passed = $"{obj} is not blocking signals";
             var failed = $"{obj} is blocking signals";
@@ -108,7 +109,7 @@ namespace WAT
             return Result(success, passed, result, context);
         }
 
-        public static object IsNotConnected(Object sender, string signal, Object receiver, string method, string context)
+        public static Dictionary IsNotConnected(Object sender, string signal, Object receiver, string method, string context)
         {
             var passed = $"{sender}.{signal} is not connected to {receiver}.{method}";
             var failed = $"{sender}.{signal} is connected to {receiver}.{method}";
@@ -117,7 +118,7 @@ namespace WAT
             return Result(success, passed, result, context);
         }
 
-        public static object IsNotQueuedForDeletion(Object obj, string context)
+        public static Dictionary IsNotQueuedForDeletion(Object obj, string context)
         {
             var passed = $"{obj} is not queued for deletion";
             var failed = $"{obj} is queued for deletion";
@@ -126,7 +127,7 @@ namespace WAT
             return Result(success, passed, result, context);
         }
         
-        public static object IsQueuedForDeletion(Object obj, string context)
+        public static Dictionary IsQueuedForDeletion(Object obj, string context)
         {
             var passed = $"{obj} is queued for deletion";
             var failed = $"{obj} is not queued for deletion";

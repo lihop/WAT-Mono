@@ -21,13 +21,22 @@
   <component name="ChangeListManager">
     <list default="true" id="2fb970b2-b1e9-4d24-a525-b68c59688c24" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WAT-Mono/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WAT-Mono/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/Assertion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/Assertion.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/test/Test.cs" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/test/Test.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SampleBuild.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SampleBuild.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/Assertions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/Assertions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/Boolean.cs" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/Boolean.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/Equality.cs" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/Equality.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/File.cs" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/File.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/Is.cs" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/Is.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/ObjectX.cs" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/ObjectX.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/Property.cs" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/Property.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/Range.cs" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/Range.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/Signal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/Signal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/StringX.cs" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/StringX.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/Utility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/Utility.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/addons/WAT/core/test/case.gd" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/test/case.gd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/addons/WAT/core/test_runner/TestController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/test_runner/TestController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/test_runner/test_controller.gd" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/test_runner/test_controller.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addons/WAT/editor/test_gatherer.gd" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/editor/test_gatherer.gd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/results/WAT/results.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tests/results/WAT/results.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_metadata.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +50,6 @@
     <changedPaths>
       <option value="$PROJECT_DIR$/addons/WAT/core/assertions/Assertions.cs" />
       <option value="$PROJECT_DIR$/addons/WAT/core/test/Recorder.cs" />
-      <option value="$PROJECT_DIR$/addons/WAT/editor/test_gatherer.gd" />
       <option value="$PROJECT_DIR$/addons/WAT/core/test/test.gd" />
       <option value="$PROJECT_DIR$/addons/WAT/ui/scripts/methodgetter.cs" />
       <option value="$PROJECT_DIR$/addons/WAT/ui/scripts/MethodGetter.cs" />
@@ -49,10 +57,21 @@
       <option value="$PROJECT_DIR$/addons/WAT/core/test_runner/single_threaded_runner.gd" />
       <option value="$PROJECT_DIR$/addons/WAT/core/test_runner/test_controller.gd" />
       <option value="$PROJECT_DIR$/addons/WAT/core/test/Test.cs" />
-      <option value="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/Assertion.cs" />
-      <option value="$PROJECT_DIR$/addons/WAT/core/test_runner/TestController.cs" />
-      <option value="$PROJECT_DIR$/addons/WAT/core/test/case.gd" />
+      <option value="$PROJECT_DIR$/addons/WAT/editor/test_gatherer.gd" />
       <option value="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/Assertions.cs" />
+      <option value="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/Equality.cs" />
+      <option value="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/File.cs" />
+      <option value="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/Is.cs" />
+      <option value="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/ObjectX.cs" />
+      <option value="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/Property.cs" />
+      <option value="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/Range.cs" />
+      <option value="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/Signal.cs" />
+      <option value="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/StringX.cs" />
+      <option value="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/Utility.cs" />
+      <option value="$PROJECT_DIR$/addons/WAT/core/test/case.gd" />
+      <option value="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/Assertion.cs" />
+      <option value="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/Boolean.cs" />
+      <option value="$PROJECT_DIR$/addons/WAT/core/test_runner/TestController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1jWSOfX1Yo38dVt8vxm2lycZAZV" />
@@ -65,6 +84,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34994584" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -123,6 +144,8 @@
       <workItem from="1604090795908" duration="322000" />
       <workItem from="1611945774469" duration="4705000" />
       <workItem from="1611954997581" duration="8229000" />
+      <workItem from="1611963922962" duration="1429000" />
+      <workItem from="1611968041563" duration="504000" />
     </task>
     <servers />
   </component>

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Godot;
+using Godot.Collections;
 using Array = Godot.Collections.Array;
 using Object = Godot.Object;
 
@@ -9,7 +10,7 @@ namespace WAT
 {
 	public class Signal: Assertion
 	{
-		public static object WasEmitted(Object emitter, string signal, string context)
+		public static Dictionary WasEmitted(Object emitter, string signal, string context)
 		{
 			var passed = $"Signal {signal} was emitted from {emitter}";
 			var failed = $"Signal {signal} was not emitted from {emitter}";
@@ -21,7 +22,7 @@ namespace WAT
 			return Result(success, passed, result, context);
 		}
 
-		public static object WasNotEmitted(Object emitter, string signal, string context)
+		public static Dictionary WasNotEmitted(Object emitter, string signal, string context)
 		{
 			var passed = $"Signal {signal} was not emitted from {emitter}";
 			var failed = $"Signal {signal} was emitted from {emitter}";
@@ -33,7 +34,7 @@ namespace WAT
 			return Result(success, passed, result, context);
 		}
 
-		public static object WasEmittedXTimes(Object emitter, string signal, int times, string context)
+		public static Dictionary WasEmittedXTimes(Object emitter, string signal, int times, string context)
 		{
 			var passed = $"Signal {signal} was emitted {times} times from {emitter}";
 			var failed = $"Signal {signal} was not emitted {times} times from {emitter}";
@@ -45,7 +46,7 @@ namespace WAT
 			return Result(success, passed, result, context);
 		}
 
-		public static object WasEmittedWithArgs(Object emitter, string signal, Array arguments, string context)
+		public static Dictionary WasEmittedWithArgs(Object emitter, string signal, Array arguments, string context)
 		{
 			var passed = $"Signal {signal} was emitted from {emitter} with arguments {arguments}";
 			var failed = $"Signal {signal} was not emitted from {emitter} with arguments {arguments}";

@@ -21,9 +21,7 @@ func add_method(name: String) -> void:
 func _on_test_method_described(description: String) -> void:
 	_methods.back().context = description
 	
-func _on_asserted(assertion: Dictionary) -> void:
-	print(assertion)
-	print_stack()
+func _on_asserted(assertion) -> void:
 	_methods.back().assertions.append(assertion)
 	
 func calculate() -> void:

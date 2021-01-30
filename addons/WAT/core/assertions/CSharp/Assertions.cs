@@ -2,6 +2,7 @@ using Godot;
 using System;
 using System.CodeDom;
 using System.Collections.Generic;
+using Godot.Collections;
 using GDArray = Godot.Collections.Array;
 using Object = Godot.Object;
 
@@ -13,8 +14,12 @@ namespace WAT {
 		
 		public Assertions() { }
 
-		private void Output(object result) => EmitSignal(nameof(Asserted), result);
-		
+		private void Output(Dictionary result)
+		{
+			//Console.WriteLine(result.ToString());
+			EmitSignal(nameof(Asserted), result);
+		}
+
 		public void IsTrue(bool a, string context = "")
 		{
 			Output(Boolean.IsTrue(a, context));
