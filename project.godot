@@ -50,10 +50,6 @@ config/name="WAT-Mono"
 run/main_scene="res://SampleBuild.tscn"
 config/icon="res://icon.png"
 
-[editor_plugins]
-
-enabled=PoolStringArray( "WAT" )
-
 [rendering]
 
 environment/default_environment="res://default_env.tres"

@@ -92,6 +92,8 @@ func _on_tag_editor_idx_pressed(idx, tagEditor) -> void:
 func _on_dirs_about_to_show() -> void:
 	refresh()
 	Directories.clear()
+	for item in Directories.get_item_count() - 1:
+		Directories.remove_item(item)
 	Directories.set_as_minsize()
 	Directories.add_item("Run All")
 	Directories.set_item_icon(0, load("res://addons/WAT/assets/play.png"))
@@ -122,12 +124,14 @@ func _on_scripts_about_to_show(scripts) -> void:
 	scripts.clear()
 	scripts.set_as_minsize()
 	scripts.add_item("Run All")
-	var currentdir: String = Directories.get_item_text(scripts.name as int)
+	var currentdir: String = Directories.get_item_text(Directories.get_item_index(scripts.name as int))
 	scripts.set_item_metadata(0, {command = RUN_DIR, path = currentdir})
 	scripts.set_item_icon(0,load("res://addons/WAT/assets/folder.png"))
 	var scriptlist: Array = test[currentdir]
 	if scriptlist.empty():
 		return
+	for child in scripts.get_children():
+		child.name += "Thrashed"
 	var idx: int = scripts.get_item_count()
 	for script in scriptlist:
 		var method = Methods.duplicate(true)
@@ -151,7 +155,8 @@ func _on_methods_about_to_show(methods, scripts) -> void:
 	methods.add_child(tag_editor)
 	methods.add_submenu_item("Edit Tags", tag_editor.name)
 	tag_editor.connect(ABOUT_TO_SHOW, self, "_on_tag_editor_about_to_show", [tag_editor, scripts])
-	var currentScript: String = scripts.get_item_text(methods.name as int)
+	print(methods.name, " is method name")
+	var currentScript: String = scripts.get_item_text(scripts.get_item_index(methods.name as int))
 	methods.set_item_metadata(0, {command = RUN_SCRIPT, path = currentScript})
 	methods.set_item_metadata(1, {command = RUN_TAG, tag = "?"})
 	methods.set_item_icon(0, load("res://addons/WAT/assets/script.png"))
@@ -171,6 +176,7 @@ func _on_methods_about_to_show(methods, scripts) -> void:
 			methods.set_item_metadata(idx, {command = RUN_METHOD, path = script.get_path(), method = method.name})
 			methods.set_item_icon(idx, load("res://addons/WAT/assets/function.png"))
 			idx += 1
+			print(0)
 	
 func _on_tags_about_to_show() -> void:
 	refresh()
