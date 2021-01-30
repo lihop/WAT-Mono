@@ -177,5 +177,10 @@ namespace WAT
 			return methods;
 		}
 
+		public static Test CreateInstance(CSharpScript script)
+		{
+			return (Test) script.New();
+		}
+
 	}
 }

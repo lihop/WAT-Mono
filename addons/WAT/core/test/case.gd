@@ -11,6 +11,7 @@ var _test: Node
 
 func _init(test: Node, path: String) -> void:
 	_test = test
+	print(test)
 	_title = test.title() if path.ends_with(".gd") else test.Title()
 	_path = path
 

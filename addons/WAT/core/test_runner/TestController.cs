@@ -60,7 +60,17 @@ namespace WAT
 		
 		public void Run(Dictionary test)
 		{
-			Test = (Test) ((CSharpScript) test["script"]).New();
+			if (Engine.EditorHint)
+			{
+				Test = (Test) ((CSharpScript) test["script"]).New();
+			}
+			else
+			{
+				Test = (Test) ResourceLoader.Load<CSharpScript>((string) test["path"]).New();
+			}
+
+			//Test = WAT.Test.CreateInstance((CSharpScript) test["script"]);
+			GD.Print(test, " gives us ", Test);
 			TestCase = (Node) Case.New(Test, test["path"]);
 			Test.Assert = this.Assertions;
 			Test.Watcher = this._Watcher;

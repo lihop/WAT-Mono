@@ -147,7 +147,6 @@
         <e p="BasicCSharpTest.cs" t="Include" />
         <e p="BooleanTest.cs" t="Include" />
         <e p="EqualityTest.cs" t="Include" />
-        <e p="FileTest.cs" t="Include" />
         <e p="IsInstanceTest.cs" t="Include" />
         <e p="IsNotInstanceTest.cs" t="Include" />
         <e p="NameSpaced.cs" t="Include" />
@@ -156,8 +155,10 @@
         <e p="RangeTest.cs" t="Include" />
         <e p="RecorderTest.cs" t="Include" />
         <e p="StringTest.cs" t="Include" />
-        <e p="sub" t="Include" />
         <e p="WatcherTest.cs" t="Include" />
+        <e p="xx" t="Include">
+          <e p="FileTest.cs" t="Include" />
+        </e>
         <e p="YieldTest.cs" t="Include" />
       </e>
       <e p="WAT-Mono.csproj" t="IncludeRecursive" />
