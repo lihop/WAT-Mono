@@ -31,6 +31,7 @@ func _run(userdata: Array) -> void:
 			yield(_mono_controller, "finished")
 			results.append(_mono_controller.GetResults())
 	_test_controller.queue_free()
+	_mono_controller.queue_free()
 	call_deferred("run_completed", thread, results)
 	
 func run_completed(thread, results) -> void:
@@ -90,12 +91,12 @@ func _set_calculated_yield_time(test: Dictionary) -> void:
 			line = line.substr(line.find_last(", ") + 1, line.length())
 			time += line as float
 		elif "await ToSignal(UntilTimeout(0.1" in line:
-		    var more = line.replace("await ToSignal(UntilTimeout(0.1)", "").replace("), YIELD);", "");
-		    time += more as float
+			var more = line.replace("await ToSignal(UntilTimeout(0.1)", "").replace("), YIELD);", "");
+			time += more as float
 		elif "await ToSignal(UntilSignal" in line:
-		    line = line.replace("), YIELD);", "")
-		    line = line.substr(line.find_last(", ") + 1, line.length())
-		    time += line as float
+			line = line.replace("), YIELD);", "")
+			line = line.substr(line.find_last(", ") + 1, line.length())
+			time += line as float
 	test["yield_time"] = time
 
 class YieldSorter:

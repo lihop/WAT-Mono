@@ -201,7 +201,19 @@ namespace WAT
 			TestCase.Free();
 			return results;
 		}
-		
-		
+
+		public override void _Notification(int what)
+		{
+			if (what == NotificationPredelete)
+			{
+				//Assertions.Free();
+				_Watcher.Call("clear");
+				if (IsInstanceValid(TestCase))
+				{
+					TestCase.Free();
+				}
+			}
+			base._Notification(what);
+		}
 	}
 }
