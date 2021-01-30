@@ -22,7 +22,7 @@ namespace WAT
 		[AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
 		protected class RunWith : Attribute
 		{
-			private object[] arguments;
+			public object[] arguments;
 
 			public RunWith(params object[] args)
 			{
@@ -141,6 +141,38 @@ namespace WAT
 			foreach (var methodInfo in methodInfos)
 			{
 				methods.Add(new Dictionary {{"name", methodInfo.Name}});
+			}
+			return methods;
+		}
+
+		public Array GetScriptMethodListWithArgs()
+		{
+			Array methods = new Array();
+			List<MethodInfo> methodInfos = new List<MethodInfo>(GetType().GetMethods().Where(m => m.IsDefined(typeof(TestAttribute))).ToList());
+			foreach (var methodInfo in methodInfos)
+			{
+				if (methodInfo.IsDefined(typeof(RunWith)))
+				{
+					Attribute[] attrs = System.Attribute.GetCustomAttributes(methodInfo);
+					foreach (Attribute attr in attrs)
+					{
+						if (attr is RunWith runWith)
+						{
+							var args = new Array();
+							foreach (var arg in runWith.arguments)
+							{
+								args.Add(arg);
+							}
+							var info = new Dictionary {{"name", methodInfo.Name}, {"args", args}};
+							methods.Add(info);
+						}
+					}
+				}
+				else
+				{
+					var info = new Dictionary {{"name", methodInfo.Name}, {"args", new Array()}};
+					methods.Add(info);
+				}
 			}
 			return methods;
 		}

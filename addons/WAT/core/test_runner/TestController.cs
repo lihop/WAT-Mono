@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Diagnostics.Eventing.Reader;
@@ -43,7 +44,7 @@ namespace WAT
 		private STATE State = STATE.START;
 		private int Cursor = -1;
 		private Array Methods = new Array();
-		private string _currentMethod;
+		private Dictionary _currentMethod;
 		private readonly Assertions Assertions;
 		private readonly Timer _Yielder;
 		private readonly Reference _Watcher;
@@ -71,9 +72,9 @@ namespace WAT
 			}
 			else
 			{
-				foreach (Dictionary method in Test.GetScriptMethodList())
+				foreach (Dictionary method in Test.GetScriptMethodListWithArgs())
 				{
-				   Methods.Add(method["name"]);
+				   Methods.Add(method);
 				}
 			}
 
@@ -109,8 +110,8 @@ namespace WAT
 		{
 			State = STATE.EXECUTE;
 			_currentMethod = NextTestMethod();
-			TestCase.Call("add_method", _currentMethod);
-			Test.Call(_currentMethod);
+			TestCase.Call("add_method", _currentMethod["name"]);
+			Test.Callv((string) _currentMethod["name"], (Array) _currentMethod["args"]);
 			Next();
 		}
 
@@ -128,11 +129,11 @@ namespace WAT
 			Next();
 		}
 
-		public string NextTestMethod()
+		private Dictionary NextTestMethod()
 		{
 			// Implement Reruns
 			Cursor += 1;
-			return Methods[Cursor] as string;
+			return Methods[Cursor] as Dictionary;
 		}
 
 		public void Next(params object[] garbage)

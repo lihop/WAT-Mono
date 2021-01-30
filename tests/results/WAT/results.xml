@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<testsuites failures="1" name="TestXML" tests="15" time="0">
+<testsuites failures="0" name="TestXML" tests="15" time="0">
 	<testsuite name="Given a Yield" failures="0"  tests="10" time="0">
 		<testcase name="TestWhenWeYieldInStart" time="0"></testcase>
 		<testcase name="TestWhenWeYieldInPre" time="0"></testcase>
@@ -25,9 +25,9 @@
 
 	<testsuite name="Given A Boolean Assertion (GDScript WATTest)" failures="0"  tests="4" time="0">
 		<testcase name=" False is false" time="0"></testcase>
-		<testcase name=" Value is true" time="0"></testcase>
-		<testcase name=" Value is true" time="0"></testcase>
 		<testcase name="True is true" time="0"></testcase>
+		<testcase name=" Value is true" time="0"></testcase>
+		<testcase name=" Value is true" time="0"></testcase>
 	</testsuite>
 
 	<testsuite name="Given an Equality Assertion" failures="0"  tests="7" time="0">
@@ -111,8 +111,10 @@
 		<testcase name="IsNotBlockingSignals" time="0"></testcase>
 	</testsuite>
 
-	<testsuite name="Given The Addition Operator (Parameter Tests)" failures="1"  tests="1" time="0">
-		<testcase name="Add" time="0"></testcase>
+	<testsuite name="Given The Addition Operator (Parameter Tests)" failures="0"  tests="3" time="0">
+		<testcase name="When we add 2 to 2 we get 4" time="0"></testcase>
+		<testcase name="When we add 5 to 3 we get 8" time="0"></testcase>
+		<testcase name="When we add 7 to 6 we get 13" time="0"></testcase>
 	</testsuite>
 
 	<testsuite name="Range Assertions" failures="0"  tests="2" time="0">

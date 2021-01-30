@@ -67,7 +67,7 @@
 		"tags": [
 
 		],
-		"passing": false
+		"passing": true
 	},
 	"res://tests/RangeTest.cs": {
 		"path": "res://tests/RangeTest.cs",
