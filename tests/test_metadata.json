@@ -20,13 +20,6 @@
 		],
 		"passing": true
 	},
-	"res://tests/FileTest.cs": {
-		"path": "res://tests/FileTest.cs",
-		"tags": [
-
-		],
-		"passing": true
-	},
 	"res://tests/IsInstanceTest.cs": {
 		"path": "res://tests/IsInstanceTest.cs",
 		"tags": [
@@ -103,5 +96,12 @@
 
 		],
 		"passing": true
+	},
+	"res://tests/xx/FileTest.cs": {
+		"path": "res://tests/xx/FileTest.cs",
+		"tags": [
+
+		],
+		"passing": false
 	}
 }

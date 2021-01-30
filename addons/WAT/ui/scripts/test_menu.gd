@@ -107,8 +107,10 @@ func _on_dirs_about_to_show() -> void:
 	if dirs.empty():
 		return
 	var idx: int = Directories.get_item_count()
+	var alreadyAdded = []
 	for dir in dirs:
-		if not test[dir].empty():
+		if not test[dir].empty() and not alreadyAdded.has(dir):
+			alreadyAdded.append(dir)
 			var script = Scripts.duplicate(true)
 			script.connect(IDX_PRESSED, self, ON_IDX_PRESSED, [script])
 			pool.append(script)
