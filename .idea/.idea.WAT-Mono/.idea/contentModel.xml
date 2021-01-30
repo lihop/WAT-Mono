@@ -156,8 +156,10 @@
         <e p="RangeTest.cs" t="Include" />
         <e p="RecorderTest.cs" t="Include" />
         <e p="StringTest.cs" t="Include" />
+        <e p="sub" t="Include">
+          <e p="YieldTest.cs" t="Include" />
+        </e>
         <e p="WatcherTest.cs" t="Include" />
-        <e p="YieldTest.cs" t="Include" />
       </e>
       <e p="WAT-Mono.csproj" t="IncludeRecursive" />
       <e p="WAT-Mono.sln" t="IncludeFlat" />

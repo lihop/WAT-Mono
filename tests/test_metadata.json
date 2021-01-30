@@ -4,7 +4,7 @@
 		"tags": [
 
 		],
-		"passing": false
+		"passing": true
 	},
 	"res://tests/BooleanTest.cs": {
 		"path": "res://tests/BooleanTest.cs",
@@ -18,7 +18,7 @@
 		"tags": [
 
 		],
-		"passing": false
+		"passing": true
 	},
 	"res://tests/EqualityTest.cs": {
 		"path": "res://tests/EqualityTest.cs",
@@ -32,35 +32,35 @@
 		"tags": [
 
 		],
-		"passing": false
+		"passing": true
 	},
 	"res://tests/IsInstanceTest.cs": {
 		"path": "res://tests/IsInstanceTest.cs",
 		"tags": [
 
 		],
-		"passing": false
+		"passing": true
 	},
 	"res://tests/IsNotInstanceTest.cs": {
 		"path": "res://tests/IsNotInstanceTest.cs",
 		"tags": [
 
 		],
-		"passing": false
+		"passing": true
 	},
 	"res://tests/NameSpaced.cs": {
 		"path": "res://tests/NameSpaced.cs",
 		"tags": [
 
 		],
-		"passing": false
+		"passing": true
 	},
 	"res://tests/ObjectTest.cs": {
 		"path": "res://tests/ObjectTest.cs",
 		"tags": [
 
 		],
-		"passing": false
+		"passing": true
 	},
 	"res://tests/ParameterizedTest.cs": {
 		"path": "res://tests/ParameterizedTest.cs",
@@ -74,21 +74,21 @@
 		"tags": [
 
 		],
-		"passing": false
+		"passing": true
 	},
 	"res://tests/RecorderTest.cs": {
 		"path": "res://tests/RecorderTest.cs",
 		"tags": [
 
 		],
-		"passing": false
+		"passing": true
 	},
 	"res://tests/StringTest.cs": {
 		"path": "res://tests/StringTest.cs",
 		"tags": [
 
 		],
-		"passing": false
+		"passing": true
 	},
 	"res://tests/WatcherTest.cs": {
 		"path": "res://tests/WatcherTest.cs",
@@ -97,8 +97,8 @@
 		],
 		"passing": true
 	},
-	"res://tests/YieldTest.cs": {
-		"path": "res://tests/YieldTest.cs",
+	"res://tests/sub/YieldTest.cs": {
+		"path": "res://tests/sub/YieldTest.cs",
 		"tags": [
 
 		],

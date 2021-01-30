@@ -1,6 +1,8 @@
 using System;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Diagnostics.Eventing.Reader;
+using System.Drawing.Printing;
 using System.Numerics;
 using Godot;
 using Godot.Collections;
@@ -41,10 +43,10 @@ namespace WAT
 		private STATE State = STATE.START;
 		private int Cursor = -1;
 		private Array Methods = new Array();
-		private string CurrentMethod;
-		private Assertions Assertions;
-		private Timer _Yielder;
-		private Reference _Watcher;
+		private string _currentMethod;
+		private readonly Assertions Assertions;
+		private readonly Timer _Yielder;
+		private readonly Reference _Watcher;
 
 		public TestController()
 		{
@@ -54,7 +56,7 @@ namespace WAT
 			AddChild(_Yielder);
 			_Yielder.Connect("finished", this, nameof(Next));
 		}
-
+		
 		public void Run(Dictionary test)
 		{
 			Test = (Test) ((CSharpScript) test["script"]).New();
@@ -62,6 +64,7 @@ namespace WAT
 			Test.Assert = this.Assertions;
 			Test.Watcher = this._Watcher;
 			Test.Yielder = this._Yielder;
+			Methods.Clear();
 			if (test.Contains("method"))
 			{
 				Methods.Add(test["method"]);
@@ -105,9 +108,9 @@ namespace WAT
 		private void Execute()
 		{
 			State = STATE.EXECUTE;
-			CurrentMethod = NextTestMethod();
-			TestCase.Call("add_method", CurrentMethod);
-			Test.Call(CurrentMethod);
+			_currentMethod = NextTestMethod();
+			TestCase.Call("add_method", _currentMethod);
+			Test.Call(_currentMethod);
 			Next();
 		}
 
@@ -147,6 +150,7 @@ namespace WAT
 			if (State == STATE.END)
 			{
 				Complete();
+				return;
 			}
 
 			switch (State)
@@ -171,6 +175,7 @@ namespace WAT
 					}
 					break;
 				case STATE.END:
+					End();
 					break;
 				default:
 					throw new ArgumentOutOfRangeException();

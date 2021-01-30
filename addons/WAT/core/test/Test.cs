@@ -30,7 +30,7 @@ namespace WAT
 			}
 		}
 
-		protected const String YIELD = "finished";
+		protected const string YIELD = "finished";
 		public const bool TEST = true;
 		public Assertions Assert;
 		public Timer Yielder;

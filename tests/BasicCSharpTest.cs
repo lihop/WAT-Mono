@@ -8,4 +8,10 @@ public class BasicCSharpTest : WAT.Test
     {
         Assert.IsTrue(true);
     }
+    
+    [Test]
+    public void CSXharpTestsWorking()
+    {
+        Assert.IsTrue(true);
+    }
 }

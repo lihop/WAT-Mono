@@ -20,7 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2fb970b2-b1e9-4d24-a525-b68c59688c24" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WAT-Mono/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WAT-Mono/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WAT-Mono/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WAT-Mono/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/addons/WAT/core/test/Test.cs" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/test/Test.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addons/WAT/core/test/watcher.gd" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/test/watcher.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addons/WAT/core/test_runner/TestController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/test_runner/TestController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addons/WAT/core/test_runner/single_threaded_runner.gd" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/test_runner/single_threaded_runner.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/BasicCSharpTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/BasicCSharpTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/BooleanTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BooleanTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/YieldTest.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/results/WAT/results.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tests/results/WAT/results.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_metadata.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +42,12 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -40,7 +56,6 @@
       <option value="$PROJECT_DIR$/addons/WAT/core/test/test.gd" />
       <option value="$PROJECT_DIR$/addons/WAT/ui/scripts/methodgetter.cs" />
       <option value="$PROJECT_DIR$/addons/WAT/ui/scripts/MethodGetter.cs" />
-      <option value="$PROJECT_DIR$/addons/WAT/core/test_runner/single_threaded_runner.gd" />
       <option value="$PROJECT_DIR$/addons/WAT/core/test_runner/test_controller.gd" />
       <option value="$PROJECT_DIR$/addons/WAT/editor/test_gatherer.gd" />
       <option value="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/Equality.cs" />
@@ -53,13 +68,16 @@
       <option value="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/Utility.cs" />
       <option value="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/Assertion.cs" />
       <option value="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/Boolean.cs" />
-      <option value="$PROJECT_DIR$/addons/WAT/core/test_runner/TestController.cs" />
       <option value="$PROJECT_DIR$/addons/WAT/core/test/case.gd" />
       <option value="$PROJECT_DIR$/addons/WAT/ui/scripts/test_menu.gd" />
       <option value="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/Assertions.cs" />
       <option value="$PROJECT_DIR$/addons/WAT/core/test/watcher.gd" />
       <option value="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/Signal.cs" />
+      <option value="$PROJECT_DIR$/tests/BasicCSharpTest.cs" />
       <option value="$PROJECT_DIR$/addons/WAT/core/test/Test.cs" />
+      <option value="$PROJECT_DIR$/addons/WAT/core/test_runner/single_threaded_runner.gd" />
+      <option value="$PROJECT_DIR$/addons/WAT/core/test/yielder.gd" />
+      <option value="$PROJECT_DIR$/addons/WAT/core/test_runner/TestController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1jWSOfX1Yo38dVt8vxm2lycZAZV" />
@@ -134,7 +152,7 @@
       <workItem from="1611954997581" duration="8229000" />
       <workItem from="1611963922962" duration="1429000" />
       <workItem from="1611968041563" duration="3535000" />
-      <workItem from="1612005957493" duration="1578000" />
+      <workItem from="1612005957493" duration="6179000" />
     </task>
     <servers />
   </component>
@@ -160,6 +178,49 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/addons/WAT/core/test_runner/TestController.cs</url>
+          <line>205</line>
+          <properties documentPath="C:\Users\Alex\Projects\WAT-Mono\addons\WAT\core\test_runner\TestController.cs" initialLine="203" containingFunctionPresentation="method 'Complete'">
+            <startOffsets>
+              <option value="4646" />
+            </startOffsets>
+            <endOffsets>
+              <option value="4647" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/addons/WAT/core/test_runner/TestController.cs</url>
+          <line>76</line>
+          <properties documentPath="C:\Users\Alex\Projects\WAT-Mono\addons\WAT\core\test_runner\TestController.cs" initialLine="76" containingFunctionPresentation="method 'Run'">
+            <startOffsets>
+              <option value="2318" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2334" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/addons/WAT/core/test_runner/TestController.cs</url>
+          <line>162</line>
+          <properties documentPath="C:\Users\Alex\Projects\WAT-Mono\addons\WAT\core\test_runner\TestController.cs" initialLine="162" containingFunctionPresentation="method 'ChangeState'">
+            <startOffsets>
+              <option value="4029" />
+            </startOffsets>
+            <endOffsets>
+              <option value="4067" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Type#Godot.Object" memberName="DynamicObject" />
@@ -167,7 +228,12 @@
     </pin-to-top-manager>
     <watches-manager>
       <configuration name="GODOT_DEBUG_RUN_CONFIGURATION">
-        <watch expression="watcher" language="C#" />
+        <watch expression="State" language="C#" />
+        <watch expression="Test" language="C#" />
+        <watch expression="Methods" language="C#" />
+        <watch expression="_currentMethod" language="C#" />
+        <watch expression="Cursor" language="C#" />
+        <watch expression="finishCount" language="C#" />
       </configuration>
     </watches-manager>
   </component>
