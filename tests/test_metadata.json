@@ -13,13 +13,6 @@
 		],
 		"passing": true
 	},
-	"res://tests/BooleanTest.gd": {
-		"path": "res://tests/BooleanTest.gd",
-		"tags": [
-
-		],
-		"passing": true
-	},
 	"res://tests/EqualityTest.cs": {
 		"path": "res://tests/EqualityTest.cs",
 		"tags": [
@@ -97,8 +90,15 @@
 		],
 		"passing": true
 	},
-	"res://tests/sub/YieldTest.cs": {
-		"path": "res://tests/sub/YieldTest.cs",
+	"res://tests/YieldTest.cs": {
+		"path": "res://tests/YieldTest.cs",
+		"tags": [
+
+		],
+		"passing": true
+	},
+	"res://tests/sub/BooleanTest.gd": {
+		"path": "res://tests/sub/BooleanTest.gd",
 		"tags": [
 
 		],

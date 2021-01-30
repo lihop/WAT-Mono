@@ -20,10 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2fb970b2-b1e9-4d24-a525-b68c59688c24" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/tests/YieldTest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/sub/BooleanTest.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WAT-Mono/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WAT-Mono/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WAT-Mono/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WAT-Mono/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/test/Test.cs" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/test/Test.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/test_runner/TestController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/test_runner/TestController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addons/WAT/core/test_runner/multi_threaded_runner.gd" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/test_runner/multi_threaded_runner.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/BooleanTest.gd" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/results/WAT/results.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tests/results/WAT/results.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/sub/YieldTest.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_metadata.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,6 +78,7 @@
       <option value="$PROJECT_DIR$/addons/WAT/core/test_runner/TestController.cs" />
       <option value="$PROJECT_DIR$/addons/WAT/core/test/Test.cs" />
       <option value="$PROJECT_DIR$/tests/ParameterizedTest.cs" />
+      <option value="$PROJECT_DIR$/addons/WAT/core/test_runner/multi_threaded_runner.gd" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1jWSOfX1Yo38dVt8vxm2lycZAZV" />
@@ -148,7 +153,7 @@
       <workItem from="1611954997581" duration="8229000" />
       <workItem from="1611963922962" duration="1429000" />
       <workItem from="1611968041563" duration="3535000" />
-      <workItem from="1612005957493" duration="8171000" />
+      <workItem from="1612005957493" duration="9324000" />
     </task>
     <servers />
   </component>

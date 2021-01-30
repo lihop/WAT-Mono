@@ -1,6 +1,7 @@
 extends Node
 
 const TestController: Script = preload("res://addons/WAT/core/test_runner/test_controller.gd")
+const MonoTestController = preload("TestController.cs")
 var _results: Array = []
 var _threads: Array = []
 signal run_completed
@@ -17,11 +18,18 @@ func _run(userdata: Array) -> void:
 	var thread: Thread = userdata[1]
 	var tests: Array = userdata[0]
 	var _test_controller: TestController = TestController.new()
+	var _mono_controller: MonoTestController = MonoTestController.new()
 	add_child(_test_controller)
+	add_child(_mono_controller)
 	for test in tests:
-		_test_controller.run(test)
-		yield(_test_controller, "finished") 
-		results.append(_test_controller.get_results())
+		if test["script"] is GDScript:
+			_test_controller.run(test)
+			yield(_test_controller, "finished") 
+			results.append(_test_controller.get_results())
+		elif test["script"] is CSharpScript:
+			_mono_controller.Run(test)
+			yield(_mono_controller, "finished")
+			results.append(_mono_controller.GetResults())
 	_test_controller.queue_free()
 	call_deferred("run_completed", thread, results)
 	
@@ -81,6 +89,13 @@ func _set_calculated_yield_time(test: Dictionary) -> void:
 			line = line.replace("), YIELD)", "")
 			line = line.substr(line.find_last(", ") + 1, line.length())
 			time += line as float
+		elif "await ToSignal(UntilTimeout(0.1" in line:
+		    var more = line.replace("await ToSignal(UntilTimeout(0.1)", "").replace("), YIELD);", "");
+		    time += more as float
+		elif "await ToSignal(UntilSignal" in line:
+		    line = line.replace("), YIELD);", "")
+		    line = line.substr(line.find_last(", ") + 1, line.length())
+		    time += line as float
 	test["yield_time"] = time
 
 class YieldSorter:
