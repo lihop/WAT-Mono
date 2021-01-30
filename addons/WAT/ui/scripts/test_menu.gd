@@ -155,7 +155,6 @@ func _on_methods_about_to_show(methods, scripts) -> void:
 	methods.add_child(tag_editor)
 	methods.add_submenu_item("Edit Tags", tag_editor.name)
 	tag_editor.connect(ABOUT_TO_SHOW, self, "_on_tag_editor_about_to_show", [tag_editor, scripts])
-	print(methods.name, " is method name")
 	var currentScript: String = scripts.get_item_text(scripts.get_item_index(methods.name as int))
 	methods.set_item_metadata(0, {command = RUN_SCRIPT, path = currentScript})
 	methods.set_item_metadata(1, {command = RUN_TAG, tag = "?"})
@@ -176,7 +175,6 @@ func _on_methods_about_to_show(methods, scripts) -> void:
 			methods.set_item_metadata(idx, {command = RUN_METHOD, path = script.get_path(), method = method.name})
 			methods.set_item_icon(idx, load("res://addons/WAT/assets/function.png"))
 			idx += 1
-			print(0)
 	
 func _on_tags_about_to_show() -> void:
 	refresh()

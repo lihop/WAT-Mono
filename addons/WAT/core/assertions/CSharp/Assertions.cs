@@ -16,7 +16,6 @@ namespace WAT {
 
 		private void Output(Dictionary result)
 		{
-			//Console.WriteLine(result.ToString());
 			EmitSignal(nameof(Asserted), result);
 		}
 

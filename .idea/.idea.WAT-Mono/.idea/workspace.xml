@@ -20,11 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2fb970b2-b1e9-4d24-a525-b68c59688c24" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.WAT-Mono/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WAT-Mono/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/Assertions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/Assertions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addons/WAT/core/test/Test.cs" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/test/Test.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/addons/WAT/ui/scripts/test_menu.gd" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/ui/scripts/test_menu.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project.godot" beforeDir="false" afterPath="$PROJECT_DIR$/project.godot" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/results/WAT/results.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tests/results/WAT/results.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_metadata.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,9 +42,7 @@
       <option value="$PROJECT_DIR$/addons/WAT/ui/scripts/MethodGetter.cs" />
       <option value="$PROJECT_DIR$/addons/WAT/core/test_runner/single_threaded_runner.gd" />
       <option value="$PROJECT_DIR$/addons/WAT/core/test_runner/test_controller.gd" />
-      <option value="$PROJECT_DIR$/addons/WAT/core/test/Test.cs" />
       <option value="$PROJECT_DIR$/addons/WAT/editor/test_gatherer.gd" />
-      <option value="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/Assertions.cs" />
       <option value="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/Equality.cs" />
       <option value="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/File.cs" />
       <option value="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/Is.cs" />
@@ -60,6 +57,8 @@
       <option value="$PROJECT_DIR$/addons/WAT/core/test_runner/TestController.cs" />
       <option value="$PROJECT_DIR$/addons/WAT/core/test/case.gd" />
       <option value="$PROJECT_DIR$/addons/WAT/ui/scripts/test_menu.gd" />
+      <option value="$PROJECT_DIR$/addons/WAT/core/test/Test.cs" />
+      <option value="$PROJECT_DIR$/addons/WAT/core/assertions/CSharp/Assertions.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1jWSOfX1Yo38dVt8vxm2lycZAZV" />
@@ -133,7 +132,7 @@
       <workItem from="1611945774469" duration="4705000" />
       <workItem from="1611954997581" duration="8229000" />
       <workItem from="1611963922962" duration="1429000" />
-      <workItem from="1611968041563" duration="2787000" />
+      <workItem from="1611968041563" duration="3469000" />
     </task>
     <servers />
   </component>

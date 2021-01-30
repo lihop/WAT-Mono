@@ -125,12 +125,7 @@ namespace WAT
             return "WAT.Test";
         }
 
-        public Array methods()
-        {
-            var x = new Array(GetType().GetMethods().Where(m => m.IsDefined(typeof(TestAttribute))).ToList());
-            Console.WriteLine(x.ToString());
-            return new Array();
-        }
+        
 
         public Array GetScriptMethodList()
         {
@@ -140,7 +135,6 @@ namespace WAT
             {
                 methods.Add(new Dictionary {{"name", methodInfo.Name}});
             }
-            Console.WriteLine(methods[0]);
             return methods;
         }
 
