@@ -12,7 +12,8 @@ func discover() -> Dictionary:
 	for path in tests.scripts:
 		if(metadata.has(path)):
 			tests.scripts[path]["tags"] = metadata[path]["tags"]
-			tests.scripts[path]["passing"] = metadata[path]["passing"]
+			if(metadata[path].has("passing")):
+				tests.scripts[path]["passing"] = metadata[path]["passing"]
 	return tests
 
 func _discover(path: String = Settings.test_directory()) -> Array:
@@ -73,7 +74,7 @@ func save(data: Dictionary) -> void:
 	file.close()
 	
 func is_script(title) -> bool:
-    return title.ends_with(".gd") or title.ends_with(".gdc") or title.ends_with(".cs")
+	return title.ends_with(".gd") or title.ends_with(".gdc") or title.ends_with(".cs")
 
 func is_not_original(title) -> bool:
-    return title != "res:///addons/WAT/core/test/test.gd" and title != "res:///addons/WAT/core/test/Test.cs" and title != "res:///addons/WAT/core/test/test.gdc"
+	return title != "res:///addons/WAT/core/test/test.gd" and title != "res:///addons/WAT/core/test/Test.cs" and title != "res:///addons/WAT/core/test/test.gdc"

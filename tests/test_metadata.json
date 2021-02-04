@@ -13,12 +13,26 @@
 		],
 		"passing": true
 	},
+	"res://tests/BooleanTest.gd": {
+		"path": "res://tests/BooleanTest.gd",
+		"tags": [
+
+		],
+		"passing": false
+	},
 	"res://tests/EqualityTest.cs": {
 		"path": "res://tests/EqualityTest.cs",
 		"tags": [
 
 		],
 		"passing": true
+	},
+	"res://tests/FileTest.cs": {
+		"path": "res://tests/FileTest.cs",
+		"tags": [
+
+		],
+		"passing": false
 	},
 	"res://tests/IsInstanceTest.cs": {
 		"path": "res://tests/IsInstanceTest.cs",
@@ -89,19 +103,5 @@
 
 		],
 		"passing": true
-	},
-	"res://tests/sub/BooleanTest.gd": {
-		"path": "res://tests/sub/BooleanTest.gd",
-		"tags": [
-
-		],
-		"passing": true
-	},
-	"res://tests/xx/FileTest.cs": {
-		"path": "res://tests/xx/FileTest.cs",
-		"tags": [
-
-		],
-		"passing": false
 	}
 }
