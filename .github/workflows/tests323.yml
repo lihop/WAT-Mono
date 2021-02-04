@@ -11,10 +11,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install Dependencies
-      run: |
-        nuget restore
-        mkdir -p .mono/assemblies/Debug
-        cp /usr/local/bin/GodotSharp/Api/Release/* .mono/assemblies/Debug
+        run: |
+          nuget restore
+          mkdir -p .mono/assemblies/Debug
+          cp /usr/local/bin/GodotSharp/Api/Release/* .mono/assemblies/Debug
       - name: Compile
         run: msbuild
       - name: Run
