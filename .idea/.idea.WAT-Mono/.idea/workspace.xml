@@ -20,23 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2fb970b2-b1e9-4d24-a525-b68c59688c24" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.WAT-Mono/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WAT-Mono/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WAT-Mono/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WAT-Mono/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SampleBuild.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SampleBuild.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SampleBuild.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/SampleBuild.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/test/Test.cs" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/test/Test.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/test/case.gd" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/test/case.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/test_runner/TestController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/test_runner/TestController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/test_runner/test_controller.gd" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/test_runner/test_controller.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/core/test_runner/test_runner.gd" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/core/test_runner/test_runner.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/network/client.gd" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/network/client.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/WAT/ui/scripts/cli.gd" beforeDir="false" afterPath="$PROJECT_DIR$/addons/WAT/ui/scripts/cli.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/default_env.tres" beforeDir="false" afterPath="$PROJECT_DIR$/default_env.tres" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/icon.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/icon.png.import" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project.godot" beforeDir="false" afterPath="$PROJECT_DIR$/project.godot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/results/WAT/results.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tests/results/WAT/results.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_metadata.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/xx/FileTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/xx/FileTest.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +96,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Editor" type="GODOT_DEBUG_RUN_CONFIGURATION" factoryName="Start and Debug">
-      <option name="EXE_PATH" value="C:\\Program Files\\Godot\\GodotMono.exe" />
+      <option name="EXE_PATH" value="$USER_HOME$/Apps/GodotC.exe" />
       <option name="PROGRAM_PARAMETERS" value="--path &quot;$PROJECT_DIR$&quot; --editor" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -122,7 +106,7 @@
       </method>
     </configuration>
     <configuration name="Player" type="GODOT_DEBUG_RUN_CONFIGURATION" factoryName="Start and Debug">
-      <option name="EXE_PATH" value="C:\\Program Files\\Godot\\GodotMono.exe" />
+      <option name="EXE_PATH" value="$USER_HOME$/Apps/GodotC.exe" />
       <option name="PROGRAM_PARAMETERS" value="--path &quot;$PROJECT_DIR$&quot;" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -157,7 +141,8 @@
       <workItem from="1611963922962" duration="1429000" />
       <workItem from="1611968041563" duration="3535000" />
       <workItem from="1612005957493" duration="10291000" />
-      <workItem from="1612040133830" duration="697000" />
+      <workItem from="1612040133830" duration="1663000" />
+      <workItem from="1612042534026" duration="297000" />
     </task>
     <servers />
   </component>
