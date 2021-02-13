@@ -70,7 +70,6 @@ namespace WAT
 			}
 
 			//Test = WAT.Test.CreateInstance((CSharpScript) test["script"]);
-			GD.Print(test, " gives us ", Test);
 			TestCase = (Node) Case.New(Test, test["path"]);
 			Test.Assert = this.Assertions;
 			Test.Watcher = this._Watcher;
