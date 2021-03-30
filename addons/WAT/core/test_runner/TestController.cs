@@ -2,8 +2,6 @@ using System;
 using System.Collections;
 using System.ComponentModel;
 using System.Diagnostics;
-using System.Diagnostics.Eventing.Reader;
-using System.Drawing.Printing;
 using System.Numerics;
 using Godot;
 using Godot.Collections;

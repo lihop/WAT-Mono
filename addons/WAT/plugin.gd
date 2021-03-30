@@ -43,7 +43,7 @@ func _on_launched_via_editor() -> void:
 	elif version.major == 3 and version.minor == 1:
 		get_editor_interface().open_scene_from_path("res://addons/WAT/core/test_runner/TestRunner.tscn")
 		get_editor_interface().get_parent()._menu_option(RUN_CURRENT_SCENE_GODOT_3_1)
-	elif version.major == 3 and version.minor == 2:
+	elif version.major == 3 and (version.minor == 2 or version.minor == 3):
 		get_editor_interface().open_scene_from_path("res://addons/WAT/core/test_runner/TestRunner.tscn")
 		get_editor_interface().get_parent()._menu_option(RUN_CURRENT_SCENE_GODOT_3_2)
 	make_bottom_panel_item_visible(instance)

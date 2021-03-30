@@ -27,7 +27,7 @@ func clear():
 		pool.pop_back().free()
 	
 func refresh() -> void:
-	if ProjectSettings.get_setting("WAT/Auto_Refresh_Tests") or Engine.get_version_info().minor < 3:
+	if ProjectSettings.get_setting("WAT/Auto_Refresh_Tests") or Engine.get_version_info().minor < 4:
 		var test_gatherer = TestGatherer.new()
 		test_gatherer.save(test)
 		test = test_gatherer.discover()
